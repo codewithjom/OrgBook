@@ -1,0 +1,16 @@
+#+title:Org Book
+#+author: Jom Dollesin
+
+* About
+
+This may contain bunch of org-mode files that I wrote in Emacs. I created this for me whenever I am not online, I do love reading especially related to my needs. I really recommend to read this in Emacs because if you are a emacs user you already know what I mean.
+
+Official website of Emacs: [[https://gnu.org/software/emacs/]]
+Official website of Org-mode: [[https://orgmode.org]]
+
+*Note*: I also have a configuration of Emacs, you can also learn there because each line I put a description of what does the line of code do.
+
+My Repo: [[https://github.com/codewithjom/emacs-config]]
+My Dotfiles: [[https://github.com/codewithjom/dotfiles]] (Optional)
+
+Check my dotfiles to see any changes of my codes.
