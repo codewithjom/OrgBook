@@ -1,0 +1,1380 @@
+#+title: Learn HTML
+#+author: Jom Dollesin
+
+* Basics
+** HTML Documents
+
+All HTML documents must start with a document type declaration: =<!DOCTYPE html>=.
+
+The HTML document itself begins with =<html>= and ends with =</html>=.
+
+The visible part of the HTML document is between =<body>= and =</body>=.
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <body>
+
+      <h1>Hello World</h1>
+      <p>Etiam vel tortor sodales tellus ultricies commodo.</p>
+
+    </body>
+  </html>
+
+#+end_src
+
+** The <!DOCTYPE> Declaration
+
+The =<!DOCTYPE>= declaration represents the document type, and helps browsers to display web pages correctly.
+
+It must only appear once, at the top of the page (before any HTML tags).
+
+The =<!DOCTYPE>= declaration is not case sensitive.
+
+The =<DOCTYPE>= declaration for HTML5 is:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+
+#+end_src
+
+** HTML Headings
+
+HTML headings are defined with the =<h1>= to =<h6>= tags.
+
+=<h1>= defines the most important heading. =<h6>= defines the least important heading.
+
+*Example*:
+#+begin_src html
+
+  <h1>Hello World</h1>
+  <h2>Hello World</h2>
+  <h3>Hello World</h3>
+
+#+end_src
+
+** HTML Paragraphs
+
+HTML paragraphs are defined with the =<p>= tag.
+
+*Example*:
+#+begin_src html
+
+  <p>Etiam laoreet quam sed arcu.</p>
+  <p>Nullam tristique diam non turpis.</p>
+
+#+end_src
+
+** HTML Links
+
+HTML links are defined with the =<a>= tag.
+
+*Example*:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+The link's destination is specified in the =href= attribute.
+
+Attributes are used to provide additional information about HTML elements.
+
+** HTML Images
+
+HTML images are defined with the =<img>= tag.
+
+The source file (=src=), alternative text (=alt=), =width= and =height= are provided as attributes.
+
+*Example*:
+#+begin_src html
+
+  <img src="profile.jpg" alt="A profile picture" width="104" height="142">
+
+#+end_src
+
+* Elements
+** HTML Elements
+
+An HTML element is defined by a start tag, some content, and a end tag.
+
+| *Start tag* | *Element content* | *End tag* |
+|-----------+-----------------+---------|
+| <h1>      | Hello World     | </h1>   |
+| <p>       | Lorem Ipsum     | </p>    |
+| <br>      | /none/            | /none/    |
+
+*Note*: Some HTML elements have no content (like the <br> element). These elements are called empty elements. Empty elements do not have an end tag!
+
+** Nested HTML Elements
+
+HTML elements can be nested (this means that elements can contain other elements).
+
+All HTML documents consist of nested HTML elements.
+
+The following example contains four HTML element (=<html>=, =<body>=, =<h1>= and =<p>=):
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <body>
+
+      <h1>Hello World</h1>
+      <p>Etiam vel tortor sodales tellus ultricies commodo.</p>
+
+    </body>
+  </html>
+
+#+end_src
+
+* Attributes
+** HTML Attributes
+
+- All HTML elements can have *attributes*
+- Attributes provide *additional information* about elements
+- Attributes are always specified in *the start tag*
+- Attributes usually come in name/value pairs like: *name="value"*
+
+** The href Attribute
+
+The =<a>= tag defines a hyperlink. The =href= attributes specifies the URL of the page the link goes to:
+
+*Example*:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+** The src Attribute
+
+The =<img>= tag is used to embed an image in an HTML page. The =src= attribute specifies the path to the image to be displayed:
+
+*Example*:
+#+begin_src html
+
+  <img src="profile.jpg">
+
+#+end_src
+
+There are two ways to specify the URL in the =src= attribute:
+
+1. =Absolute URL= - Links to an external image that is hosted on another website. Example: *src="https://fakewebsite.com/profile.jpg"*
+
+*Note*: External images might be under copyright. If you do not get permission to use it, you me be in violation of copyright laws. In addition, you cannot control external images; it can suddenly be removed or changed.
+
+2. =Relative URL= - Links to an image that is hosted within the website. Here, the URL does not include the domain name. If the URL begins without a slash, it will be relative to the current page. Example: src="profile.jpg". If the URL begins with a slash, it will be relative to the domain. Example: src="/images/profile.jpg".
+
+*Tip*: It is almost always best to use relative URLs. They will not break if you change domain.
+
+** The width and height Attributes
+
+The =<img>= tag should also contain the =width= and =height= attributes, which specifies the width and height of the image (in pixels).
+
+*Example*:
+#+begin_src html
+
+  <img src="profile.jpg" width="500" height="600">
+
+#+end_src
+
+** The alt Attribute
+
+The required =alt= attribute for the =<img>= tag specifies an alternate text for an image, if the image for some reason cannot be displayed. This can be due to slow connection, or an error in the =src= attribute, or if the user uses a screen reader.
+
+*Example*:
+#+begin_src html
+
+  <img src="profile.jpg" alt="A profile picture">
+
+#+end_src
+
+This what happends if we try to diplay an image that does not exist!
+
+*Example*:
+#+begin_src html
+
+  <img src="fakeprofile.jpg" alt="A profile picture.">
+
+#+end_src
+
+** The style Attribute
+
+The =style= attribute is used to add styles to an element, such as color, font, size, and more.
+
+*Example*:
+#+begin_src html
+
+  <p style="color:red;">Integer placerat tristique nisl.</p>
+
+#+end_src
+
+** The lang Attribute
+
+You should always include the =lang= attribute inside the =<html>= tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
+
+The following example specifies English as the language:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <body>
+
+      ...
+
+    </body>
+  </html>
+
+#+end_src
+
+Country codes can also be added to the language code in the =lang= attribute. So, the first two characters define the language of the HTML page, and the last two characters define the country.
+
+The following example specifies English as the language and United States as the country:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en-US">
+    <body>
+
+      ...
+
+    </body>
+  </html>
+
+#+end_src
+
+** The title Attribute
+
+The =title= attribute defines some extra information about an element.
+
+The value of the title attribute will be displayed as a tooltip when you mouse over the element.
+
+*Example*:
+#+begin_src html
+
+  <p title="Hello World">Nam vestibulum accumsan nisl.</p>
+
+#+end_src
+
+** Always Use Lowecase Attributes
+
+The HTML standard does not require lowercase attribute names.
+
+The title attribute (and all other attributes) can be written with uppercase or lowercase like *title* or *TITLE*.
+
+** Always Quote Attribute Values
+
+The HTML standard does not require quotes around attribute values.
+
+Good:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+Bad:
+#+begin_src html
+
+  <a href=https://github.com/codewithjom>My GitHub</a>
+
+#+end_src
+
+Sometimes you have to use quotes. This example will not display the title attribute correctly, because it contains a space.
+
+#+begin_src html
+
+ <p title=Hello World>
+
+#+end_src
+
+** Single or Double Quotes?
+
+Double quotes around attribute values are the most common in HTML, but single quotes can also be used.
+
+In some situations, when the attribute value itself contains double quotes, it is necessary to use single quotes.
+
+#+begin_src html
+
+  <p title='Jom "Totoy" Dollesin'>
+
+#+end_src
+
+Or vice versa:
+
+#+begin_src html
+
+  <p title="Jom 'Totoy' Dollesin">
+
+#+end_src
+
+* Headings
+** HTML Headings
+
+HTML headings are defined with the =<h1>= to =<h6>= tags.
+
+=<h1>= defines the most important heading. =<h6>= defines the least important heading.
+
+*Example*:
+#+begin_src html
+
+  <h1>Hello World</h1>
+  <h2>Hello World</h2>
+  <h3>Hello World</h3>
+  <h4>Hello World</h4>
+  <h5>Hello World</h5>
+  <h6>Hello World</h6>
+
+#+end_src
+
+*Note*: Browsers automatically add some white space (a margin) before and after a heading.
+
+** Headings Are Important
+
+Search engines use the headings to index the structure and content of your web pages.
+
+Users often skim a page by its headings. It is important to use headings to show the document structure.
+
+=<h1>= headings should be used for main headings, followed by =<h2>= headings, then the less important =<h3>=, and so on.
+
+*Note*: Use HTML headings for headings only, Don't use headings to make text *BIG* or *bold*.
+
+** Bigger Headings
+
+Each HTML heading has a default size. However, you can specify the size for any heading with the =style= attribute, using the CSS =font-size= property.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="font-size:60px;">Hello World</h1>
+
+#+end_src
+
+* Paragraphs
+** HTML Paragraphs
+
+The HTML =<p>= element defines a paragraph.
+
+A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.
+
+*Example*:
+#+begin_src html
+
+  <p>Etiam vel neque nec dui dignissim bibendum.</p>
+  <p>Etiam vel neque nec dui dignissim bibendum.</p>
+
+#+end_src
+
+** HTML Display
+
+You cannot be sure how HTML will be displayed.
+
+Large or small screens, and resized windows will create different results.
+
+With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.
+
+The browser will automatically remove any extra spaces and lines when the page is displayed.
+
+*Example*:
+#+begin_src html
+
+  <p>
+    Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui in ligula mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.  Nullam libero mauris, consequat quis, varius et, dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
+  </p>
+
+  <p>
+    Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam                  vel tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis blandit.                        Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui                in ligula mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.
+  </p>
+
+#+end_src
+
+** HTML Horizontal Rules
+
+The =<hr>= tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.
+
+The =<hr>= element is used to separate content (or define a change) in an HTML page.
+
+*Example*:
+#+begin_src html
+
+  <h1>Hello World</h1>
+  <p>Phasellus at dui in ligula mollis ultricies.</p>
+  <hr>
+  <h2>Hello World</h2>
+  <p>Donec hendrerit tempor tellus.</p>
+
+#+end_src
+
+The =<hr>= tag is an empty tag, which means that it has no end tag.
+
+** HTML Line Breaks
+
+The HTML =<br>= element defines a line break.
+
+Use the =<br>= if you want a line break (a new line) without starting a new paragraph:
+
+*Example*:
+#+begin_src html
+
+  <p>Nullam eu <br>ante vel est <br>convallis dignissim.</p>
+
+#+end_src
+
+The =<br>= tag is an empty tag, which means that it has no end tag.
+
+** The Poem Problem
+
+This poem will diplay on a single line:
+
+*Example*:
+#+begin_src html
+
+  <p>
+    My Bonnie lies over the ocean.
+
+    My Bonnie lies over the sea.
+
+    My Bonnie lies over the ocean.
+
+    Oh, bring back my Bonnie to me.
+  </p>
+
+#+end_src
+
+** Solution - The HTML <pre> Element
+
+The HTML =<pre>= element defines preformatted text.
+
+The text inside a =<pre>= element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
+
+*Example*:
+#+begin_src html
+
+  <pre>
+    My Bonnie lies over the ocean.
+
+    My Bonnie lies over the sea.
+
+    My Bonnie lies over the ocean.
+
+    Oh, bring back my Bonnie to me.
+  </pre>
+
+#+end_src
+
+* Styles
+** The HTML Style Attribute
+
+Setting the style of a HTML element, can be done with the =style= attribute. The HTML =style= attribute has the following syntax:
+
+#+begin_src html
+
+  <tagname style="property:value;">
+
+#+end_src
+
+The *property* is a CSS property. The *value* is a CSS value.
+
+** Background Color
+
+The CSS =background-color= property defines the background color for an HTML element.
+
+*Example*:
+#+begin_src html
+
+  <body>
+    <h1>Hello World</h1>
+    <p>Nulla posuere.</p>
+  </body>
+
+#+end_src
+
+*Example*:
+#+begin_src html
+
+  <body>
+    <h1 style="background-color:powderblue;">Hello World</h1>
+    <p style="background-color:tomato;">Nulla posuere.</p>
+  </body>
+
+#+end_src
+
+** Text Color
+
+The CSS =color= property defines the text color for an HTML element.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="color:blue;">Hello World</h1>
+  <p style="color:red;">Aliquam erat volutpat.</p>
+
+#+end_src
+
+** Fonts
+
+The CSS =font-family= property defines the font to be used for an HTML element.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="font-family:verdana;">Hello World</h1>
+  <p style="font-family:courier;">Cras placerat accumsan nulla.</p>
+
+#+end_src
+
+** Text Size
+
+The CSS =font-size= property defines the text size for an HTML element:
+
+*Example*:
+#+begin_src html
+
+  <h1 style="font-size:300%;">Hello World</h1>
+  <p style="font-size:160%;">Nam vestibulum accumsan nisl.</p>
+
+#+end_src
+
+** Text Alignment
+
+The CSS =text-alignment= property defines the horizontal text alignment for an HTML element:
+
+*Example*:
+#+begin_src html
+
+  <h1 style="text-align:center;">Hello World</h1>
+  <p style="text-align:center;">Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.</p>
+
+#+end_src
+
+* Formatting
+** HTML Formatting Elements
+
+Formatting elements were designed to display special types of text:
+
+- =<b>= - Bold Text
+- =<strong>= - Important Text
+- =<i>= - Italic Text
+- =<em>= - Emphasized Text
+- =<mark>= - Marked Text
+- =<small>= - Smaller Text
+- =<del>= - Deleted Text
+- =<ins>= - Inserted Text
+- =<sub>= - Subscript Text
+- =<sup>= - Superscript Text
+
+** HTML <b> and <strong> Elements
+
+The HTML =<b>= element defines bold text, without any extra importance.
+
+*Example*:
+#+begin_src html
+
+  <b>This is bold</b>
+
+#+end_src
+
+The HTML =<strong>= element defines text with strong importance. The content inside is typically displayed in bold.
+
+*Example*:
+#+begin_src html
+
+  <strong>This text is important!</strong>
+
+#+end_src
+
+** HTML <i> and <em> Elements
+
+The HTML =<i>= element defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.
+
+*Tip*: The =<i>= tag is often used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.
+
+*Example*:
+#+begin_src html
+
+  <i>This text is italic</i>
+
+#+end_src
+
+The HTML =<em>= element defines emphasized text. The content inside is typically displayed in italic.
+
+*Tip*: A screen reader will pronounce the words in =<em>= with an emphasis, using verbal stress.
+
+*Example*:
+#+begin_src html
+
+  <em>This text is emphasized</em>
+
+#+end_src
+
+** HTML <smalL> Element
+
+The HTML =<smalll>= element defines smaller text:
+
+*Example*:
+#+begin_src html
+
+  <small>This is some smaller text.</small>
+
+#+end_src
+
+** HTML <mark> Element
+
+The HTML =<mark>= element defines text that should be marked or highlighted:
+
+*Example*:
+#+begin_src html
+
+  <p>Pellentesque condimentum, magna ut <mark>suscipit</mark> hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.</p>
+
+#+end_src
+
+** HTML <del> Element
+
+The HTML =<del>= element defines text that has been deleted from a document. Browsers will usually strike a line through deleted text:
+
+*Example*:
+#+begin_src html
+
+  <p>Phasellus neque orci, porta a, <del>aliquet quis</del>, semper a, massa.</p>
+
+#+end_src
+
+** HTML <ins> Element
+
+The HTML =<ins>= element defines a text that has been inserted into a document. Browsers will usually underline inserted text:
+
+*Example*:
+#+begin_src html
+
+  <p>Nunc aliquet, augue nec <del>adipiscing</del> <ins>interdum</ins>, lacus tellus malesuada massa, quis varius mi purus non odio.</p>
+
+#+end_src
+
+** HTML <sub> Element
+
+The HTML =<sub>= element defines subscript text. Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas.
+
+*Example*:
+#+begin_src html
+
+  <p>This is <sub>subscripted</sub> text.</p>
+
+#+end_src
+
+** HTML <sup> Element
+
+The HTML =<sup>= element defines superscript text. Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font. Superscript text can be used for footnotes.
+
+*Example*:
+#+begin_src html
+
+  <p>Aliquam <sup>posuere</sup>.Donec at pede.</p>
+
+#+end_src
+
+* Quotations
+** HTML <blockquote> for Quotations
+
+The HTML =<blockquote>= element defines a section that is quoted from another source.
+
+Browsers usually indent =<blockquote>= element.
+
+*Example*:
+#+begin_src html
+
+  <p>Here is a quote from WWF's website:</p>
+
+  <blockquote cite="http://www.worldwildlife.org/who/index.html">
+  For 50 years, WWF has been protecting the future of nature.
+  The world's leading conservation organization,
+  WWF works in 100 countries and is supported by
+  1.2 million members in the United States and
+  close to 5 million globally.
+  </blockquote>
+
+#+end_src
+
+** HTML <q> for Short Quotations
+
+The HTML =<q>= tag defines a short quotations.
+
+Browsers normally insert quotation marks around the quotation.
+
+*Example*:
+#+begin_src html
+
+  <p>Integer placerat <q>tristique</q> nisl.</p>
+
+#+end_src
+
+** HTML <abbr> for Abbreviations
+
+The HTML =<abbr>= tag defines an abbreviations or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
+
+Marking abbreviations can give useful information to browsers, translation systems and search-engines.
+
+*Tip*: Use the global title attribute to show the discription for the abbreviations/acronym when you mouse over the element.
+
+*Example*:
+#+begin_src html
+
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+#+end_src
+
+** HTML <address> for Contact Information
+
+The HTML =<address>= tag defines the contact information for the author/owner of a document or an article.
+
+The contact information can be an email address, URL, physical address, phone number, social media handle, etc.
+
+The text in the =<address>= element usually renders in /italic/, and browsers will always add a line break before and after the =<address>= element.
+
+*Example*:
+#+begin_src html
+
+  <address>
+    Written by Jom Dollesin.<br>
+    My GitHub:<br>
+    github.com/codewithjom<br>
+    ...
+  </address>
+
+#+end_src
+
+** HTML <cite> for Work Title
+
+The HTML =<cite>= tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).
+
+*Note*: A person's name is not the title of a work.
+
+The text in the =<cite>= element usually renders in /italic/.
+
+*Example*:
+#+begin_src html
+
+  <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+
+#+end_src
+
+** HTML <bdo> for Bi-Directional Override
+
+BDO stands for Bi-Directional Override.
+
+The HTML =<bdo>= tag is used to override the current text direction.
+
+*Example*:
+#+begin_src html
+
+  <bdo dir="rtl">This text will be written from right to left.</bdo>
+
+#+end_src
+
+* Comments
+** HTML Comment Tag
+
+You can add comments to your HTML source by using the following syntax:
+
+#+begin_src html
+
+  <!-- Write your comment here -->
+
+#+end_src
+
+Notice that there is an exclamation point (!) in the start tag, but not in the end tag.
+
+*Note*: Comments are not displayed by the browsers, but they can help document your HTML source code.
+
+* Colors
+** Color Names
+
+In HTML, a color can be specified by using a color name:
+
++ Tomato
++ DodgerBlue
++ Gray
++ Violet
++ Orange
++ MediumSeaGreen
++ SlateBlue
++ LightGray
+
+** Background Color
+
+You can set the background color for HTML elements.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="background-color:DodgerBlue;">Hello World</h1>
+  <p style="background-color:Tomato;">Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.</p>
+
+#+end_src
+
+** Text Color
+
+You can set the color of text.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="color:Tomato;">Hello World</h1>
+  <p style="color:DodgerBlue;">Lorem Ipsum...</p>
+
+#+end_src
+
+** Border Color
+
+You can set the color of borders.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="border:2px solid Tomato;">Hello World</h1>
+  <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+  <h1 style="border:2px solid Violet;">Hello World</h1>
+
+#+end_src
+
+** Color Values
+
+In HTML, colors can also be specified using RGB value, HEX values, HSL values, RGBA values, HSLA values.
+
+The following three <div> elements have their background color set with RGB, HEX, and HSL values.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="background-color:rgb(255, 99, 71);">...</h1>
+  <h1 style="background-color:#ff6347;">...</h1>
+  <h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+
+#+end_src
+
+The following two <div> elements have their background color set with RGBA and HSLA values, which adds an Alpha channel to the color (Here we have 50% transparency):
+
+*Example*:
+#+begin_src html
+
+  <h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+  <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+
+#+end_src
+
+* Colors - RGB
+** RGB Color Values
+
+- =RGB= color value represents RED, GREEN, and BLUE light sources.
+- =RGBA= color values is an extension of RGB with an Alpha channel (opacity).
+
+In HTML, a color can be specified as an RGB value, using this formula.
+
+*rgb(red, green, blue)*
+
+Each parameter (red, green, blue) defines the intensity of the color with a value between 0 and 255,
+
+This means that there are 256 x 256 x 256 = 16777216 possible colors!
+
+For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255), and the other two (green and blue) are set to 0.
+
+Another example, rgb(0, 255, 0) is displayed as green, because green is set to its highest value (255), and the other two (red and blue) are set to 0.
+
+To display black, set all color parameters to 0, like this: rgb(0, 0, 0).
+
+To display white, set all color parameter to 255, like this: rgb(255, 255, 255).
+
+** Shades of Gray
+
+Shades of gray are often defined using equal values for all three parameters.
+
+*Example*:
+
+- rgb(60, 60, 60)
+- rgb(140, 140, 140)
+- rgb(200, 200, 200)
+- rgb(100, 100, 100)
+- rgb(180, 180, 180)
+- rgb(240, 240, 240)
+
+** RGBA Color Values
+
+RGBA color values are an extension of RGB color values with an Alpha channel - which specifies the opacity for a color.
+
+An RGBA color values is specified with:
+
+*rgba(red, green, blue, alpha)*
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all).
+
+* Colors - HEX
+** HEX Color Values
+
+A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green), and BB (blue) hexadecimal integers specify the components of the color.
+
+In HTML, a color can be specified using a hexadecimal value in the form:
+
+*#rrggbb*
+
+Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).
+
+For example, #ff0000 is displayed as red, because red is set to its highest value (ff), and the other two (green and blue) are set to 00.
+
+Another example, #00ff00 is displayed as green, because green is set to its highest value (ff), and the other two (red and blue) are set to 00.
+
+To display black, set all color parameter to 00, like this: #000000.
+
+To display white, set all color parameters to ff, like this: #ffffff.
+
+** Shades of Gray
+
+Shades of gray are often defined using equal values for all three parameters:
+
+*Example*:
+
+- #404040
+- #a0a0a0
+- #dcdcdc
+- #686868
+- #bebebe
+- #f8f8f8
+
+* Colors - HSL
+** HSL Color Values
+
+In HTML, a color can be specified using hue, saturation, and lightness (HSL) in the form:
+
+*hsl (/hue, saturation, lightness/)*
+
+HSLA color values are an extension of HSL with an Alpha channel (opacity).
+
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+
+Saturation is a percentage value, 0% means a shade of gray, and 100% is a full color.
+
+Lightness is also a percentage value, 0% is black, and 100% is white.
+
+*Example*:
+
+- hsl (0, 100%, 50%)
+- hsl (147, 50%, 47%)
+- hsl (39, 100%, 50%)
+- hsl (240, 100%, 50%)
+- hsl (300, 76%, 72%)
+- hsl (248, 53%, 58%)
+
+*Saturation*
+
+Saturation can be described as the intensity of a color.
+
+100% is pure color, no shades of gray
+
+50% is 50% gray, but you can still see the color.
+
+0% is completely gray, you can no longer see the color.
+
+*Example*:
+
+- hsl (0, 100%, 50%)
+- hsl (0, 60%, 50%)
+- hsl (0, 20%, 50%)
+- hsl (0, 80%, 50%)
+- hsl (0, 40%, 50%)
+- hsl (0, 0%, 50%)
+
+*Lightness*
+
+The lightness of a color can be described as how much light you want to give the color, where 0% means no light (black), 50% means 50% light (neither dark nor light) 100% means full lightness (white).
+
+*Example*:
+
+- hsl (0, 100%, 0%)
+- hsl (0, 100%, 50%)
+- hsl (0, 100%, 90%)
+- hsl (0, 100%, 25%)
+- hsl (0, 100%, 75%)
+- hsl (0, 100%, 100%)
+
+** Shades of Gray
+
+Shades of gray are often defined by setting the hue and saturation to 0, and adjust the lightness from 0% to 100% to get darker/lighter shades.
+
+*Example*:
+
+- hsl (0, 0%, 20%)
+- hsl (0, 0%, 40%)
+- hsl (0, 0%, 70%)
+- hsl (0, 0%, 30%)
+- hsl (0, 0%, 60%)
+- hsl (0, 0%, 90%)
+
+** HSLA Color Values
+
+HSLA color values are an extension of HSL color values with an Alpha channel which specifies the opacity for a color.
+
+An HSLA color value is specified with:
+
+*hsla (/hue, saturation, lightness, alpha/)*
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+
+* CSS
+** What is CSS?
+
+Cascading Style Sheets (CSS) is used to format the layout of a webpage.
+
+With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
+
+*Tip*: The word *cascading* means that a style applied to a parent element will also apply to all children elements within the parent. So, if you set the color of the body text to "blue", all headings, paragraphs, and other text elements within the body will also get the same color (unless you specify something else)!
+
+** Using CSS
+
+CSS can be added to HTML document in 3 ways.
+
+- *Inline* - by using the =style= attribute inside HTML elements
+- *Internal* - by using the =<style>= element in the =<head>= section
+- *External* - by using the =<link>= element to link to an external CSS file
+
+The most common way to add CSS, is to keep the styles in external CSS files. However, in this org-book I will be using inline and internal styles, because this is easier to demonstrate, and easier for you to try it yourself.
+
+** Inline CSS
+
+An inline CSS is used to apply unique style to a single HTML element.
+
+An inline CSS uses the =style= attribute of an HTML element.
+
+The following example sets the text color of the =<h1>= element to blue, and the text color of the =<p>= element to red.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="color:blue;">Hello World</h1>
+  <p style="color:red;">Donec pretium posuere tellus.</p>
+
+#+end_src
+
+** Internal CSS
+
+An internal CSS is used to define a style for a single HTML page.
+
+An internal CSS is defined in the =<head>= section of an HTML page, within a =style= element.
+
+The following example sets the text color of ALL the =<h1>= elements (on that page) to blue, and the text color of ALL the =<p>= elements to red. In addition, the page will be displayed with a "powderblue" background color:
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body {background-color: powderblue;}
+        h1 {color: blue;}
+        p {color: red;}
+      </style>
+    </head>
+    <body>
+      <h1>Hello World</h1>
+      <p>Mauris mollis tincidunt felis.</p>
+    </body>
+  </html>
+
+#+end_src
+
+** External CSS
+
+An external style sheet is used to define the style for many HTML pages.
+
+To use an external style sheet, add a link to it in the =<head>= section of each HTML page.
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <h1>Hello World</h1>
+      <p>Donec at pede.</p>
+    </body>
+  </html>
+
+#+end_src
+
+The external style sheet can be written in any text editor. The file must not contain any HTML code, and must be saved with a .css extension.
+
+Here is what the "styles.css" file looks like.
+
+*"styles.css"*
+#+begin_src css
+
+  body {
+      background-color: powderblue;
+  }
+  h1 {
+      color:blue;
+  }
+  p {
+      color: red;
+  }
+
+#+end_src
+
+*Tip*: With an external style sheet, you can change the look of an entire web site, by changing on file!
+
+** CSS Colors, Fonts and Sizes
+
+Here, we will demonstrate some commonly used CSS properties. You will learn more about them later!
+
+- The CSS =color= property defines the text color to be used.
+- The CSS =font-family= property defines the font to be used.
+- The CSS =font-size= property defines the text size to be used.
+
+*Example*:
+#+begin_src css
+
+  h1 {
+      color: blue;
+      font-family: verdana;
+      font-size: 300%;
+  }
+  p {
+      color: red;
+      font-family: courier;
+      font-size: 160%;
+  }
+
+#+end_src
+
+** CSS Border
+
+The CSS =border= property defines a border around an HTML element.
+
+*Tip*: You can define a border for nearly all HTML elements.
+
+*Example*:
+#+begin_src css
+
+  p {
+      border: 2px solid powderblue;
+  }
+
+#+end_src
+
+** CSS Padding
+
+The CSS =padding= property defines a padding (space) between the text and the border.
+
+*Example*:
+#+begin_src css
+
+  p {
+      border: 2px solid powderblue;
+      padding: 30px;
+  }
+
+#+end_src
+
+** CSS Margin
+
+The CSS =margin= property defines a margin (space) outside the border.
+
+*Example*:
+#+begin_src css
+
+  p {
+      border: 2px solid powderblue;
+      margin: 50px;
+  }
+
+#+end_src
+
+** Link to External CSS
+
+External style sheets can be refferenced with a full URL or with a path relative to the current web page.
+
+*Example*:
+#+begin_src html
+
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+#+end_src
+
+This example links to a style sheet located in the html folder on the current web site:
+
+*Example*:
+#+begin_src html
+
+  <link rel="stylesheet" href="/html/styles.css">
+
+#+end_src
+
+This example links to a style sheet located in the same folder as the current page:
+
+*Example*:
+#+begin_src html
+
+  <link rel="stylesheet" href="styles.css">
+
+#+end_src
+
+* Links
+** HTML Links - Hyperlinks
+
+HTML links are hyperlinks.
+
+YOu can click on a link and jump to another document.
+
+When you move the mouse over a link, the mouse arrow will turn into a little hand.
+
+*Note*: A link does not have to be text. A link can be an image or any other HTML element!
+
+** HTML Links - Syntax
+
+The HTML =<a>= tag defines a hyperlink. It has the following syntax:
+
+#+begin_src html
+
+  <a href="url">link text</a>
+
+#+end_src
+
+The most important attribute of the =<a>= element is the =href= attribute,
+
+which indicates the link's destination.
+
+The /link text/ is the part that will be visible to the reader.
+
+Clicking in the link text, will send the reader to the specified URL address.
+
+*Example*:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+By default, links will appear as follows in all browsers:
+
+- An unvisited link is underlined and blue
+- A visited link is underlined and purple
+- An active link is underlined and red
+
+** HTML Links - The target Attribute
+
+By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link.
+
+The =target= attribute specifies where to open the linked document.
+
+The =target= attribute can have one of the following values:
+
+- =_self= - Default. Opens the document in the same window/tab as it was clicked.
+- =_blank= - Opens the document in a new window or tab
+- =_parent= - Opens the document in the parent frame
+- =_top= - Opens the document in the full body of the window
+
+Use the target="_blank" to open the linked document in a new browser window or tab:
+
+#+begin_src html
+
+  <a href="https://github.com/codewithjom" target="_blank">My GitHub</a>
+
+#+end_src
+
+** Absolute URLs vs Relative URLs
+
+Both examples above are using an *absolute URL* (a full web address) in the =href= attribute.
+
+A local link (a link to a page within the same website) is specified with a *relative URL* (without the "https://www" part):
+
+#+begin_src html
+
+  <h2>Absolute URLs</h2>
+  <p><a href="https://google.com">Google</a></p>
+  <p><a href="https://github.com/codewithjom">My GitHub</a></p>
+
+  <h2>Relative URLs</h2>
+  <p><a href="about.html">About Page</a></p>
+  <p><a href="/css/about.css">About Page CSS</a></p>
+
+#+end_src
+
+** HTML Links - Use an Image as a Link
+
+To use an image as a link, just put the =<img>= tag inside the =<a>= tag:
+
+*Example*:
+#+begin_src html
+
+  <a>
+    <img src="profile.jpg" alt="A profile picture" style="width:42px; height:42px">
+  </a>
+
+#+end_src
+
+** Link to an Email Address
+
+Use =mailto:= inside the =href= attribute to create a link that opens the user's email program (to let them send a new email):
+
+*Example*:
+#+begin_src html
+
+  <a href="mailto:codewithjom@gmail.com">Send email</a>
+
+#+end_src
+
+** Button as a Link
+
+To use an HTML button as a link, you have to add some JavaScript code.
+
+JavaScript allows you to specify what happens at certain events, such as a click of a button:
+
+*Example*:
+#+begin_src html
+
+  <button onclick="document.location='about.html'">About Page</button>
+
+#+end_src
+
+** Link Titles
+
+The =title= attribute specifies extra information about an element. The information is most often shown as a tooltip text when the mouse moves over the element.
+
+*Example*:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom" title="Go to Jom's GitHub">My GitHub</a>
+
+#+end_src
+
+** More on Absolute URLs and Relative URLs
+
+Use a full URL to link to a web page:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+Link to a page located in the html folder on the current web site:
+#+begin_src html
+
+  <a href="/html/about.html">About Page</a>
+
+#+end_src
+
+Link to a page located in the same folder as the current page:
+#+begin_src html
+
+  <a href="about.html">About Page</a>
+
+#+end_src
