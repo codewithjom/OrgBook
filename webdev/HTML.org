@@ -1795,3 +1795,334 @@ Try resizing the browser window, and you will see that the image will stretch, b
   </style>
 
 #+end_src
+
+* Images - The Picture Element
+** The HTML <picture> Element
+
+The HTML =<picture>= element gives web developers more flexibility in specifying image resources.
+
+The =<picture>= element contains one or more =<source>= element, each referring to different images through the =srcset= attribute. This way the browser can choose the image that best fits the current view and/or device.
+
+Each =<source>= element has a =media= attribute that defines when the image is the most suitable.
+
+*Example*:
+
+Show different images for different screen sizes:
+#+begin_src html
+
+  <picture>
+    <source media="(min-width: 650px)" srcset="img_food.jpg">
+    <source media="(min-width: 465px)" srcset="img_car.jpg">
+    <img src="img_girl.jpg">
+  </picture>
+
+#+end_src
+
+*Note*: Always specify an =<img>= element as the last child element of the =<picture>= element. The =<img>= element is used by browsers that do not support the =<picture>= element, or if none of the =<source>= tags matc
+*Note*: Always specify an =<img>= element as the last child element of the =<picture>= element. The =<img>= element is used by browsers that do not support the =<picture>= element, or if none of the =<source>= tags match.
+
+** When to use the Picture Element
+
+There are two main purposes for the =<picture>= element:
+
+*1. Bandwidth*
+
+If you have a small screen or device, it is not necessary to load a large image file. The browser will use the first =<source>= element with matching attribute values, and ignore any of the following elements.
+
+*2. Format Support*
+
+Some browsers or devices may not support all image formats. By using the =<picture>= element, you can add images of all formats, and the browser will use the first format it recognizes, and ignore any of the following elements.
+
+*Example*:
+
+The browser will use the first image format it recognizes.
+
+#+begin_src html
+
+  <picture>
+    <source srcset="img_avatart.png">
+    <source srcset="img_girl.png">
+    <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+  </picture>
+
+#+end_src
+
+*Note*: The browser will use the first =<source>= element with matching attribute values, and ignore any following =<source>= elements.
+
+** HTML Image Tags
+
+| *Tag*       | *Description*                                      |
+|-----------+--------------------------------------------------|
+| <img>     | Defines an image                                 |
+| <map>     | Defines an image map                             |
+| <area>    | Defines a clickable area inside an image map     |
+| <picture> | Defines a container for multiple image resources |
+
+* Favicon
+** How To Add a Favicon in HTML
+
+You can use any image you like as your favicon. You can also create your own favicon on sites like [[https://www.favicon.cc]].
+
+*Tip*: A favicon is a small image, so it should be a simple image with hight contrast.
+
+A favicon image is displayed to the left of the page title in the browser tab.
+
+To add a favicon to your website, either save your favicon image to the root directory of your webserver, or create a folder in the root directory called images, and save you favicon image in this folder. A common name for a favicon image is "favicon.ico".
+
+Next, add a =<link>= element to your "index.html" file, after the =<title>= element, like this:
+
+*Example*:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>My Page Title</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+
+  </body>
+  </html>
+
+#+end_src
+
+Now, save the "index.html" file and reload it in your browser. Your browser tab should now display your favicon image to the left of the page title.
+
+* Tables
+** Define a HTML Table
+
+A table in HTML consist of table cells inside rows and columns.
+
+*Example*:
+#+begin_src html
+
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfred Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro commercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>
+
+#+end_src
+
+** Table Cells
+
+Each table cell is defined by a =<td>= and a =</td>= tag.
+
+=td= stands for table data.
+
+Everything between =<td>= and =</td>= are the content of the table cell.
+
+*Example*:
+#+begin_src html
+
+  <table>
+    <tr>
+      <td>Emil</td>
+      <td>Tobias</td>
+      <td>Linus</td>
+    </tr>
+  </table>
+
+#+end_src
+
+*Note*: Table data elements are the data containers of the table. They can contain all sorts of HTML elements; text, images, list, other tables, etc.
+
+** Table Rows
+
+Each table row starts with a =<tr>= and end with a =</tr>= tag.
+
+=tr= stands for table row.
+
+*Example*
+#+begin_src html
+
+  <table>
+    <tr>
+      <td>Emil</td>
+      <td>Tobias</td>
+      <td>Linus</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>14</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+#+end_src
+
+You can have as many rows as you like in a table, just make sure that the number of cells are the same in each row.
+
+*Note*: There are times where a row can havee less or more cells that another.
+
+** Table Headers
+
+Sometimes you want your cells to be headers, in those cases use the =<th>= tag instead of the =<td>= tag.
+
+*Example*:
+
+Let the first row be table headers
+
+#+begin_src html
+
+  <table>
+    <tr>
+      <th>Person 1</th>
+      <th>Person 2</th>
+      <th>Person 3</th>
+    </tr>
+    <tr>
+      <td>Emil</td>
+      <td>Tobias</td>
+      <td>Linus</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>14</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+
+#+end_src
+
+By default, the text in =<th>= elements are bold and centered, but you can change that with CSS.
+
+** HTML Table Tags
+
+| *Tag*        | *Desciption*                                                              |
+|------------+-------------------------------------------------------------------------|
+| <table>    | Defines a table                                                         |
+| <th>       | Defines a header cell in a table                                        |
+| <tr>       | Defines a row in a table                                                |
+| <td>       | Defines a cell in a table                                               |
+| <caption>  | Defines a table caption                                                 |
+| <colgroup> | Specifies a group of one ore more columns in a table for formatting     |
+| <col>      | Specifies column properties for each column within a <colgroup> element |
+| <thead>    | Groups the header content in a table                                    |
+| <tbody>    | Groups the body content in a table                                      |
+| <tfoot>    | Groups the footer content in a table                                    |
+
+* Table - Border
+** How to Add a Border
+
+When you add a border to a table, you also add borders around each table cell:
+
+To add a border, use the CSS =border= property on =table=, =th=, and =td= elements.
+
+*Example*:
+
+#+begin_src css
+
+  table, th, td {
+      border: 1px solid black;
+  }
+
+#+end_src
+
+** Collapsed Table Borders
+
+To avoid having double borders like in the example above, set the CSS =broder-collapse= property to =collapse=.
+
+This will make the borders collapse into a single border.
+
+*Example*:
+#+begin_src css
+
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+
+#+end_src
+
+** Style Table Borders
+
+If you set a background color of each cell, and give the border a white color (the same as the document background), you get the impression of an invisible border.
+
+*Example*:
+#+begin_src css
+
+  table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+  }
+
+  th, td {
+      background-color: #96D4D4
+  }
+
+#+end_src
+
+** Round Table Borders
+
+With the =border-radius= property, the borders get rounded corners.
+
+*Example*:
+#+begin_src css
+
+  table, th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+  }
+
+#+end_src
+
+Skip the border around the table by leaving out =table= from the css selector:
+
+*Example*:
+#+begin_src css
+
+  th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+  }
+
+#+end_src
+
+** Dotted Table Borders
+
+With the =border-style= property, you can set the appearance of the border.
+
+The following values are allowed:
+
+- =dotted=
+- =dashed=
+- =solid=
+- =double=
+- =groove=
+- =ridge=
+- =inset=
+- =outset=
+- =none=
+- =hidded=
+
+** Border Color
+
+With the =border-color= property, you can set the color of the border.
+
+*Example*:
+#+begin_src css
+
+  th, td {
+      border-color: #96D4d4;
+  }
+
+#+end_src
