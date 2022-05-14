@@ -1,6 +1,8 @@
 #+title: Learn HTML
 #+author: Jom Dollesin
 
+*Disclaimer*: This is not my original copy of the book I wrote, most of these are comming from W3schools. The reason for this is for me whenever I am not online I have a copy which I can scan when I need it.
+
 * Basics
 ** HTML Documents
 
@@ -2653,5 +2655,685 @@ You can hide columns with the =visibility: collapse= property:
       <th>WED</th>
       <th>THU</th>
     ...
+
+#+end_src
+
+* Lists
+** Unordered HTML List
+
+An unordered list starts with the =<ul>= tag. Each list item starts with the =<li>= tag.
+
+The list items will be marke with bullets (small black circles) by default.
+
+*Example*:
+#+begin_src html
+
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+** Ordered HTML List
+
+An ordered list starts with the =<ol>= tag. Each list item starts with the =<li>= tag.
+
+The list items will be marked with numbers by default.
+
+*Example*:
+#+begin_src html
+
+  <ol>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+** HTML Description Lists
+
+HTML also supports description lists.
+
+A description list is a list of terms, with a description of each term.
+
+The =<dl>= tag defines the description list, the =<dt>= tag defines the term (name), and the =<dd>= tag describes each term.
+
+*Example*:
+#+begin_src html
+
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>
+
+#+end_src
+
+** HTML List Tags
+
+| *Tag*  | *Description*                              |
+| <ul> | Defines an unordered list                |
+| <ol> | Defines an ordered list                  |
+| <li> | Defines a list items                     |
+| <dl> | Defines a desciption list                |
+| <dt> | Defines a term in a description list     |
+| <dd> | Describes the term in a description list |
+
+* Lists - Unordered List
+** Unordered HTML List
+
+An unordered list starts with the =<ul>= tag. Each list item starts with the =<li>= tag.
+
+The list items will be marke with bullets (small black circles) by default.
+
+*Example*:
+#+begin_src html
+
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+** Unordered HTML List - Choose List Item Marker
+
+The CSS =list-style-type= property is used to define the style of the list item marker. It can have one of the following values.
+
+| *Value*  | *Description*                                     |
+| disc   | Sets the list item marker to a bullet (default) |
+| circle | Sets the list item marker to a circle           |
+| square | Sets the list item marker to a square           |
+| none   | The list items will not be marked               |
+
+*** Disc
+
+#+begin_src html
+
+  <ul style="list-style-type:disc;">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+*** Circle
+
+#+begin_src html
+
+  <ul style="list-style-type:circle;">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+*** Square
+
+#+begin_src html
+
+  <ul style="list-style-type:square;">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+*** None
+
+#+begin_src html
+
+  <ul style="list-style-type:none;">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+** Nested HTML Lists
+
+List can be nested (list inside list).
+
+*Example*:
+#+begin_src html
+
+  <ul>
+    <li>Coffee</li>
+    <li>Tea
+      <ul>
+        <li>Black tea</li>
+        <li>Green tea</li>
+      </ul>
+    </li>
+    <li>Milk</li>
+  </ul>
+
+#+end_src
+
+*Note*: A list item (=<li>=) can contain a new list, and other HTML elements like images and links etc.
+
+** Horizontal List with CSS
+
+HTML lists can be styled in many different ways with CSS.
+
+One popular way is to style a list horizontally, to create a navigation menu.
+
+*** HTML
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>nav bar</title>
+    </head>
+    <body>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </body>
+  </html>
+
+#+end_src
+
+*** CSS
+
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+  }
+
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+  }
+
+  li a:hover {
+      background-color: #111111;
+  }
+
+#+end_src
+
+* Lists - Ordered Lists
+** Ordered HTML List
+
+An ordered list starts with the =<ol>= tag. Each list item starts with the =<li>= tag.
+
+The list items will be marked with numbers by default.
+
+*Example*:
+#+begin_src html
+
+  <ol>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+** Ordered HTML List - The Type Attribute
+
+The =type= attribute of the =<ol>= tag, defines the type of the list item marker.
+
+| *Type*     | *Description*                                                  |
+| type="1" | The list items will be numbered with numbers (default)       |
+| type="A" | The list items will be numbered with uppercase letters       |
+| type="a" | The list items will be numbered with lowercase letters       |
+| type="I" | The list items will be numbered with uppercase roman numbers |
+| type="i" | The list items will be numbered with lowercase roman numbers |
+
+*** Numbers
+
+#+begin_src html
+
+  <ol type="1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+*** Uppercase Letters
+
+#+begin_src html
+
+  <ol type="A">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+*** Lowercase Letters
+
+#+begin_src html
+
+  <ol type="a">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+*** Uppercase Roman Numbers
+
+#+begin_src html
+
+  <ol type="I">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+*** Lowercase Roman Numbers
+
+#+begin_src html
+
+  <ol type="i">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+** Control List Counting
+
+By default, an ordered list will start counting from 1. If you want to start counting from a specific number, you can use the =start= attribute.
+
+*Example*:
+#+begin_src html
+
+  <ol start="50">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+** Nested HTML Lists
+
+List can be nested (list inside list).
+
+*Example*:
+#+begin_src html
+
+  <ol>
+    <li>Coffee</li>
+    <li>Tea
+      <ol>
+        <li>Black tea</li>
+        <li>Green tea</li>
+      </ol>
+    </li>
+    <li>Milk</li>
+  </ol>
+
+#+end_src
+
+*Note*: A list item (=<li>=) can contain a new list, and other HTML elements, like images and links, etc.
+
+* Lists - Other Lists
+** HTML Description Lists
+
+HTML also supports description lists.
+
+A description list is a list of terms, with a description of each term.
+
+The =<dl>= tag defines the description list, the =<dt>= tag defines the term (name), and the =<dd>= tag describes each term.
+
+*Example*:
+#+begin_src html
+
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>
+
+#+end_src
+
+* Block and Inline
+** Block-level Elements
+
+Every HTML element has a default display value, depending on what type of element it is.
+
+There are two display values: block and inline.
+
+A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+
+Two commonly used block elements are: =<p>= and =<div>=.
+
+The =<p>= element defines a paragraph in an HTML document.
+
+The =<div>= element defines a division or a section in an HTML document.
+
+*Example*:
+#+begin_src html
+
+  <p>Hello World</p>
+  <div>Hello World</div>
+
+#+end_src
+
+Here are the block-level elements in HTML.
+
++ <address>
++ <canvas>
++ <dt>
++ <footer>
++ <hr>
++ <noscript>
++ <section>
++ <video>
++ <article>
++ <dd>
++ <fieldset>
++ <form>
++ <li>
++ <ol>
++ <table>
++ <aside>
++ <div>
++ <figcaption>
++ <h1> - <h6>
++ <main>
++ <tfoot>
++ <blockquote>
++ <dl>
++ <figure>
++ <header>
++ <nav>
++ <pre>
++ <ul>
+
+** Inline Elements
+
+An inline element does not start on a new line.
+
+An inline element only takes up as much width as necessary.
+
+*Example*:
+#+begin_src html
+
+  <span>Hello World</span>
+
+#+end_src
+
+Here are the inline element in HTML.
+
++ <a>
++ <bdo>
++ <cite>
++ <i>
++ <label>
++ <q>
++ <small>
++ <sup>
++ <var>
++ <abbr>
++ <big>
++ <code>
++ <img>
++ <map>
++ <samp>
++ <span>
++ <textarea>
++ <acronym>
++ <br>
++ <dfn>
++ <input>
++ <object>
++ <script>
++ <strong>
++ <time>
++ <b>
++ <button>
++ <em>
++ <kbd>
++ <output>
++ <select>
++ <sub>
++ <tt>
+
+*Note*: An inline element cannot contain a block-level element!
+
+** The <div> Element
+
+The =<div>= element is often used as a container for other HTML elements.
+
+The =<div>= element has no required attributes, but =style=, =class=, and =id= are common.
+
+When used together with CSS, the =<div>= element can be used to style blocks of content.
+
+*Example*:
+#+begin_src html
+
+  <div style="background-color:black;color:white;padding:20px;">
+    <h2>London</h2>
+    <p>
+      London is the capital city of England. It is the most popular city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
+    </p>
+  </div>
+
+#+end_src
+
+** The <span> Element
+
+The =<span>= element is an inline container used to mark up a part of a text, or a part of a document.
+
+The =<span>= element has no required attribute, but =style=, =class= and =id= are common.
+
+When used together with CSS, the =<span>= element can be used to style parts of the text.
+
+*Example*:
+#+begin_src html
+
+  <p>
+    My mother has
+    <span style="color:blue;font-weight:bold;">
+      blue
+    </span>
+    eyes and my father has
+    <span style="color:darkolivegreen;font-weight:bold;">
+      dark green
+    </span>
+    eyes.
+  </p>
+
+#+end_src
+
+* Classes
+** Using The class Attribute
+
+The HTML =class= attribute is used to specify a class for an HTML element.
+
+Multiple HTML elements can share the same class.
+
+The =class= attribute is often used to point to a class name in a style sheet. It can also be used by a JavaScript to access and manipulate elements with the specific class name.
+
+In the following example we have three =<div>= elements with a =class= attribute with the value of "city". All of the three =<div>= elements will be styled equally according to the =.city=.
+
+*HTML*:
+
+#+begin_src html
+
+  <div class="city">
+    <h2>London</h2>
+    <p>London is the capital of England.</p>
+  </div>
+
+  <div class="city">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p>
+  </div>
+
+  <div class="city">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+#+end_src
+
+*CSS*
+
+#+begin_src css
+
+  .city {
+      background-color: tomato;
+      color:white;
+      border: 2px solid black;
+      margin: 20px;
+      padding: 20px;
+  }
+
+#+end_src
+
+In the following example we have two =<span>= elements with a =class= attribute with the value of "note". Both =<span>= elements will be styled equally according to the =.note=.
+
+*HTML*
+
+#+begin_src html
+
+  <h1>My <span class="note">Important</span> Heading</h1>
+  <p>This is some <span class="note">important</span> text.</p>
+
+#+end_src
+
+*CSS*
+
+#+begin_src css
+
+  .note {
+      font-size: 120%;
+      color: red;
+  }
+
+#+end_src
+
+*Tip*: The =class= attribute can be used on /any/ HTML element.
+
+*Note*: The class name is case sensitive!
+
+** The Syntax For Class
+
+To create a class; write a period (.) character, followed by a class name. Then, define the CSS properties within curly braces {}.
+
+*HTML*:
+
+#+begin_src html
+
+  <div class="city">
+    <h2>London</h2>
+    <p>London is the capital of England.</p>
+  </div>
+
+  <div class="city">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p>
+  </div>
+
+  <div class="city">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+#+end_src
+
+*CSS*
+
+#+begin_src css
+
+  .city {
+      background-color: tomato;
+      color:white;
+      border: 2px solid black;
+      margin: 20px;
+      padding: 20px;
+  }
+
+#+end_src
+
+** Multiple Classes
+
+HTML elements can belong to more than one class.
+
+To define multiple classes, separate the class names with a space, e.g. <div class="city main">. The element will be styled according to all the classes specified.
+
+In the following example, the first =<h2>= element belongs to both the =city= class and also to the =main= class, and will get the CSS styles from both of the classes.
+
+*Example*:
+#+begin_src html
+
+  <h2 class="city main">London</h2>
+  <h2 class="city">Paris</h2>
+  <h2 class="city">Tokyo</h2>
+
+#+end_src
+
+** Different Elements Can Share Same Class
+
+Different HTML elements can point to the same class name.
+
+In the following example, both =<h1>= and =<p>= points to the "city" class and will share the same style.
+
+*Example*:
+#+begin_src html
+
+  <h2 class="city">Paris</h2>
+  <p class="city">Paris is the capital of France.</p>
+
+#+end_src
+
+** Use of The class Attribute in JavaScript
+
+The class name can also be used by JavaScript to perform certain tasks for specific elements.
+
+JavaScript can access elements with a specific class name with the =getElementByClassName()= method:
+
+*Example*:
+
+Click on a button to hide all elements with the class name "city".
+
+#+begin_src javascript
+
+  function myFunction() {
+      var x = document.getElementByClassName("city");
+      for (var i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+      }
+  }
 
 #+end_src
