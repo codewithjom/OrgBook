@@ -3697,3 +3697,465 @@ In the following example, the file path points to a file in the images folder lo
 It is best practice to use relative file paths (if possible).
 
 When using relative file paths, you web pages will not be bound to your current base URL. All links will work on you own computer (localhost) as well as on you current public domain and you future public domains.
+
+* Head
+** The HTML <head> Element
+
+The HTML =<head>= element is a container for the following elements: =<title>=, =<style>=, =<meta>=, =<link>=, =<script>=, and =<base>=.
+
+The =<head>= element is a container for metadata (data about data) and is placed between the =<html>= tag and the =<body>= tag.
+
+HTML metadata is data about the HTML document. Metadata is not displayed.
+
+Metadata typically define the document title, character set, styles, scripts, and other meta information.
+
+** The HTML <title> Element
+
+The =<title>= element defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.
+
+The =<title>= element is required in HTML documents!
+
+The contents of a page title is very important for search engine optimization (SEO)! The page title is used by search engine algorithms to decide the order when listing pages in search results.
+
+The =<title>= element:
+
+- Defines a title in the browser toolbar
+- Provides a title for the page when it is added to favorites
+- Displays a title for the page in search engine-results
+
+So, try to make the title as accurate and meaningful as possible!
+
+A simple HTML document:
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>TITLE</title>
+    </head>
+    <body>
+
+      The content of the document...
+
+    </body>
+  </html>
+
+#+end_src
+
+** The HTML <style> Element
+
+The =<style>= element is used to define a style information for a single HTML page.
+
+*Example*:
+#+begin_src html
+
+  <style>
+    body {
+      background-color: powderblue;
+    }
+    h1 {
+      color: red;
+    }
+    p {
+      color: blue;
+    }
+  </style>
+
+#+end_src
+
+** The HTML <link> Element
+
+The =<link>= element defines the relationship between the current document and an external resource.
+
+The =<link>= tag is most often used to link to external style sheets:
+
+*Example*:
+#+begin_src html
+
+  <link rel="stylesheet" href="mystyle.css">
+
+#+end_src
+
+** The HTML <meta> Element
+
+The =<meta>= element is typically used to specify the character set, page desciption, keywords, author of the document, and viewport settings.
+
+The metadata will not be displayed on the page, but are used by browsers (how to display content or reload page), by search engines (keywords), and other web services.
+
++ Define the character set used:
+
+#+begin_src html
+
+  <meta charset="UTF-8">
+
+#+end_src
+
++ Define keywords for search engines:
+
+#+begin_src html
+
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+
+#+end_src
+
++ Define a description of your web page:
+
+#+begin_src html
+
+  <meta name="description" content="I am learning in Emacs">
+
+#+end_src
+
++ Define the author of a page:
+
+#+begin_src html
+
+  <meta name="author" content="Jom Dollesin">
+
+#+end_src
+
++ Refresh document every 30 seconds:
+
+#+begin_src html
+
+  <meta http-equiv="refresh" content="30">
+
+#+end_src
+
++ Setting the viewport to make your website look good on all devices:
+
+#+begin_src html
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+#+end_src
+
+Example of =<meta>= tags:
+
+#+begin_src html
+
+  <meta charset="UTF-8">
+  <meta name="description" content="I am learning in Emacs">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Jom Dollesin">
+
+#+end_src
+
+** Setting The Viewport
+
+The viewport is the user's visible area of a web page. It varies with the device it will be smaller on a mobile phone than on a computer screen.
+
+You should include the following =<meta>= element in all you web pages:
+
+#+begin_src html
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+#+end_src
+
+This gives the browsre instructions on how to control the page's dimensions and scaling.
+
+The =width=device-width= part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The =initial-scale=1.0= part sets the initial zoom level when the page is first loaded by the browsers.
+
+** The HTML <script> Element
+
+The =<script>= element is used to define client-side JavaScripts.
+
+The following JavaScript writes "Hello JavaScript!" into an HTML element with id="demo":
+
+*Example*:
+#+begin_src html
+
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    }
+  </script>
+
+#+end_src
+
+** The HTML <base> Element
+
+The =<base>= element specifies the base URL and/or target for all relative URLs in a page.
+
+The =<base>= tag must have either an href or a target attribute present, or both.
+
+There can only be one single =<base>= element in a document!
+
+*Example*:
+
+Specify a default URL and a default target for all links on a page:
+
+#+begin_src html
+
+  <head>
+    <base href="https://github.com/codewithjom" target="_blank">
+  </head>
+
+  <body>
+    <img src="images/stickman.gif" width="24" height="39" alt="Stickman">
+    <a href="tags/tag_base.asp">HTML base Tag</a>
+  </body>
+
+#+end_src
+
+* Layout
+** HTML Layout Elements
+
+HTML has several semantic elements that define the difference parts of a web page.
+
+- =<header>= - Defines a header for a document or a section
+- =<nav>= - Defines a set of navigation links
+- =<section>= - Defines a section in a document
+- =<article= - Defines an independent, self-contained content
+- =<aside>= - Defines content aside from the content (like sidebar)
+- =<footer>= - Defines a footer for a document or a section
+- =<details>= - Defines additional details that the user can open and close on demand
+- =<summary>= - Defines a heading for the =<details>= element
+
+** HTML Layout Techniques
+
+There are four different techniques to create multicolumn layouts. Each technique has its pros and cons.
+
+- CSS framework
+- CSS float property
+- CSS flexbox
+- CSS grid
+
+** CSS Float Layout
+
+It is common to do entire web layouts using the CSS =float= property. Float is easy to learn - you just need to remember how the =float= and =clear= properties work. *Disadvantage*: Floating elements are tied to the document flow, which may harm the flexibility.
+
+** CSS Flexbox Layout
+
+Use of flexbox ensures that elements behave predictably when the page layout must accommodate different screen sizes and different display devices.
+
+** CSS Grid Layout
+
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+
+* Responsive
+** What is Responsive Web Design?
+
+Responsive web design is about creating web pages that look good on all devices!
+
+A responsive web design will automatically adjust for different screen sizes and viewports.
+
+Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
+
+** Setting The Viewport
+
+To create a responsive website, add the following =<meta>= tag to all your web pages.
+
+*Example*:
+#+begin_src html
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+#+end_src
+
+This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling.
+
+** Responsive Images
+
+Responsive images are images that scale nicely to file any browser size.
+
+*** Using the width Property
+
+If the CSS =width= property is set to 100%, the image will be responsive and scale up and down.
+
+*Example*:
+#+begin_src html
+
+  <img src="girl.jpg" style="width:100%;">
+
+#+end_src
+
+Notice that if the image can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the =max-width= property instead.
+
+*** Using the max-width Property
+
+If the =max-width= property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size.
+
+*Example*:
+#+begin_src html
+
+  <img src="girl.jpg" style="max-width:100%;height:auto;">
+
+#+end_src
+
+*** Show Different Images Depending on Browser Width
+
+The HTML =<picture>= element allows you to define images for different browser window sizes.
+
+Resize the browser window to see how the image below change depending on the width.
+
+*Example*:
+#+begin_src html
+
+  <picture>
+    <source srcset="smallflower.jpg" media="(max-width:600px)">
+    <source srcset="flowers.jpg" media="(max-width:1500px)">
+    <source srcset="flowers.jpg">
+    <img src="smallflower.jpg" alt="Flowers">
+  </picture>
+
+#+end_src
+
+*** Responsive Text Size
+
+The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
+
+*Example*:
+#+begin_src html
+
+  <h1 style="font-size:10vw">Hello World</h1>
+
+#+end_src
+
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+*** Media Queries
+
+In addition to resize text and images, it is also common to use media queries in responsive web pages.
+
+With media queries you can define completely different styles for different browser size.
+
+*Example*:
+#+begin_src html
+
+  <style>
+    .left, .right {
+      float: left;
+      width: 20%; /* The width is 20%, by default */
+    }
+
+    .main {
+      float: left;
+      width: 60%; /* The width is 60%, by default */
+    }
+
+    /* Use a media query to add a breakpoint at 800px: */
+    @media screen and (max-width: 800px) {
+      .left, .main, .right {
+        width: 100%;
+      }
+    }
+  </style>
+
+#+end_src
+
+** Responsive Web Design - Frameworks
+
+All popular CSS Frameworks offer responsive design.
+
+They are free, and easy to use.
+
+*** Bootstrap
+
+A popular CSS framework is Bootstrap. Bootstrap uses HTML, CSS, and jQuery to make responsive web pages.
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Bootstrap</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+          <h1>My First Bootstrap Page</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            ...
+          </div>
+          <div class="col-sm-4">
+            ...
+          </div>
+          <div class="col-sm-4">
+            ...
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+
+#+end_src
+
+* Computer Code
+** HTML <kbd> For Keyboard Input
+
+The HTML =<kbd>= element is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
+
+*Example*:
+
+Define some text as keyboard input in a document:
+
+#+begin_src html
+
+  <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+
+#+end_src
+
+** HTML <samp> For Program Output
+
+The HTML =<samp>= element is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.
+
+*Example*:
+
+Define some text as sample output from a computer program in a document.
+
+#+begin_src html
+
+  <p>Message from my computer:</p>
+  <p><samp>File not found.<br>Press F1 to continue.</samp></p>
+
+#+end_src
+
+** HTML <code> For Computer Code
+
+The HTML =<code>= element is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.
+
+*Example*:
+
+Define some text as computer code in a document.
+
+#+begin_src html
+
+  <code>
+    x = 5;
+    y = 6;
+    z = x + y;
+  </code>
+
+#+end_src
+
+Notice that the =<code>= element does not preserve extra whitespace and line-breaks.
+
+To fix this, you can put the =<code>= element inside a =<pre>= element.
+
+** HTML <var> For Variables
+
+The HTML =<var>= element is used to define a variable in programming or in a mathematical expression. The content inside is typically displayed in italic.
+
+*Example*:
+
+Define some text as variables in a document.
+
+#+begin_src html
+
+  <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is the vertical height.</p>
+
+#+end_src
