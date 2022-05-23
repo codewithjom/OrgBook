@@ -4159,3 +4159,12 @@ Define some text as variables in a document.
   <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is the vertical height.</p>
 
 #+end_src
+
+* Semantics
+** What are Semantic Elements
+
+A semantic element clearly describes its meaning to both the browser and the developer.
+
+Example of *none-semantic* elements: =<div>= and =<span>= - Tells nothing about its content.
+
+Example of *semantic* elements: =<form>=, =<table>=, and =<arcticle>= - Clearly defines its content.
