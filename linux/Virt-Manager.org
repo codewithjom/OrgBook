@@ -56,3 +56,13 @@ Run this on your terminal.
   sudo virsh net-autostart br10
 
 #+end_src
+
+* Convert From Vbox To Qemu
+
+Run this command if you want to run your .vdi to virt manager. Let's convert the .vdi to .qcow2 and place it to =/var/lib/libvirt/images/archlinux.qcow2=.
+
+#+begin_src sh
+
+  sudo qemu-img convert -f vdi -O qcow2 archlinux.vdi /var/lib/libvirt/images/archlinux.qcow2
+
+#+end_src
