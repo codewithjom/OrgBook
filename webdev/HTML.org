@@ -1,7 +1,7 @@
 #+title: Learn HTML
 #+author: Jom Dollesin
 
-*Disclaimer*: This is not my original copy of the book I wrote, most of these are comming from W3schools. The reason for this is for me whenever I am not online I have a copy which I can scan when I need it.
+*Disclaimer*: This is not my original copy of the book I wrote, most of these are from W3schools. The reason for this is for me whenever I am not online I have a copy which I can use when I need it.
 
 * Basics
 ** HTML Documents
@@ -4485,3 +4485,579 @@ Below is a list of some of the semantic elements in HTML.
 | <section>    | A section in a document                            |
 | <summary>    | A visible heading for a <details> element          |
 | <time>       | Date/time                                          |
+
+* Style Guide
+** Always Declare Document Type
+
+A consistent, clean, and tidy HTML code makes it easier for others to read and understand your code.
+
+Here are some guidelines and tips for creating good HTML code.
+
+Always declare the document type as the first line in your document.
+
+The correct document type for HTML is:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+
+#+end_src
+
+** Use Lowercase Element Names
+
+HTML allows mixing uppercase and lowecase letters in element names.
+
+However, we recommend using lowercase element names, because:
+
+- Mixing uppercase and lowercase names looks bad
+- Developers normally use lowercase names
+- Lowercase looks cleaner
+- Lowercase is easier to write
+
+*Good*:
+#+begin_src html
+
+  <body>
+    <p>This is a paragraph.</p>
+  </body>
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <BODY>
+    <P>This is a paragraph.</P>
+  </BODY>
+
+#+end_src
+
+** Close All HTML Elements
+
+In HTML, you do not have to close all elements (for example the =<p>= element).
+
+However, we strongly recommend closing all HTML elements, like this:
+
+*Good*:
+#+begin_src html
+
+  <section>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+  </section>
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <section>
+    <p>This is a paragraph.
+    <p>This is a paragraph.
+  </section>
+
+#+end_src
+
+** Use Lowercase Attribute Names
+
+HTML allows mixing uppercase and lowercase letters in attribute names.
+
+However, we recommend using lowercase attribute names, because:
+
+- Mixing uppercase and lowercase names looks bad
+- Developers normally use lowercase names
+- Lowercase look cleaner
+- Lowercase are easier to write
+
+*Good*:
+#+begin_src html
+
+  <a href="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <a HREF="https://github.com/codewithjom">My GitHub</a>
+
+#+end_src
+
+** Always Quote Attribute Values
+
+HTML allows attribute values without qoutes.
+
+However, we recommend quoting attribute values, because:
+
+- Developers normally quote attribute values
+- Quoted values are easier to read
+- You MUST use quotes if the value contains spaces
+
+*Good*:
+#+begin_src html
+
+  <table class="striped">
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <table class=striped>
+
+#+end_src
+
+*Very Bad*:
+
+This will not work, because the value contains spaces.
+
+#+begin_src html
+
+  <table class=table striped>
+
+#+end_src
+
+** Always Specify alt, width, and height for Images
+
+Always specify the =alt= attribute for images. This attribute is important if the image fo some reason cannot be displayed.
+
+Also, always define the =width= and =height= of images. This reduces flickering, because the browser can reserve space for the image before loading.
+
+*Good*:
+#+begin_src html
+
+  <img src="human.jpg" alt="A human picture" style="width:128px;height:128px;">
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <img src="human.jpg">
+
+#+end_src
+
+** Spaces and Equal Signs
+
+HTML allows spaces around equal signs. But space-less is easier to read and groups entities better together.
+
+*Good*:
+#+begin_src html
+
+  <link rel="stylesheet" href="styles.css">
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <link rel = "stylesheet" href = "styles.css">
+
+#+end_src
+
+** Avoid Long Code Lines
+
+When using an HTML editor, it is NOT convenient to scroll right and left to read the HTML code.
+
+Try to avoid too long code lines.
+
+** Blank Lines and Indentation
+
+Do not add blank lines, spaces, or indentations without a reason.
+
+For readabilty, add blank lines to separate large or logical code blocks.
+
+For readabilty, add two spaces of indentation. Do not use the tab key.
+
+*Good*:
+#+begin_src html
+
+  <body>
+
+    <h1>Famous Cities</h1>
+
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+
+    <h2>London</h2>
+    <p>London is the capital city of England. It is the most populous city in the United Kingdom.</p>
+
+    <h2>Paris</h2>
+    <p>Paris is the capital of France. The paris area is one of the largest population centers in Europe</p>
+
+  </body>
+
+#+end_src
+
+*Bad*:
+#+begin_src html
+
+  <body>
+    <h1>Famous Cities</h1>
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+    <h2>London</h2>
+    <p>London is the capital city of England. It is the most populous city in the United Kingdom.</p>
+    <h2>Paris</h2>
+    <p>Paris is the capital of France. The paris area is one of the largest population centers in Europe</p>
+  </body>
+
+#+end_src
+
+*Good Table Example*:
+#+begin_src html
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>Description of A</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Description of B</td>
+    </tr>
+  </table>
+
+#+end_src
+
+*Good List Example*:
+#+begin_src html
+
+  <ul>
+    <li>London</li>
+    <li>Paris</li>
+    <li>Tokyo</li>
+  </ul>
+
+#+end_src
+
+** Never Skip the <title> Element
+
+The =<title>= element is required in HTML.
+
+The contents of a page title is very important for search engine optimization (SEO)! The page title is used by search engine algorithms to decide the order when listing pages in search results.
+
+The =<title>= element:
+
+- defines a title in the browser toolbar
+- provides a title for the page when it is added to favorites
+- displays a title for the page in search-engine results
+
+So, try to make the title as accurate and meaningful as possible.
+
+#+begin_src html
+
+  <title>HTML Style Guide and Coding Conventions</title>
+
+#+end_src
+
+** Omitting <html> and <body>?
+
+An HTML page will validate without the =<html>= and =<body>= tags:
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <head>
+    <title>Page Title</title>
+  </head>
+
+  <h1>This is a heading</h1>
+  <p>This is a paragraph.</p>
+
+#+end_src
+
+However, we strongly recommend to always add the =<html>= and =<body>= tags!
+
+Omitting =<body>= can produce errors in older browsers.
+
+Omitting =<html>= and =<body>= can also crash DOM and XML software.
+
+** Omitting <head>?
+
+The HTML <head> tag can also be omitted.
+
+Browsers will add all elements before =<body>=, to a default =<head>= element.
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <title>Page Title</title>
+    <body>
+      <h1>This is a heading</h1>
+      <p>This is a paragraph.</p>
+    </body>
+  </html>
+
+#+end_src
+
+However, we recommend using the =<head>= tag.
+
+** Close Empty HTML Elements?
+
+In HTML, it is optional to close empty elements.
+
+*Allowed*:
+#+begin_src html
+
+  <meta charset="utf-8">
+
+#+end_src
+
+*Also Allowed*:
+#+begin_src html
+
+  <meta charset="utf-8" />
+
+#+end_src
+
+If you expect XML/XHTML softwares to access your page, keep the closing slash (/), because it is required in XML and XHTML.
+
+** Add The lang Attribute
+
+You should always include the =lang= attribute inside the =<html>= tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en-us">
+    <head>
+      <title>Page Title</title>
+    </head>
+    <body>
+      <h1>This is a heading</h1>
+      <p>This is a paragraph.</p>
+    </body>
+  </html>
+
+#+end_src
+
+** Meta Data
+
+To ensure proper interpretation and correct search engine indexing, both the language and the character encoding <meta charset="charset"> should be defined as early as possible in an HTML document.
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html lang="en-us">
+    <head>
+      <meta charset="UTF-8">
+      <title>Page Title</title>
+    </head>
+  </html>
+
+#+end_src
+
+** Setting The Viewport
+
+The viewport is the user's visible area of a web page. It varies with the device and it will be smaller on a mobile phone than on a computer screen.
+
+You should include the following =<meta>= element in all you web pages:
+
+#+begin_src html
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+#+end_src
+
+This gives the browser intructions on how to control the page's dimensions and scaling.
+
+The =width=device-width= part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The =initial-scale=1.0= part sets the initial zoom level when the page is first loaded by the browser.
+
+** HTML Comments
+
+Short comments should be written on one line, like this:
+
+#+begin_src html
+
+  <!-- This is a comment -->
+
+#+end_src
+
+Comment that spans more than one line, should be written like this:
+
+#+begin_src html
+
+  <!--
+      This is a long comment example.
+      This is a long comment example.
+      This is a long comment example.
+      This is a long comment example.
+  -->
+
+#+end_src
+
+Long comments are easier to observe if they are indented with two spaces.
+
+** Using Style Sheets
+
+Use simple syntax for linking to style sheets (the =type= attribute is not necessary):
+
+#+begin_src html
+
+  <link rel="stylesheet" href="styles.css">
+
+#+end_src
+
+Short CSS rules can be written compressed, like this:
+
+#+begin_src html
+
+  p.intro {font-family:Verdana;font-size:16em;}
+
+#+end_src
+
+Long CSS rules should be written over multiple lines:
+
+#+begin_src css
+
+  body {
+      background-color: lightgray;
+      font-family: "Arial Black", Helvetica, sans-serif;
+      font-size: 16em;
+      color: black;
+  }
+
+#+end_src
+
+- Place the opening bracket on the same line as the selector
+- Use one space before the opening bracket
+- Use two spaces of indentation
+- Use semicolon after each property-value pair, including the last
+- Only use quotes around values if the value contains spaces
+- Place the closing bracket on a new line, without leading spaces
+
+** Loading JavaScript in HTML
+
+Use simple syntax for loading externale scripts (the =type= attribute is not necessary):
+
+#+begin_src html
+
+  <script src="myscript.js">
+
+#+end_src
+
+** Accessing HTML Elements with JavaScript
+
+Using "untidy" HTML code can result in JavaScript errors.
+
+These two JavaScript statements will produce different results:
+
+*Example*:
+#+begin_src javascript
+
+  getElementById("Demo").innerHTML = "Hello";
+
+  getElementById("demo").innerHTML = "Hello";
+
+#+end_src
+
+** Use Lower Case File Names
+
+Some web servers (Apache, Unix) are case sensitive about file names: "london.jpg" cannot be accessed as "London.jpg".
+
+Other web servers (Microsoft, IIS) are not case sensitive: "london.jpg" can be accessed as "London.jpg".
+
+If you use a mix of uppercase and lowercase, you have to be aware of this.
+
+If you move from a case-insensitive to a case-sensitive server, even small errors will break you web!
+
+To avoid these problems, always use lowercase file names!
+
+** File Extensions
+
+HTML files should have a *.html* extension (*.htm* is allowed).
+
+CSS files should have a *.css* extension.
+
+JavaScript files should have *.js* extension.
+
+** Difference Between .htm and .html?
+
+There is no difference between the .htm and .html file extensions!
+
+Both will be treated as HTML by any web browser and web server.
+
+** Default Filenames
+
+When a URL does not specify a filename at the end (like "https://github.com/"), the server just adds a default filename, such as "index.html", "index.htm", "default.html", or "default.htm".
+
+If your server is configured only with "index.html" as the default filename, you file must be named "index.html", and not "default.html".
+
+However, servers can be configured with more than one default filenames; usually you can set up as many default filenames as you want.
+
+* Entities
+** HTML Entities
+
+Some characters are reserved in HTML.
+
+If you use the less than (<) or greater than (>) signs in your text, the browser might mix the with tags.
+
+Character entities are used to display reserved characters in HTML.
+
+A character entity looks like this:
+
+#+begin_src html
+
+  &entity_name;
+
+  OR
+
+  &#entity_number;
+
+#+end_src
+
+To display a less than sign (<) we must write: *&lt;* or *&#60;*
+
+*Advantage of using an entity name:* An entity name is easy to remember.
+
+*Disadvantage of using an entity name:* Browsers may not support all entity names, but the support for entity numbers is good.
+
+** Non-breaking Space
+
+A common used entity in HTML is the non-breaking space: *&nbsp;*
+
+A non-breaking space is a space that will not break into a new line.
+
+Two words separate by a non-breaking space will stick together (not break into a new line). This is handy when breaking the words might be disruptive.
+
+*Examples*:
+
+ - § 10
+ - 10 km/h
+ - 10 PM
+
+Another common use of the non-breaking space is to prevent browsers from truncating spaces in HTML pages.
+
+If you write 10 spaces in your text, the browser will remove 9 of them. To add real spaces to your text, you can use the *&nbsp;* character entity.
+
+Tip*: The non-breaking hyphen (&#8209;) is used to define a hyphen character (-) that does not break into a new line.
+
+** Some Useful HTML Character Entities
+
+| *Result* | *Description*        | *Entity Name* | *Entity Number* |
+|        | non-breaking space | &nbsp;      | &#160;        |
+| <      | less than          | &lt;        | &#60;         |
+| >      | greater than       | &gt;        | &#62;         |
+| &      | ampersand          | &amp;       | &#38;         |
+| "      | double quote       | &quot;      | &#34;         |
+| '      | single quote       | &apos;      | &#39;         |
+| ¢      | cent               | &cent;      | &#162;        |
+| £      | pound              | &pound;     | &#163;        |
+| ¥      | yen                | &yen;       | &#165;        |
+| €      | euro               | &euro;      | &#8364;       |
+| ©      | copyright          | &copy;      | &#169;        |
+| ®      | reg. trademark     | &reg;       | &#174;        |
+
+*Note*: Entity names are case sensitive.
+
