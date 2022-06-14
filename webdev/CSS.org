@@ -1,0 +1,2951 @@
+#+title: Learn CSS
+#+author: Jom Dollesin
+
+*Disclaimer*: This is not my original copy of the book I wrote, most of these are from W3schools. The reason for this is for me whenever I am not online I have a copy which I can use when I need it.
+
+* Introduction
+** What is CSS?
+
+CSS is the language we use to style a Web page.
+
+- CSS stands for Cascading Style Sheets
+- CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+- CSS saves a lot of work. It can control the layout of multiple web pages all at once
+- External stylesheets are stored in CSS files
+
+** Why Use CSS?
+
+CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
+
+*CSS Example*:
+#+begin_src css
+
+  body {
+      background-color: lightblue;
+  }
+
+  h1 {
+      color: white;
+      text-align: center;
+  }
+
+  p {
+      font-family: verdana;
+      font-size: 20px;
+  }
+
+#+end_src
+
+** CSS Solved a Big Problem
+
+HTML was NEVER intended to contain tags for formatting a web page!
+
+HTML was created to describe the content of a web page, like:
+
+#+begin_src html
+
+  <h1>This is a heading</h1>
+  <p>This is a paragraph.</p>
+
+#+end_src
+
+When tags like <font>, and color attributes were added to the HTML 3.2 specification, it started a nightmare for a web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive process.
+
+To solve this problem, the World Wide Web Consortium (W3C) created CSS.
+
+CSS removed the style formatting from the HTML page!
+
+** CSS Saves a Lot of Work!
+
+The style definitions are normally saved in external .css file.
+
+With an external stylesheet file, you can change the look of an entire website by changing just one file!
+
+* Syntax
+** CSS Syntax
+
+[[file:~/Repo/org-book/pictures/img_selector.gif]]
+
+The selector points to the HTML element you want to style.
+
+The declaration block contains one or more declarations separated by semicolns.
+
+Each declaration includes a CSS property name and a value, separated by a colon.
+
+Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+
+*Example*:
+
+In this example all <p> elements will be center-aligned, with a red text color.
+
+#+begin_src css
+
+  p {
+      color: red;
+      text-align: center;
+  }
+
+#+end_src
+
+*Example Explained*
+
+- =p= is a selector in CSS (it points to the HTML element you want to style <p>)
+- =color= is a property, and =red= is the property value
+- =text-aligned= is a property, and =center= is the property value
+
+* Selectors
+** CSS Selectors
+
+A CSS selector selects the HTML element(s) you want to style.
+
+CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+We can divide CSS selectors into five categories:
+
+- Simple selector (select elements based on name, id, class)
+- _Combinator selectors_ (select elements based on a specific relationship between them)
+- _Pseudo-class selectors_ (select elements based on a certain state)
+- _Pseudo-elements selectors_ (select and style a part of an element)
+- _Attribute selector_ (select elements based on an attribute or attribute value)
+
+This page will explain the most basic CSS selectors.
+
+** The CSS element Selector
+
+The element selector selects HTML elements based on the element name.
+
+*Example*:
+
+Here, all <p> elements on the page will be center-aligned, with a red text color:
+
+#+begin_src css
+
+  p {
+      color: red;
+      text-align: center;
+  }
+
+#+end_src
+
+** The CSS id Selector
+
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element!
+
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+*Example*
+
+The CSS rule below will be applied to the HTML element with id="para1":
+
+#+begin_src css
+
+  #para1 {
+      text-align: center;
+      color: red;
+  }
+
+#+end_src
+
+*Note*: An id name cannot start with a number!
+
+** The CSS class Selector
+
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character, followed by the class name.
+
+*Example*
+
+In this example all HTML elements with a class="center" will be red and center-aligned:
+
+#+begin_src css
+
+  .center {
+      text-align: center;
+      color: red;
+  }
+
+#+end_src
+
+You can also specify that only specific HTML elements should be affected by a class.
+
+*Example*
+
+In this example only <p> elements with class="center" will be red and center-aligned:
+
+#+begin_src css
+
+  p.center {
+      text-align: center;
+      color: red;
+  }
+
+
+#+end_src
+
+HTML elements can also refer to more than one class.
+
+*Example*
+
+In this example the <p> element will be styled according to class="center" and to class="large":
+
+#+begin_src html
+
+  <p class="center large">This paragraph refers to two classes.</p>
+
+#+end_src
+
+*Note*: A class name cannot start with a number!
+
+** The CSS Universal Selector
+
+The universal selector (*) selects all HTML elements on the page.
+
+*Example*
+
+The CSS rule below will affect every HTML element on the page:
+
+#+begin_src css
+
+  * {
+      text-align: center;
+      color: blue;
+  }
+
+#+end_src
+
+** The CSS Grouping Selector
+
+The grouping selector selects all the HTML elements with the same style definitions.
+
+Look at the following CSS code (the h1, h2, and p elements have the same style definitions).
+
+#+begin_src css
+
+  h1 {
+      text-align: center;
+      color: red;
+  }
+
+  h2 {
+      text-align: center;
+      color: red;
+  }
+
+  p {
+    text-align: center;
+    color: red;
+  }
+
+#+end_src
+
+It will be better to group the selectors, to minimize the code.
+
+To group selectors, separate each selector with a comma.
+
+*Example*
+
+In this example we have grouped the selectors from the code above:
+
+#+begin_src css
+
+  h1, h2, p {
+      text-align: center;
+      color: red;
+  }
+
+#+end_src
+
+* How To Add CSS
+** Three Ways to Insert CSS
+
+When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.
+
+There are three ways of inserting a style sheet:
+
+- External CSS
+- Internal CSS
+- Inline CSS
+
+** External CSS
+
+With an external style sheet, you can change the look of an entire website by changing just one file!
+
+Each HTML page must include a reference to the external style sheet file inside the <link> element, inside the head section.
+
+*Example*
+
+External styles are defined within the <link> element, inside the <head> section of an HTML page:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+
+      <h1>This is a heading</h1>
+      <p>This is a paragraph.</p>
+
+    </body>
+  </html>
+
+#+end_src
+
+An external style sheet can be written in any text editor, and must be saved with a .css extension.
+
+The external .css file should not contain any HTML tags.
+
+Here is how the "style.css" file looks:
+
+*style.css*
+#+begin_src css
+
+  body {
+      background-color: lightblue;
+  }
+
+  h1 {
+      color: navy;
+      margin-left: 20px;
+  }
+
+#+end_src
+
+*Note*: Do not add a space between the property value and the unit:
+
+- Incorrect (space): =margin-left: 20 px;=
+- Correct (nospace): =margin-left: 20px;=
+
+** Internal CSS
+
+An internal style sheet may be used if one single HTML page has a unique style.
+
+The internal style is defined inside the <style> element, inside the head section.
+
+*Example*
+
+Internal styles are defined within the <style> element, inside the <head> section of an HTML page:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body {
+          background-color: linen;
+        }
+
+        h1 {
+          color: maroon;
+          margin-left: 40px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>This is a heading</h1>
+      <p>This is a paragraph.</p>
+    </body>
+  </html>
+
+#+end_src
+
+** Inline CSS
+
+An inline style may be used to apply a unique style for a single element.
+
+To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+
+*Example*
+
+Inline styles are defined within the "style" attribute of the relevant element:
+
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <h1 style="color:blue;text-align:center;">This is a heading</h1>
+      <p style="color:red;">This is a paragraph.</p>
+    </body>
+  </html>
+
+#+end_src
+
+*Tip*: An inline style loses many of the advantages of a style sheet (by mixing content with presentation). Use this method sparingly.
+
+** Multiple Style Sheets
+
+If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used.
+
+Assume that an *external style sheet* has the following style for the <h1> element:
+#+begin_src css
+
+  h1 {
+      color: navy;
+  }
+
+#+end_src
+
+Then, assume that an *internal style sheet* also has the following style for the <h1> element:
+#+begin_src css
+
+  h1 {
+      color: orange;
+  }
+
+#+end_src
+
+*Example*
+
+If the internal style is defined *after* the link to the external style sheet, the <h1> elements will be "orange".
+
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      h1 {
+        color: orange;
+      }
+    </style>
+  </head>
+
+#+end_src
+
+*Example*
+
+However, if the internal style is designed *before* the link to the external style sheet, the <h1> elements will be "navy":
+
+#+begin_src html
+
+  <head>
+    <style>
+      h1 {
+        color: orange;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+#+end_src
+
+** Cascading Order
+
+What style will be used when there is more than one style specified for an HTML element?
+
+All the styles in a page will "cascade" into a new "virtual" style sheet by the following rules, where number one has the highest priority:
+
+1. Inline style (inside an HTML element)
+2. External and internal style sheets (in the head section)
+3. Browser default
+
+So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+* Comments
+** CSS Comments
+
+CSS comments are not displayed in the browser, but they can help document your source code.
+
+Comments are used to explaine the code, and may help when you edit the source code at a later date.
+
+Comments are ignored by browsers.
+
+A CSS comment is placed inside the =<style>= element, and starts with the =/*= and ends with =*/=:
+
+*Example*
+#+begin_src css
+
+  /* This is a single-line comment */
+  p {
+      color: red;
+  }
+
+#+end_src
+
+You can add comments wherever you want in the code:
+
+*Example*
+#+begin_src css
+
+  p {
+      color: red; /* Set text color to red */
+  }
+
+#+end_src
+
+Comments can also span multiple lines:
+
+*Example*:
+#+begin_src css
+
+  /* This is
+  a multiple-line
+  comment */
+
+  p {
+      color: red;
+  }
+
+#+end_src
+
+** HTML and CSS Comments
+
+From the HTML tutorial, you learned that you can add comments to your HTML source by using the =<!--...-->= syntax.
+
+In the following example, we use a combination of HTML and CSS comments:
+
+*Example*:
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        p {
+          color: red; /* Set text color to red */
+        }
+      </style>
+    </head>
+    <body>
+      <h2>My Heading</h2>
+
+      <!-- These paragraphs will be red -->
+      <p>Hello World!</p>
+      <p>This paragraph is styled with CSS.</p>
+      <p>CSS comments are not shown in the output.</p>
+    </body>
+  </html>
+
+#+end_src
+
+* Color
+** CSS Color Names
+
+In CSS, a color can be specified by using a predefined color name:
+
+[[file:~/Repo/org-book/pictures/color_names.png]]
+
+** CSS Background Color
+
+You can set the background color for HTML elements:
+
+*Example*:
+#+begin_src html
+
+  <h1 style="background-color:DodgerBlue;">Hello World</h1>
+  <p style="background-color:Tomato;">Lorem ipsum...</p>
+
+#+end_src
+
+** CSS Text Color
+
+You can set the color of text:
+
+*Example*:
+#+begin_src html
+
+  <h1 style="color:Tomato;">Hello World</h1>
+  <p style="color:DodgerBlue;">Lorem ipsum...</p>
+  <p style="color:MediumSeaGreen;">Ut wisi enim...</p>
+
+#+end_src
+
+** CSS Border Color
+
+You can set the color of borders:
+
+*Example*:
+#+begin_src html
+
+  <h1 style="border:2px solid Tomato;">Hello World</h1>
+  <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+  <h1 style="border:2px solid Violet;">Hello World</h1>
+
+#+end_src
+
+** CSS Color Values
+
+In CSS, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values:
+
+Same as color name "Tomato":
+#+begin_src css
+
+  color: rgb(255, 99, 71);
+  color: #ff6347;
+  color: hsl(9, 100%, 64%);
+
+#+end_src
+
+Same as color name "Tomato", but 50% transparent:
+#+begin_src css
+
+  color: rgba(255, 99, 71, 0.5);
+  color: hsla(9, 100%, 64%, 0.5);
+
+#+end_src
+
+* Background Color
+** CSS background-color
+
+[[file:~/Repo/org-book/pictures/background.png]]
+
+The =background-color= property specifies the background color of an element.
+
+*Example*:
+
+The background color of a page is set like this:
+
+#+begin_src css
+
+  body {
+      background-color: lightblue;
+  }
+
+#+end_src
+
+With CSS, a color is most often specified by:
+
+- a valid color name - like "red"
+- a HEX value - like "#ff0000"
+- a RGB value - like "rgb(255,0,0)"
+
+** Other Elements
+
+You can set the background color for any HTML elements:
+
+*Example*:
+
+Here, the <h1>, <p>, and <div> elements will have different background colors:
+
+#+begin_src css
+
+  h1 {
+      background-color: green;
+  }
+
+  div {
+      background-color: lightblue;
+  }
+
+  p {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** Opacity/Transparency
+
+The =opacity= property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent:
+
+[[file:~/Repo/org-book/pictures/opacity.png]]
+
+*Example*:
+#+begin_src css
+
+  div {
+      background-color: green;
+      opacity: 0.3;
+  }
+
+#+end_src
+
+*Note*: When using the =opacity= property to add transperency to the background of an element, all of its child elements inherit the same transparency. This can make the text inside a fully transparent element hard to read.
+
+** Transparency using RGBA
+
+If you do not want to apply opacity to child elements, like in our example above, use *RGBA* color values. The following example sets the opacity for the background color and not the text:
+
+[[file:~/Repo/org-book/pictures/transparency.png]]
+
+You learned from the Colors Chapter, that you can use RGB as a color value. In addition to RGB, you can use RGB color value with an *alpha* channel (RGBA) - which specifies the opacity for a color.
+
+RGBA color value is specified with: rgba(red, green, blue, /alpha/). The /alpha/ parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
+
+*Example*:
+#+begin_src css
+
+  div {
+      background: rgba(0, 128, 0, 0.3); /* Green background with 30% opacity */
+  }
+
+#+end_src
+
+* Background Image
+** CSS background-image
+
+The =background-image= property specifies an image to use as the background of an element.
+
+By default, the image is repeated so it covers the entire element.
+
+*Example*:
+
+Set the background image for a page:
+#+begin_src css
+
+  body {
+      background-image: url("paper.gif");
+  }
+
+#+end_src
+
+*Example*:
+
+This example shows a *bad combination* of text and background image. The text is hardly readable:
+#+begin_src css
+
+  body {
+      background-image: url("bgdesert.jpg");
+  }
+
+#+end_src
+
+*Note*: When using a background image, use an image that does not disturb the text.
+
+The background image can also be set for specific elements, like the <p> element:
+
+*Example*:
+#+begin_src css
+
+  p {
+      background-image: url("paper.gif");
+  }
+
+#+end_src
+
+* Background Repeat
+** CSS background-repeat
+
+By default, the =background-image= property repeats an image both horizontally and vertically.
+
+Some images should be repeated only horizontally or vertically, or they will look strange, like this:
+
+*Example*:
+#+begin_src css
+
+  body {
+      background-image: url("gradient_bg.png");
+  }
+
+#+end_src
+
+If the image above is repeated only horizontally (=background-repeat: repeat-x;=), the background will look better:
+
+*Example*:
+#+begin_src css
+
+  body {
+      background-image: url("gradient_bg.png");
+      background-repeat: repeat-x;
+  }
+
+#+end_src
+
+*Tip*: To repeat an image vertically, set =background-repeat: repeat-y;=
+
+** CSS background-repeat: no-repeat
+
+Showing the background image only once is also specified by the =background-repeat= property:
+
+*Example*:
+
+Show the background image only once:
+#+begin_src css
+
+  body {
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+  }
+
+#+end_src
+
+In the example above, the background image is placed in the same place as the text. We want to change the position of the image, so that it does not disturb the text too much.
+
+** CSS background-position
+
+The =background-position= property is used to specify the position of the background image.
+
+*Example*
+
+Position the background image in the top-right corner.
+#+begin_src css
+
+  body {
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+  }
+
+#+end_src
+
+* Background Attachment
+** CSS background-attachment
+
+The =background-attachment= property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page):
+
+*Example*
+
+Specify that the background image should be fixed:
+#+begin_src css
+
+  body {
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-attachment: fixed;
+  }
+
+#+end_src
+
+*Example*
+
+Specify that the background image should scroll with the rest of the page:
+#+begin_src css
+
+  body {
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-attachment: scroll;
+  }
+
+#+end_src
+
+* Background Shorthand
+** CSS background - Shorthand property
+
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+Instead of writing:
+#+begin_src css
+
+  body {
+      background-color: #ffffff;
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+  }
+
+#+end_src
+
+You can use the shorthand property =background=:
+
+#+begin_src css
+
+  body {
+      background: #ffffff url("img_tree.png") no-repeat right top;
+  }
+
+#+end_src
+
+When using the shorthand property the order of the property value is:
+
+- =background-color=
+- =background-image=
+- =background-repeat=
+- =background-attachment=
+- =background-position=
+
+It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value.
+
+* Borders
+** CSS Border Style
+
+The CSS border properties allow you to specify the style, width, and color of an element's border.
+
+[[file:~/Repo/org-book/pictures/borders.png]]
+
+The =border-style= property specifies what kind of border to display.
+
+The following values are allowed:
+
+- =dotted= - Defines a dotted border
+- =dashed= - Defines a dashed border
+- =solid= - Defines a solid border
+- =double= - Defines a double border
+- =groove= - Defines a 3D grooved border. The effect depends on the border-color value
+- =ridge= - Defines a 3D ridged border. The effect depends on the border-color value
+- =inset= - Defines a 3D inset border. The effect depends on the border-color value
+- =outset= - Defines a 3D outset border. The effect depends on the border-color value
+- =none= - Defines no border
+- =hidden= - Defines a hidden border
+
+The =border-style= property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+*Example*
+
+Demonstration of the different border styles:
+#+begin_src css
+
+  p.dotted {border-style: dotted;}
+  p.dashed {border-style: dashed;}
+  p.solid {border-style: solid;}
+  p.double {border-style: double;}
+  p.groove {border-style: groove;}
+  p.ridge {border-style: ridge;}
+  p.inset {border-style: inset;}
+  p.outset {border-style: outset;}
+  p.none {border-style: none;}
+  p.hidden {border-style: hidden;}
+  p.mix {border-style: dotted dashed solid double;}
+
+#+end_src
+
+[[file:~/Repo/org-book/pictures/border-style.png]]
+
+* Border Width
+** CSS Border Width
+
+The =border-width= property specifies the width of the four borders.
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick:
+
+*Example*
+
+Demonstration of the different border widths:
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-width: 5px;
+  }
+
+  p.two {
+      border-style: solid;
+      border-width: medium;
+  }
+
+  p.three {
+      border-style: dotted;
+      border-width: 2px;
+  }
+
+  p.four {
+      border-style: dotted;
+      border-width: thick;
+  }
+
+#+end_src
+
+[[file:~/Repo/org-book/pictures/border-widths.png]]
+
+** Specific Side Widths
+
+The =border-width= property can have from one to four values (for the top border, right border, bottom border, and the left border):
+
+*Example*
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+  }
+
+  p.two {
+      border-style: solid;
+      border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+  }
+
+  p.three {
+      border-style: solid;
+      border-width: 25px 10px 4px 35px; /* 25px top, 10px right 4px bottom and 35px left */
+  }
+
+#+end_src
+
+* Border Color
+** CSS Border Color
+
+The =border-color= property is used to set the color of the four borders.
+
+The color can be set by:
+
+- name - specify a color name, like "red"
+- HEX - specify a HEX value, like "#ff0000"
+- RGB - specify a RGB value, like "rgb(255,0,0)"
+- HSL - specify a HSL value, like "hsl(0, 100%, 50%)"
+- transparent
+
+*Note* If =border-color= is not set, it inherits the color of the element.
+
+*Example*
+
+Demonstration of the different border colors:
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-color: red;
+  }
+
+  p.two {
+      border-style: solid;
+      border-color: green;
+  }
+
+  p.three {
+      border-style: dotted;
+      border-color: blue;
+  }
+
+#+end_src
+
+** Specific Side Colors
+
+The =border-color= property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+*Example*
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-color: red green blue yellow; /* red top, green right, blue bottom, and yellow left */
+  }
+
+#+end_src
+
+** HEX Values
+
+The color of the border can also be specified using a hexadecimal value (HEX):
+
+*Example*
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-color: #ff0000; /* red */
+  }
+
+#+end_src
+
+** RGB Values
+
+Or by using RGB values:
+
+*Example*:
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-color: rgb(255, 0, 0); /* red */
+  }
+
+#+end_src
+
+** HSL Values
+
+You can also use HSL values:
+
+*Example*:
+#+begin_src css
+
+  p.one {
+      border-style: solid;
+      border-color: hsl(0, 100%, 50%); /* red */
+  }
+
+#+end_src
+
+* Border Sides
+** CSS Border - Individual Sides
+
+From the examples on the previous pages, you have seen that it is possible to specify a different border for each side.
+
+In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left):
+
+*Example*:
+#+begin_src css
+
+  p {
+      border-top-style: dotted;
+      border-right-style: solid;
+      border-bottom-style: dotted;
+      border-left-style: solid;
+  }
+
+#+end_src
+
+The example above gives the same result as this:
+#+begin_src css
+
+  p {
+      border-style: dotted solid;
+  }
+
+#+end_src
+
+So, here is how it works:
+
+If the =border-style= property has four values:
+
+- *border-style: dotted solid double dashed;*
+  + top border is dotted
+  + right border is solid
+  + bottom border is double
+  + left border is dashed
+
+If the =border-style= property has three values:
+
+- *border-style: dotted solid double;*
+  + top border is dotted
+  + right and left borders are solid
+  + bottom border is double
+
+If the =border-style= property has two values:
+
+- *border-style: dotted solid;*
+  - top and bottom borders are dotted
+  - right and left borders are solid
+
+If the =border-style= property has one value:
+
+- *border-style: dotted;*
+  + all four borders are dotted
+
+*Example*
+#+begin_src css
+
+  /* Four values */
+  p {
+      border-style: dotted solid double dashed;
+  }
+
+  /* Three values */
+  p {
+      border-style: dotted solid double;
+  }
+
+  /* Two values */
+  p {
+      border-style: dotted solid;
+  }
+
+  /* One value */
+  p {
+      border-style: dotted;
+  }
+
+#+end_src
+
+The =border-style= property is used in the example above, However, it also works with =border-width= and =border-color=.
+
+* Border Shorthand
+** CSS Border - Shorthand Property
+
+Like you saw in the previous page, there are many properties to consider when dealing with borders.
+
+To shorten the code, it is also possible to specify all the individual border properties in one property.
+
+The =border= property is a shorthand property for the following individual border properties:
+
+- =border-width=
+- =border-style= (required)
+- =border-color=
+
+*Example*
+#+begin_src css
+
+  p {
+      border: 5px solid red;
+  }
+
+#+end_src
+
+You can also specify all the individual border properties for just one side:
+
+*Left Border*
+#+begin_src css
+
+  p {
+      border-left: 6px solid red;
+  }
+
+#+end_src
+
+*Bottom Border*
+#+begin_src css
+
+  p {
+      border-bottom: 6px solid red;
+  }
+
+#+end_src
+
+* Rounded Borders
+** CSS Rounded Borders
+
+The =border-radius= property is used to add rounded borders to an element:
+
+*Example*
+#+begin_src css
+
+  p {
+      border: 2px solid red;
+      border-radius: 5px;
+  }
+
+#+end_src
+
+* Margin
+** CSS Margins
+
+Margins are used to create space around elements, outside of any defined borders.
+
+The CSS =margin= properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+
+** Margin - Individual Sides
+
+CSS has properties for specifying the margin for each side of an element:
+
+- =margin-top=
+- =margin-right=
+- =margin-bottom=
+- =margin-left=
+
+All the margin properties can have the following values:
+
+- auto - the browser calculates the margin
+- /length/ - specifies a margin in px, pt, cm, etc.
+- /%/ - specifies a margin in % of the width of the containing element
+- inherit - specifies that the margin should be inherited from the parent element
+
+*Tip*: Negative values are allowed.
+
+*Example*
+
+Set different margins for all four sides of a <p> element
+#+begin_src css
+
+  p {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 80px;
+  }
+
+#+end_src
+
+** Margin - Shorthand Property
+
+To shorten the code, it is possible to specify all the margin properties in one property.
+
+The =margin= property is a shorthand property for the following individual margin properties.
+
+- =margin-top=
+- =margin-right=
+- =margin-bottom=
+- =margin-left=
+
+So, here is how it works:
+
+If the =margin= property has four values:
+
+- *margin: 25px 50px 75px 100px;*
+  + top margin is 25px
+  + right margin is 50px
+  + bottom margin is 75px
+  + left margin is 100px
+
+*Example*
+
+Use the margin shorthand property with four values:
+#+begin_src css
+
+  p {
+      margin: 25px 50px 75px 100px;
+  }
+
+#+end_src
+
+If the =margin= property has three values:
+
+- *margin: 25px 50px 75px;*
+  + top margin is 25px
+  + right and left margins are 50px
+  + bottom margin is 75px
+
+*Example*
+
+Use the margin shorthand property with three values:
+#+begin_src css
+
+  p {
+      margin: 25px 50px 75px;
+  }
+
+#+end_src
+
+If the =margin= property has two values:
+
+- *margin: 25px 50px;*
+  + top and bottom margins are 25px
+  + right and left margins are 50px
+
+*Example*
+
+Use the margin shorthand property with two values:
+#+begin_src css
+
+  p {
+      margin: 25px 50px;
+  }
+
+#+end_src
+
+If the =margin= property has one value:
+
+- *margin: 25px;*
+  + all four margins are 25px;
+
+*Example*
+
+Use the margin shorthand property with one value:
+#+begin_src css
+
+  p {
+      margin: 25px;
+  }
+
+#+end_src
+
+** The auto Value
+
+You can set the margin property to =auto= to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+*Example*
+
+Use margin: auto:
+#+begin_src css
+
+  div {
+      width: 300px;
+      margin: auto;
+      border: 1px solid red;
+  }
+
+#+end_src
+
+** The inherit Value
+
+This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+
+*Example*:
+
+Use of the inherit value:
+#+begin_src css
+
+  div {
+      border: 1px solid red;
+      margin-left: 100px;
+  }
+
+  p.ex1 {
+      margin-left: inherit;
+  }
+
+#+end_src
+
+** All CSS Margin Properties
+
+| *Property*      | *Description*                                       |
+|---------------+---------------------------------------------------|
+| _margin_        | Sets all the margin properties in one declaration |
+| _margin-bottom_ | Sets the bottom margin of an element              |
+| _margin-left_   | Sets the left margin of an element                |
+| _margin-right_  | Sets the right margin of an element               |
+| _margin-top_    | Sets the top margin of an element                 |
+
+** Margin Collapse
+
+Top and bottom margins of elements are sometimes collapse into a single margin that is equal to the largest of the two margins.
+
+This does not happen on left and right margins! Only top and bottom margins!
+
+Look at the following example:
+
+*Example*
+
+Demonstration of margin collapse:
+#+begin_src css
+
+  h1 {
+      margin: 0 0 50px 0;
+  }
+
+  h2 {
+      margin: 20px 0 0 0;
+  }
+
+#+end_src
+
+In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
+
+Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
+
+* Padding
+** CSS Padding
+
+Padding is used to create space around an element's content, inside of any defined borders.
+
+The CSS =padding= properties are used to generate space around an element's content, inside of any defined borders.
+
+With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).
+
+** Padding - Individual Sides
+
+CSS has properties for specifying the padding for each side of an element:
+
+- =padding-top=
+- =padding-right=
+- =padding-bottom=
+- =padding-left=
+
+All the padding properties can have the following values:
+
+- /length/ - specifies a padding in px, pt, cm, etc.
+- /%/ - specifies a padding in % of the width of the containing element
+- inherit - specifies that the padding should be inherited from the parent element
+
+*Note*: Negative values are not allowed.
+
+*Example*
+
+Set different padding for all four sides of a <div> element:
+#+begin_src css
+
+  div {
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      padding-left: 80px;
+  }
+
+#+end_src
+
+** Padding - Shorthand Property
+
+To shorten the code, it is possible to specify all the padding properties in one property.
+
+The =padding= property is a shorthand property for the following individual padding properties:
+
+- =padding-top=
+- =padding-right=
+- =padding-bottom=
+- =padding-left=
+
+So, here is how it works:
+
+If the =padding= property has four values:
+
+- *padding: 25px 50px 75px 100px;*
+  + top padding is 25px
+  + right padding is 50px
+  + bottom padding is 75px
+  + left padding is 100px
+
+*Example*
+
+Use the padding shorthand property with four values:
+#+begin_src css
+
+  div {
+      padding: 25px 50px 75px 100px;
+  }
+
+#+end_src
+
+If the =padding= property has three values:
+
+- *padding: 25px 50px 75px;*
+  + top padding is 25px
+  + right and left paddings are 50px
+  + bottom padding is 75px
+
+*Example*
+
+Use the padding shorthand property with three values:
+#+begin_src css
+
+  div {
+      padding: 25px 50px 75px;
+  }
+
+#+end_src
+
+If the =padding= property has two values:
+
+- *padding: 25px 50px*
+  + top and bottom paddings are 25px
+  + right and left paddings are 50px
+
+*Example*
+
+Use the padding shorthand property with two values:
+#+begin_src css
+
+  div {
+      padding: 25px 50px;
+  }
+
+#+end_src
+
+If the =padding= property has one value:
+
+- *padding: 25px;*
+  + all four paddings are 25px
+
+*Example*
+
+Use the padding shorthand property with one value:
+#+begin_src css
+
+  div {
+      padding: 25px;
+  }
+
+#+end_src
+
+** Padding and Element Width
+
+The CSS =width= property specifies the width of the element's content area. The content area is the portion inside the padding, border, and margin of an element (_the box model_).
+
+So, if an element has a specified width, the padding added to that element will be added to the total width of the element, This is often an undesirable result.
+
+*Example*
+
+Here, the <div> element is given a width of 300px. However, the actual width of the <div> element will be 350px (300px + 25px of left padding + 25px of right padding):
+#+begin_src css
+
+  div {
+      width: 300px;
+      padding: 25px;
+  }
+
+#+end_src
+
+To keep the width at 300px, no matter the amount of padding, you can use the =box-sizing= property. This causes the element to maintain its actual width; if you increase the padding, the available content space will decrease.
+
+*Example*
+
+Use the box-sizing property to keep the width at 300px, no matter the amount of padding:
+#+begin_src css
+
+  div {
+      width: 300px;
+      padding: 25px;
+      box-sizing: border-box;
+  }
+
+#+end_src
+
+* Height/Width
+** CSS Height, Width and Max-width
+
+The CSS =height= and =width= properties are used to set the height and width of an element.
+
+The CSS =max-width= property is used to set the maximum width of an element.
+
+** CSS Setting height and width
+
+The =height= and =width= properties are used to set the height and width of an element.
+
+The height and width properties do not include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the elements.
+
+** CSS height and width Values
+
+The =height= and =width= properties may have the following values:
+
+- =auto= - This is default. The browser calculates the height and width
+- =length= - Defines the height/width in px, cm etc.
+- =%= - Defines the height/width in percent of the containing block
+- =initial= - Sets the height/width to its default value
+- =inherit= - The height/width will be inherited from its parent value
+
+** CSS height and width Examples
+
+[[file:~/Repo/org-book/pictures/height-width.png]]
+
+*Example*
+
+Set the height and width of a <div> element:
+#+begin_src css
+
+  div {
+      height: 200px;
+      width: 50%;
+      background-color: powderblue;
+  }
+
+#+end_src
+
+[[file:~/Repo/org-book/pictures/height-width2.png]]
+
+*Example*
+
+Set the height and width of another <div> element:
+#+begin_src css
+
+  div {
+      height: 100px;
+      width: 500px;
+      background-color: powderblue;
+  }
+
+#+end_src
+
+*Note*: Remember that the =height= and =width= properties do not include padding, borders, or margins! They set the height/width of the area inside the padding, border, and margin of the element!
+
+** Setting max-width
+
+The =max-width= property is used to set the maximum width of an element.
+
+The =max-width= can be specified in /length/ values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default). Means that there is no maximum width).
+
+The problem with the =<div>= above occurs when the browser window is smaller than the width of the element (500px). The browser then adds a horizontal scrollbar to the page.
+
+Using =max-width= instead, in this situation, will improve the browser's handling of small windows.
+
+*Tip*: Drag the browser window to samller than 500px wide, to see the difference between the two divs!
+
+[[file:~/Repo/org-book/pictures/height-width3.png]]
+
+*Note*: If you for some reason use both the =width= property and the =max-width= property on the same element, and the value of the =width= property is larger than the =max-width= property; the =max-width= property will be used (and the =width= property will be ignored).
+
+*Example*
+
+This <div> element has a height of 100 pixels and a max-width of 500 pixels:
+#+begin_src css
+
+  div {
+      max-width: 500px;
+      height: 100px;
+      background-color: powderblue;
+  }
+
+#+end_src
+
+* Box Model
+** The CSS Box Model
+
+In CSS, the term "box model" is used when talking about design and layout.
+
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model
+
+[[file:~/Repo/org-book/pictures/box-model.png]]
+
+Explanation of the different parts:
+
+- *Content* - The content of the box, where text and images appear
+- *Padding* - Clears an area around the content. The padding is transparent
+- *Border* - A border that goes around the padding and content
+- *Margin* - Clears an area outside the border. The margin is transparent
+
+The box model allows us to add a border around elements, and to define space between elements.
+
+*Example*
+
+Demonstration of the box model:
+#+begin_src css
+
+  div {
+      width: 300px;
+      border: 15px solid green;
+      padding: 50px;
+      margin: 20px;
+  }
+
+#+end_src
+
+** Width and Height of an Element
+
+In order to set the width and height of an element correctly in all browsers, you need to know how the box model works.
+
+*Important*: When you set the width and height properties of an element with CSS, you just set the width and height of the *content area*. To calculate the full size of an element, you must also add padding, borders, and margins.
+
+*Example*
+
+The <div> element will have a total width of 350px:
+#+begin_src css
+
+  div {
+      width: 320px;
+      padding: 10px;
+      border: 5px solid gray;
+      margin: 0;
+  }
+
+#+end_src
+
+Here is the calculation:
+| 320px(width)                  |
+| + 20px (left + right padding) |
+| + 10px (left + right border)  |
+| + 0px (left + right margin)   |
+| *= 350px*                       |
+
+The total width of an element should be calculated like this:
+
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+
+The total height of an element should be calculated like this:
+
+Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+
+* Outline
+** CSS Outline
+
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+
+[[file:~/Repo/org-book/pictures/outline.png]]
+
+CSS has the following outline properties:
+
+- =outline-style=
+- =outline-color=
+- =outline-width=
+- =outline-offset=
+- =outline=
+
+*Note*: Outline differs from _borders_! Unline border, the outline is drawn outside the element's border, and may overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline.
+
+** CSS Outline Style
+
+The =outline-style= property specifies the style of the outline, and can have one of the following values:
+
+- =dotted= - Defines a dotted outline
+- =dashed= - Defines a dashed outline
+- =solid= - Defines a solid outline
+- =double= - Defines a double outline
+- =groove= - Defines a 3D grooved outline
+- =ridge= - Defines a 3D ridged outline
+- =inset= - Defines a 3D inset outline
+- =outset= - Defines a 3D outset outline
+- =none= - Defines no outline
+- =hidded= - Defines a hidden outline
+
+The following example shows the different =outline-style= values:
+
+*Example*
+
+Demonstration of the different outline styles:
+#+begin_src css
+
+  p.dotted {outline-style: dotted}
+  p.dashed {outline-style: dashed}
+  p.solid {outline-style: solid}
+  p.double {outline-style: double}
+  p.groove {outline-style: groove}
+  p.ridge {outline-style: ridge}
+  p.inset {outline-style: inset}
+  p.outset {outline-style: outset}
+
+#+end_src
+
+* Outline Width
+** CSS Outline Width
+
+The =outline-width= property specifies the width of the outline, and can have one of the following values:
+
+- thin (typically 1px)
+- medium (typically 3px)
+- thick (typically 5px)
+- A specific size (in px, pt, cm, em, etc)
+
+*Example*
+#+begin_src css
+
+  p.ex1 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: thin;
+  }
+
+  p.ex2 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: medium;
+  }
+
+  p.ex1 {
+    border: 1px solid black;
+    outline-style: solid;
+    outline-color: red;
+    outline-width: thick;
+  }
+
+  p.ex1 {
+    border: 1px solid black;
+    outline-style: solid;
+    outline-color: red;
+    outline-width: 4px;
+  }
+
+#+end_src
+
+* Outline Color
+** CSS Outline Color
+
+The =outline-color= property is used to set the color of the outline.
+
+The color can be set by:
+
+- name - specify a color name, like "red"
+- HEX - specify a hex value, like "#ff0000"
+- RGB - specify a RGB value, like "rgb(255, 0, 0)"
+- HSL - specify a HSL value, like "hsl(0, 100%, 50%)"
+- invert - performs a color inversion (which ensures that the outline is visible, regardless of color background)
+
+The following example shows some different outlines with different colors. Also notice that these elements also have a thin black border inside the outline:
+
+*Example*
+#+begin_src css
+
+  p.ex1 {
+      border: 2px solid black;
+      outline-style: solid;
+      outline-color: red
+  }
+
+  p.ex2 {
+      border: 2px solid black;
+      outline-style: dotted;
+      outline-color: red
+  }
+
+  p.ex3 {
+      border: 2px solid black;
+      outline-style: outset;
+      outline-color: red
+  }
+
+#+end_src
+
+** HEX Values
+
+The outline color can also be specified using a hexadecimal value (HEX):
+
+*Example*
+#+begin_src css
+
+  p.ex1 {
+      outline-style: solid;
+      outline-color: #ff0000; /* red */
+  }
+
+#+end_src
+
+** RGB Values
+
+Or by using RGB values:
+
+*Example*
+#+begin_src css
+
+  p.ex1 {
+      outline-style: solid;
+      outline-color: rgb(255, 0, 0); /* red */
+  }
+
+#+end_src
+
+** HSL Values
+
+You can also use HSL values:
+
+*Example*
+#+begin_src css
+
+  p.ex1 {
+      outline-style: solid;
+      outline-color: hsl(0, 100%, 50%); /* red */
+  }
+
+#+end_src
+
+* Outline Shorthand
+** CSS Outline - Shorthand property
+
+The =outline= property is a shorthand property for setting the following individual outline properties:
+
+- =outline-width=
+- =outline-style= (required)
+- =outline-color=
+
+The =outline= property is specified as one, two, or three values from the list above. The order of the values does not matter.
+
+The following example shows some outline specified with the shorthand =outline= property:
+
+*Example*
+#+begin_src css
+
+  p.ex1 {outline: dashed;}
+  p.ex2 {outline: dotted red;}
+  p.ex3 {outline: 5px solid yellow;}
+  p.ex4 {outline: thick ridge pink;}
+
+#+end_src
+
+* Outline Offset
+** CSS Outline Offset
+
+The =outline-offset= property adds space between an outline and the edge/border of an element. The space between an element and its outline is transparent.
+
+The following example specifies an outline 15px outside the border edge:
+
+*Example*
+#+begin_src css
+
+  p {
+      margin: 30px;
+      border: 1px solid black;
+      outline: 1px solid red;
+      outline-offset: 15px;
+  }
+
+#+end_src
+
+The following example shows that the space between an element and its outline is transparent:
+
+*Example*
+#+begin_src css
+
+  p {
+      margin: 30px;
+      background: yellow;
+      border: 1px solid black;
+      outline: 1px solid red;
+      outline-offset: 15px;
+  }
+
+#+end_src
+
+* Text
+** Text Color
+
+CSS has a lot of properties for formatting text.
+
+[[file:~/Repo/org-book/pictures/text.png]]
+
+The =color= property is used to set the color of the text. The color is specified by:
+
+- a color name - like "red"
+- a HEX value - like "#ff0000"
+- a RGB value - like "rgb(255, 0, 0)"
+
+The default text color for a page is defined in the body selector.
+
+*Example*
+#+begin_src css
+
+  body {
+      color: blue;
+  }
+
+  h1 {
+      color: green
+  }
+
+#+end_src
+
+** Text Color and Background Color
+
+In this example, we define both the =background-color= property and the =color= property:
+
+*Example*
+#+begin_src css
+
+  body {
+      background-color: lightgrey;
+      color: blue;
+  }
+
+  h1 {
+      background-color: black;
+      color: white;
+  }
+
+  div {
+      background-color: blue;
+      color: white;
+  }
+
+#+end_src
+
+*Important*: High contrast is very important for people with vision problems. So, always ensure that the contrast between the text color and the text background color (or background image) is good!
+
+* Text Alignment
+** CSS Text Alignment and Text Direction
+
+In this chapter you will learn about the following properties:
+
+- =text-align=
+- =text-align-last=
+- =direction=
+- =unicode-bidi=
+- =vertical-align=
+
+** Text Alignment
+
+The =text-align= property is used to set the horizontal alignment of a text.
+
+A text can be left or right aligned, centered, or justified.
+
+The following example shows center aligned, and left and right aligned text (left alignment is default if text direction is left-to-right, and right alignment is default if text direction is right-to-left):
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-align: center;
+  }
+
+  h2 {
+      text-align: left;
+  }
+
+  h3 {
+      text-align: right;
+  }
+
+#+end_src
+
+When the =text-align= property is set to "justify", each line stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers):
+
+*Example*
+#+begin_src css
+
+  div  {
+      text-align: justify;
+  }
+
+#+end_src
+
+** Text Align Last
+
+The =text-align-last= property specifies how to align the last line of a text.
+
+*Example*
+
+Align the last line of text in three <p> elements:
+#+begin_src css
+
+  p.a {
+      text-align-last: right;
+  }
+
+  p.b {
+      text-align-last: center;
+  }
+
+  p.c {
+      text-align-last: justify;
+  }
+
+#+end_src
+
+** Text Direction
+
+The =direction= and =unicode-bidi= properties can be used to change the text direction of an element:
+
+*Example*
+#+begin_src css
+
+  p {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+  }
+
+#+end_src
+
+** Verical Alignment
+
+The =vertical-align= property sets the vertical alignment of an element.
+
+*Example*
+
+Set the vertical alignment of an image in a text:
+#+begin_src css
+
+  img.a {
+      vertical-align: baseline;
+  }
+
+  img.b {
+      vertical-align: text-top;
+  }
+
+  img.c {
+      vertical-align: text-bottom;
+  }
+
+  img.d {
+      vetical-align: sub;
+  }
+
+  img.e {
+      vertical-align: super;
+  }
+
+#+end_src
+
+* Text Decoration
+** CSS Text Decoration
+
+In this chapter you will learn about the following properties:
+
+- =text-decoration-line=
+- =text-decoration-color=
+- =text-decoration-style=
+- =text-decoration-thickness=
+- =text-decoration=
+
+** Add a Decoration Line to Text
+
+The =text-decoration-line= property is used to add a decoration line to text.
+
+*Tip*: You can combine more than one value, like overline and underline to display lines both over and under a text.
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-decoration-line: overline;
+  }
+
+  h2 {
+      text-decoration-line: line-through;
+  }
+
+  h3 {
+      text-decoration-line: underline;
+  }
+
+  p {
+      text-decoration-line: overline underline;
+  }
+
+#+end_src
+
+*Note*: It is not recommended to underline text that is not a link, as this often confuses the reader.
+
+** Specify a Color for the Decoration Line
+
+The =text-decoration-color= property is used to set the color of the decoration line.
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-decoration-line: overline;
+      text-decoration-color: red;
+  }
+
+  h2 {
+      text-decoration-line: line-through;
+      text-decoration-color: blue;
+  }
+
+  h3 {
+      text-decoration-line: underline;
+      text-decoration-color: green;
+  }
+
+  p {
+      text-decoration-line: overline underline;
+      text-decoration-color: purple;
+  }
+
+#+end_src
+
+** Specify a Style for the Decoration Line
+
+The =text-decoration-style= property is used to set the style of the decoration line.
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+  }
+
+  h2 {
+      text-decoration-line: underline;
+      text-decoration-style: double;
+  }
+
+  h3 {
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+  }
+
+  p.ex1 {
+      text-decoration-line: underline;
+      text-decoration-style: dashed;
+  }
+
+  p.ex2 {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+  }
+
+  p.ex3 {
+      text-decoration-line: underline;
+      text-decoration-color: red;
+      text-decoration-style: wavy;
+  }
+
+#+end_src
+
+** Specify the Thickness for the Decoration Line
+
+The =text-decoration-thickness= property is used to set the thickness of the decoration line.
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-decoration-line: underline;
+      text-decoration-thickness: auto;
+  }
+
+  h2 {
+      text-decoration-line: underline;
+      text-decoration-thickness: 5px;
+  }
+
+  h3 {
+      text-decoration-line: underline;
+      text-decoration-thickness: 25%;
+  }
+
+  p {
+      text-decoration-line: underline;
+      text-decoration-color: red;
+      text-decoration-style: double;
+      text-decoration-thickness: 5px;
+  }
+
+#+end_src
+
+** The Shorthand Property
+
+The =text-decoration= property is a shorthand property for:
+
+- =text-decoration-line= (required)
+- =text-decoration-color= (optional)
+- =text-decoration-style= (optional)
+- =text-decoration-thickness= (optional)
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-decoration: underline;
+  }
+
+  h2 {
+      text-decoration: underline red;
+  }
+
+  h3 {
+      text-decoration: underline red double;
+  }
+
+  p {
+      text-decoration: underline red double 5px;
+  }
+
+#+end_src
+
+** A Small Tip
+
+All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The =text-decoration: none;= is used to remove the underline from links, like this:
+
+*Example*
+#+begin_src css
+
+  a {
+      text-decoration: none;
+  }
+
+#+end_src
+
+* Text Transformation
+** CSS Text Transformation
+
+The =text-transform= property is used to specify uppercase and lowercase letters in a text.
+
+It can be used to turn everything into uppercase or lowercase letters, or capitalize the first letter of each word;
+
+*Example*
+#+begin_src css
+
+  p.uppercase {
+      text-transform: uppercase;
+  }
+
+  p.lowercase {
+      text-transform: lowercase;
+  }
+
+  p.capitalize {
+      text-transform: capitalize;
+  }
+
+#+end_src
+
+* Text Spacing
+** CSS Text Indentation, Letter Spacing, Line Height, Word Spacing, and White Space
+
+In this chapter you will learn about the following properties:
+
+- =text-indent=
+- =letter-spacing=
+- =line-height=
+- =word-spacing=
+- =white-space=
+
+** Text Indentation
+
+The =text-indent= property is used to specify the indentation of the first ling of a text:
+
+*Example*
+#+begin_src css
+
+  p {
+      text-indent: 50px;
+  }
+
+#+end_src
+
+** Letter Spacing
+
+The =letter-spacing= property is used to specify the space between the characters in a text.
+
+The following example demonstrates how to increase or decrease the space between characters:
+
+*Example*
+#+begin_src css
+
+  h1 {
+      letter-spacing: 5px;
+  }
+
+  h2 {
+      letter-spacing: -2px;
+  }
+
+#+end_src
+
+** Line Height
+
+The =line-height= property is used to specify the space between lines:
+
+*Example*
+#+begin_src css
+
+  p.small {
+      line-height: 0.8;
+  }
+
+  p.big {
+      line-height: 1.8;
+  }
+
+#+end_src
+
+** Word Spacing
+
+The =word-spacing= property is used to specify the space between the words in a text.
+
+The following example demonstrates how to increase or decrease the space between words:
+
+*Example*
+#+begin_src css
+
+  p.one {
+      word-spacing: 10px;
+  }
+
+  p.two {
+      word-spacing: -2px;
+  }
+
+#+end_src
+
+** White Space
+
+The =white-space= property specifies how white-space inside an element is handled.
+
+This example demonstrates how to disable text wrapping inside an element:
+
+*Example*
+#+begin_src css
+
+  p {
+      white-space: nowrap;
+  }
+
+#+end_src
+
+* Text Shadow
+** CSS Text Shadow
+
+The =text-shadow= property adds shadow to text.
+
+In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px):
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-shadow: 2px 2px;
+  }
+
+#+end_src
+
+Next, add a color (red) to the shadow:
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-shadow: 2px 2px red;
+  }
+
+#+end_src
+
+Then, add a blur effect (5px) to the shadow:
+
+*Example*
+#+begin_src css
+
+  h1 {
+      text-shadow: 2px 2px 5px red;
+  }
+
+#+end_src
+
+** More Text Shadow Examples
+
+*Example 1*
+
+Text-shadow on a white text:
+#+begin_src css
+
+  h1 {
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+  }
+
+#+end_src
+
+*Example 2*
+
+Text-shadow with red neon glow:
+#+begin_src css
+
+  h1 {
+      text-shadow: 0 0 3px #ff0000;
+  }
+
+#+end_src
+
+*Example 3*
+
+Text-shadow with red and blue neon glow:
+#+begin_src css
+
+  h1 {
+      text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  }
+
+#+end_src
+
+*Example 4*
+#+begin_src css
+
+  h1 {
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+#+end_src
+
+* Fonts
+** Font Selection is Important
+
+Choosing the right font has a huge impact on how the readers experience a website.
+
+The right font can create a strong identity for your brand.
+
+Using a font that is easy to read is important. The font adds value to your text. It is also important to choose the correct color and text size for the font.
+
+** Generic Font Families
+
+In CSS there are five generic font families:
+
+1. *Serif* fonts have a small stroke at the edges of each letter. They create a sense of fomality and elegance.
+
+2. *Sans-serif* fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.
+
+3. *Monospace* fonts - here all the letters have the same fixed width. They create a mechanical look.
+
+4. *Cursive* fonts imitate human handwriting.
+
+5. *Fantasy* fonts are decorative/playful fonts.
+
+All the different font names belong to one of the generic font families.
+
+** Difference Between Serif and Sans-serif Fonts
+
+[[file:~/Repo/org-book/pictures/fonts.png]]
+
+*Note*: On computer screens, sans-serif fonts are considered easier to read than serif fonts.
+
+** The CSS font-family Property
+
+In CSS, we use the =font-family= property to specify the font of a text.
+
+*Note*: If the font name is more than one word, it must be in quotation marks, like: "Times New Roman".
+
+*Tip*: The =font-family= property should hold several font names as a "fallback" system, to ensure maximum compatibility between browsers/operating systems. Start with the font you want, and end with a generic family (to let the browser pick a similar font in the generic family, if no other fonts are available). The font names should be separated with comma.
+
+*Example*
+
+Specify some different fonts for three paragraphs:
+#+begin_src css
+
+  .p1 {
+      font-family: "Times New Roman", Times, serif;
+  }
+
+  .p2 {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .p3 {
+      font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+#+end_src
+
+* Font Web Safe
+** What are Web Safe Fonts?
+
+Web safe fonts are fonts that are universally installed across all browsers and devices.
+
+** Fallback Fonts
+
+However, there are no 100% completely web safe fonts. There is always a chance that a font is not found or is not installed properly.
+
+Therefore, it is very important to always use fallback fonts.
+
+This means that you should add a list of similar "backup fonts" in the =font-family= property. If the first font does not work, the browser will try the next one, and the next one, and so on. Always end the list with a generic font family name.
+
+*Example*
+
+Here, there are three font types: Tahoma, Verdana, and sans-serif. The second and third fonts are backups, in case the first one is not found.
+#+begin_src css
+
+  p {
+      font-family: Tahoma, Verdana, sans-serif;
+  }
+
+#+end_src
+
+** Best Web Safe Fonts for HTML and CSS
+
+The following list are the best web safe fonts for HTML and CSS:
+
+- Arial (sans-serif)
+- Verdana (sans-serif)
+- Helvetica (sans-serif)
+- Tahoma (sans-serif)
+- Trebuchet MS (sans-serif)
+- Times New Roman (serif)
+- Georgia (serif)
+- Garamond (serif)
+- Courier New (monospace)
+- Brush Script MT (cursive)
+
+*Note*: Before you publish you website, always check how your fonts appear on different browsers and devices, and always use fallback fonts!
+
+* Font Fallbacks
+** Commonly Used Font Fallbacks
+
+Below are some commonly used font fallbacks, organized by the 5 generic font families:
+
+- *Serif*
+- *Sans-serif*
+- *Monospace*
+- *Cursive*
+- *Fantasy*
+
+** Serif Fonts
+
+| *font-family*                     |
+|---------------------------------|
+| "Times New Roman", Times, serif |
+| Georgia, serif                  |
+| Garamond, serif                 |
+
+** Sans-Serif Fonts
+
+| *font-family*                           |
+|---------------------------------------|
+| Arial, Helvetica, sans-serif          |
+| Tahoma, Verdana, sans-serif           |
+| "Trebuchet MS", Helvetica, sans-serif |
+| Geneva, Verdana, sans-serif           |
+
+** Monospace Fonts
+
+| *font-family*                       |
+|-----------------------------------|
+| "Courier New", Courier, monospace |
+
+** Cursive Fonts
+
+| *font-family*                |
+|----------------------------|
+| "Brush Script MT", cursive |
+
+** Fantasy Fonts
+
+| *font-family*                   |
+|-------------------------------|
+| Copperplate, Papyrus, fantasy |
+
+* Font Style
+** CSS Font Style
+
+The =font-style= property is mostly used to specify italic text.
+
+This property has three values:
+
+- normal - The text is shown normally
+- italic - The text is shown in italics
+- oblique - The text is "leaning" (oblique is very similar to italic, but less supported)
+
+*Example*
+#+begin_src css
+
+  p.normal {
+      font-style: normal;
+  }
+
+  p.italic {
+      font-style: italic;
+  }
+
+  p.oblique {
+      font-style: oblique;
+  }
+
+#+end_src
+
+** Font Weight
+
+The =font-weight= property specifies the weight of a font:
+
+*Example*
+#+begin_src css
+
+  p.normal {
+      font-weight: normal;
+  }
+
+  p.thick {
+      font-weight: bold;
+  }
+
+#+end_src
+
+** Font Variant
+
+The =font-variant= property specifies whether or not a text should be displayed in a small-caps font.
+
+In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+
+*Example*
+#+begin_src css
+
+  p.normal {
+      font-variant: normal;
+  }
+
+  p.small {
+      font-variant: small-caps;
+  }
+
+#+end_src
+
+* Font Size
+** CSS Font Size
+
+The =font-size= property sets the size of the text.
+
+Being able to manage the text size is important in web design. However, you should not use font size adjustments to make paragraphs look like headings, or heading look like paragraphs.
+
+Always use the proper HTML tags, like <h1> - <h6> for headings and <p> for paragraphs.
+
+The font-size value can be an absolute, or relative size.
+
+Absolute size:
+
+- Sets the text to a specified size
+- Does not allow a user to change the text size in all browsers (bad for accessibility reasons)
+- Absolute size is useful when the physical size of the output is known
+
+Relative size:
+
+- Sets the size relative to surrounding elements
+- Allows a user to change the text size in browsers
+
+*Note*: If you do not specify a font size, the default size for normal text, like paragraphs, is 16px (16px=1em).
+
+** Set Font Size With Pixels
+
+Setting the text size with pixels gives you full control over the text size:
+
+*Example*
+#+begin_src css
+
+  h1 {
+      font-size: 40px;
+  }
+
+  h2 {
+      font-size: 30px;
+  }
+
+  p {
+      font-size: 14px;
+  }
+
+#+end_src
+
+*Tip*: If you use pixels, you can still use the zoom tool to resize the entire page.
+
+** Set Font Size With Em
+
+To allow users to resize the text (in the browser menu), many developers use em instead of pixels.
+
+1em is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em is 16px.
+
+The size can be calculated from pixels to em using this formula: /pixels/16=em/
+
+*Example*
+#+begin_src css
+
+  h1 {
+      font-size: 2.5em; /* 40px/16=2.5em */
+  }
+
+  h2 {
+      font-size: 1.875em; /* 30px/16=1.875em */
+  }
+
+  p {
+      font-size: 0.875em; /* 14px/16=0.875em */
+  }
+
+#+end_src
+
+In the example above, the text size in em is the same as the previous example in pixels. However, with the em size, it is possible to adjust the text size in all browsers.
+
+Unfortunately, there is still a problem with older versions of Internet Explorer. The text becomes larger than it should when made larger, and smaller that it should when made smaller.
+
+** Use a Combination of Percent and Em
+
+The solution that works in all browsers, is to set a default font-size in percent for the <body> element:
+
+*Example*
+#+begin_src css
+
+  body {
+      font-size: 100%;
+  }
+
+  h1 {
+      font-size: 2.5em;
+  }
+
+  h2 {
+      font-size: 1.875em;
+  }
+
+  p {
+      font-size: 0.875em;
+  }
+
+#+end_src
+
+Our code now works great! It shows the same text size in all browsers, and allows all browsers to zoom or resize the text!
+
+** Responsive Font Size
+
+The text size can be set with a =vw= unit, which means the "viewport width".
+
+That way the text size will follow the size of the browser window:
+
+*Example*
+#+begin_src html
+
+  <h1 style="font-size:10vw">Hello World</h1>
+
+#+end_src
+
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+* Font Google
+** Google Fonts
+
+If you do not want to use any of the standard fonts in HTML, you can use Google Fonts.
+
+Google Fonts are free to use, and have more than 1000 fonts to choose from.
+
+** How To Use Google Fonts
+
+Just add a special style sheet link in the <head> section and then refer to the font in the CSS.
+
+*Example*
+
+Here, we want to use a font named "Sofia" from Google Fonts:
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+      body {
+        font-family: "Sofia", sans-serif;
+      }
+    </style>
+  </head>
+
+#+end_src
+
+Here, we want to use a font named "Trirong" from Google Fonts:
+#+begin_src html
+
+  <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <style>
+    body {
+      font-family: "Trirong", serif;
+    }
+  </style>
+  </head>
+
+#+end_src
+
+*Note*: When specifying a font in CSS, always list at minimum one fallback font (to avoid unexpected behaviors). So, also here you should add a generic font family (like serif or sans-serif) to the end of the list.
+
+** Use Multiple Google Fonts
+
+To use multiple Google fonts, just separate the font names with a pipe character (=|=) like this:
+
+*Example*
+
+Request multiple fonts:
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <style>
+      h1.a {font-family: "Audiowide", sans-serif;}
+      h1.b {font-family: "Sofia", sans-serif;}
+      h1.a {font-family: "Trirong", serif;}
+    </style>
+  </head>
+
+#+end_src
+
+*Note*: Requesting multiple fonts may slow down your web pages! So be careful about that.
+
+** Styling Google Fonts
+
+Of course you can style Google Fonts as you like, with CSS!
+
+*Example*
+
+Style the "Sofia" font:
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+      body {
+        font-family: "Sofia", sans-serif;
+        font-size: 30px;
+        text-shadow: 3px 3px 3px #ababab;
+      }
+    </style>
+  </head>
+
+#+end_src
+
+** Enabling Font Effects
+
+Google have also enable different font effects that you can use.
+
+First add =effect=effectname= to the Google API, then add a special class name to the element that is going to use the special effect. The class name always starts with =font-effect-= and ends with the =effectname=.
+
+*Example*
+
+Add the fire effect to the "Sofia" font:
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <style>
+      body {
+        font-family: "Sofia", sans-serif;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="font-effect-fire">Sofia on Fire</h1>
+  </body>
+
+#+end_src
+
+To request multiple font effects, just separate the effect names with a pip character (=|=), like this:
+
+*Example*
+
+Add multiple effects to the "Sofia" font:
+#+begin_src html
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <style>
+      body {
+        font-family: "Sofia", sans-serif;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="font-effect-neon">Neon Effect</h1>
+    <h1 class="font-effect-outline">Outline Effect</h1>
+    <h1 class="font-effect-emboss">Emboss Effect</h1>
+    <h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+
+  </body>
+
+#+end_src
