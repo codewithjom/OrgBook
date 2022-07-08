@@ -1,0 +1,111 @@
+#+title: Getting Started with Debian
+#+author: Jom Dollesin
+
+* Add User in Sudoers File
+
+By default the user do not have the permission to use =sudo= (installing a package etc.).
+
+To have the permission, these are the following commands:
+
+1. Log in to your root account by typing =su= and =password=.
+
+#+begin_src bash
+
+  su
+
+#+end_src
+
+2. Vim is not install by default, so we will use nano as our text editor. Follow these commands.
+
+#+begin_src bash
+
+  nano /etc/sudoers
+
+#+end_src
+
+Below the =sudoers= file, find this line:
+
+#+begin_src bash
+
+  # User previlege specification
+
+#+end_src
+
+3. Add the following.
+
+#+begin_src bash
+
+  jd      ALL=(ALL:ALL) ALL
+
+#+end_src
+
+*NOTE*: Do not copy jd as your username!
+
+4. The file should be look like this! Once done you can now exit nano.
+
+#+begin_src bash
+
+  root      ALL=(ALL:ALL) ALL
+  jd        ALL=(ALL:ALL) ALL
+
+#+end_src
+
+5. To test if everything works, try to update the packages!
+
+#+begin_src bash
+
+  sudo apt update
+
+#+end_src
+
+* Debian Unstable
+
+Debian Unstable (also known by its codename "Sid") is not strictly a release, but rather a rolling development version of the Debian distribution containing the latest packages that have been introduced into Debian
+
+** How to make Debian unstable?
+
+If you prefer using Vim as your text editor you can follow these steps, but if your are using a different text editor just change the =vim= to your text editor.
+
+Edit the =sources.list= which is located in =/etc/apt/sources.list=
+
+#+begin_src bash
+
+  sudo vim /etc/apt/sources.list
+
+#+end_src
+
+By the time I was making this the codename of my Debian is =bullseye= in the future bullseye will be change.
+
+Look for this:
+
+#+begin_src bash
+
+  deb http://deb.debian.org/debian/ bullseye main non-free contrib
+  deb-src http://deb.debian.org/debian bullseye main non-free contrib
+
+  deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+  deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+
+#+end_src
+
+Change =bullseye= to =unstable= the file should look like this:
+
+#+begin_src bash
+
+  deb http://deb.debian.org/debian/ unstable main non-free contrib
+  deb-src http://deb.debian.org/debian unstable main non-free contrib
+
+  deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+  deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+
+#+end_src
+
+You can now leave Vim (=:wq=) and update your packages by running this command in your terminal:
+
+#+begin_src bash
+
+  sudo apt update && sudo apt full-upgrade -y
+
+#+end_src
+
+*NOTE*: Reboot is recommended to see the changes!
