@@ -64,7 +64,7 @@ With an external stylesheet file, you can change the look of an entire website b
 * Syntax
 ** CSS Syntax
 
-[[file:~/Repo/org-book/pictures/img_selector.gif]]
+[[file:~/OrgBook/pictures/img_selector.gif]]
 
 The selector points to the HTML element you want to style.
 
@@ -528,7 +528,7 @@ In the following example, we use a combination of HTML and CSS comments:
 
 In CSS, a color can be specified by using a predefined color name:
 
-[[file:~/Repo/org-book/pictures/color_names.png]]
+[[file:~/OrgBook/pictures/color_names.png]]
 
 ** CSS Background Color
 
@@ -592,7 +592,7 @@ Same as color name "Tomato", but 50% transparent:
 * Background Color
 ** CSS background-color
 
-[[file:~/Repo/org-book/pictures/background.png]]
+[[file:~/OrgBook/pictures/background.png]]
 
 The =background-color= property specifies the background color of an element.
 
@@ -642,7 +642,7 @@ Here, the <h1>, <p>, and <div> elements will have different background colors:
 
 The =opacity= property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent:
 
-[[file:~/Repo/org-book/pictures/opacity.png]]
+[[file:~/OrgBook/pictures/opacity.png]]
 
 *Example*:
 #+begin_src css
@@ -660,7 +660,7 @@ The =opacity= property specifies the opacity/transparency of an element. It can 
 
 If you do not want to apply opacity to child elements, like in our example above, use *RGBA* color values. The following example sets the opacity for the background color and not the text:
 
-[[file:~/Repo/org-book/pictures/transparency.png]]
+[[file:~/OrgBook/pictures/transparency.png]]
 
 You learned from the Colors Chapter, that you can use RGB as a color value. In addition to RGB, you can use RGB color value with an *alpha* channel (RGBA) - which specifies the opacity for a color.
 
@@ -688,7 +688,7 @@ Set the background image for a page:
 #+begin_src css
 
   body {
-      background-image: url("paper.gif");
+      background-image: url('paper.gif');
   }
 
 #+end_src
@@ -699,7 +699,7 @@ This example shows a *bad combination* of text and background image. The text is
 #+begin_src css
 
   body {
-      background-image: url("bgdesert.jpg");
+      background-image: url('bgdesert.jpg');
   }
 
 #+end_src
@@ -712,7 +712,7 @@ The background image can also be set for specific elements, like the <p> element
 #+begin_src css
 
   p {
-      background-image: url("paper.gif");
+      background-image: url('paper.gif');
   }
 
 #+end_src
@@ -728,7 +728,7 @@ Some images should be repeated only horizontally or vertically, or they will loo
 #+begin_src css
 
   body {
-      background-image: url("gradient_bg.png");
+      background-image: url('gradient_bg.png');
   }
 
 #+end_src
@@ -739,7 +739,7 @@ If the image above is repeated only horizontally (=background-repeat: repeat-x;=
 #+begin_src css
 
   body {
-      background-image: url("gradient_bg.png");
+      background-image: url('gradient_bg.png');
       background-repeat: repeat-x;
   }
 
@@ -757,7 +757,7 @@ Show the background image only once:
 #+begin_src css
 
   body {
-      background-image: url("img_tree.png");
+      background-image: url('img_tree.png');
       background-repeat: no-repeat;
   }
 
@@ -775,7 +775,7 @@ Position the background image in the top-right corner.
 #+begin_src css
 
   body {
-      background-image: url("img_tree.png");
+      background-image: url('img_tree.png');
       background-repeat: no-repeat;
       background-position: right top;
   }
@@ -793,7 +793,7 @@ Specify that the background image should be fixed:
 #+begin_src css
 
   body {
-      background-image: url("img_tree.png");
+      background-image: url('img_tree.png');
       background-repeat: no-repeat;
       background-position: right top;
       background-attachment: fixed;
@@ -807,7 +807,7 @@ Specify that the background image should scroll with the rest of the page:
 #+begin_src css
 
   body {
-      background-image: url("img_tree.png");
+      background-image: url('img_tree.png');
       background-repeat: no-repeat;
       background-position: right top;
       background-attachment: scroll;
@@ -825,7 +825,7 @@ Instead of writing:
 
   body {
       background-color: #ffffff;
-      background-image: url("img_tree.png");
+      background-image: url('img_tree.png');
       background-repeat: no-repeat;
       background-position: right top;
   }
@@ -837,7 +837,7 @@ You can use the shorthand property =background=:
 #+begin_src css
 
   body {
-      background: #ffffff url("img_tree.png") no-repeat right top;
+      background: #ffffff url('img_tree.png') no-repeat right top;
   }
 
 #+end_src
@@ -857,7 +857,7 @@ It does not matter if one of the property values is missing, as long as the othe
 
 The CSS border properties allow you to specify the style, width, and color of an element's border.
 
-[[file:~/Repo/org-book/pictures/borders.png]]
+[[file:~/OrgBook/pictures/borders.png]]
 
 The =border-style= property specifies what kind of border to display.
 
@@ -895,7 +895,7 @@ Demonstration of the different border styles:
 
 #+end_src
 
-[[file:~/Repo/org-book/pictures/border-style.png]]
+[[file:~/OrgBook/pictures/border-style.png]]
 
 * Border Width
 ** CSS Border Width
@@ -931,7 +931,7 @@ Demonstration of the different border widths:
 
 #+end_src
 
-[[file:~/Repo/org-book/pictures/border-widths.png]]
+[[file:~/OrgBook/pictures/border-widths.png]]
 
 ** Specific Side Widths
 
@@ -1571,7 +1571,7 @@ The =height= and =width= properties may have the following values:
 
 ** CSS height and width Examples
 
-[[file:~/Repo/org-book/pictures/height-width.png]]
+[[file:~/OrgBook/pictures/height-width.png]]
 
 *Example*
 
@@ -1586,7 +1586,7 @@ Set the height and width of a <div> element:
 
 #+end_src
 
-[[file:~/Repo/org-book/pictures/height-width2.png]]
+[[file:~/OrgBook/pictures/height-width2.png]]
 
 *Example*
 
@@ -1615,7 +1615,7 @@ Using =max-width= instead, in this situation, will improve the browser's handlin
 
 *Tip*: Drag the browser window to samller than 500px wide, to see the difference between the two divs!
 
-[[file:~/Repo/org-book/pictures/height-width3.png]]
+[[file:~/OrgBook/pictures/height-width3.png]]
 
 *Note*: If you for some reason use both the =width= property and the =max-width= property on the same element, and the value of the =width= property is larger than the =max-width= property; the =max-width= property will be used (and the =width= property will be ignored).
 
@@ -1639,7 +1639,7 @@ In CSS, the term "box model" is used when talking about design and layout.
 
 The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model
 
-[[file:~/Repo/org-book/pictures/box-model.png]]
+[[file:~/OrgBook/pictures/box-model.png]]
 
 Explanation of the different parts:
 
@@ -1704,7 +1704,7 @@ Total element height = height + top padding + bottom padding + top border + bott
 
 An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
 
-[[file:~/Repo/org-book/pictures/outline.png]]
+[[file:~/OrgBook/pictures/outline.png]]
 
 CSS has the following outline properties:
 
@@ -1934,7 +1934,7 @@ The following example shows that the space between an element and its outline is
 
 CSS has a lot of properties for formatting text.
 
-[[file:~/Repo/org-book/pictures/text.png]]
+[[file:~/OrgBook/pictures/text.png]]
 
 The =color= property is used to set the color of the text. The color is specified by:
 
@@ -2510,7 +2510,7 @@ All the different font names belong to one of the generic font families.
 
 ** Difference Between Serif and Sans-serif Fonts
 
-[[file:~/Repo/org-book/pictures/fonts.png]]
+[[file:~/OrgBook/pictures/fonts.png]]
 
 *Note*: On computer screens, sans-serif fonts are considered easier to read than serif fonts.
 
@@ -2947,5 +2947,3851 @@ Add multiple effects to the "Sofia" font:
     <h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
 
   </body>
+
+#+end_src
+
+* Font Pairings
+** Font Pairing Rules
+
+Great font pairings are essential to great design.
+
+Here are some basic rules to create great font pairings:
+
+*1. Complement*
+
+It is always safe to find font pairings that complement one another.
+
+A great font combination should harmonize, without being too similar or too different.
+
+*2. Use Font Superfamilies*
+
+A font superfamily is a set of fonts designed to work well together. So, using different fonts within the same superfamily is safe.
+
+For example, the Lucida superfamily contains the following fonts: Lucida Sans, Lucida Serif, Lucida Typewriter Sans, Lucida Typewriter Serif and Lucida Math.
+
+*3. Contrast is King*
+
+Two fonts that are too similar will often conflict. However, contrasts, done the right way, brings out the best in each font.
+
+Example: Combining serif with sans serif is a well known combination.
+
+A strong superfamily includes both serif and sans serif variations of the same font (e.g. Lucida and Lucida Sans).
+
+*4. Choose Only One Boss*
+
+One font should be the boss. This establishes a hierarchy for the fonts on your page. This can be achieved by varying the size, weight and color.
+
+*Example*
+
+No doubt "Georgia" is the boss here:
+#+begin_src css
+
+  body {
+      background-color: black;
+      font-family: Verdana, sans-serif;
+      font-size: 16px;
+      color: gray;
+  }
+
+  h1 {
+      font-family: Georgia, serif;
+      font-size: 60px;
+      color: white;
+  }
+
+#+end_src
+
+Below, we have shown some popular font pairings that will suit many brands and contexts.
+
+** Georgia and Verdana
+
+Georgia and Verdana is a classic combination. It also sticks to the web safe font standards:
+
+*Example*
+
+Use the "Georgia" font for headings, and "Verdana" for text:
+
+[[file:~/OrgBook/pictures/beautiful-norway.png]]
+
+** Helvetica and Garamond
+
+Helvetica and Garamond is another classic combination that uses web safe fonts:
+
+*Example*
+
+Use the "Helvetica" font for headings, and "Garamond" for text:
+
+[[file:~/OrgBook/pictures/beautiful-norway2.png]]
+
+** Popular Google Font Pairings
+
+If you do not want to use standard fonts in HTML, you can use Google Fonts.
+
+Google Fonts are free to use, and have more than 1000 fonts to choose from.
+
+Below are some popular Google Web Font Pairings.
+
+** Merriweather and Open Sans
+
+*Example*
+
+Use the "Merriweather" font for headings, and "Open Sans" for text:
+
+[[file:~/OrgBook/pictures/beautiful-norway3.png]]
+
+** Ubuntu and Lora
+
+*Example*
+
+Use the "Ubuntu" for headings, and "Lora" for text:
+
+[[file:~/OrgBook/pictures/beautiful-norway4.png]]
+
+For more fonts check [[https://fonts.google.com][Google Fonts]] Web Page.
+
+* Font Shorthand
+** The CSS Font Property
+
+To shorten the code, it is also possible to specify all the individual font properties in one property.
+
+The =font= property is a shorthand property for:
+
+- =font-style=
+- =font-variation=
+- =font-weight=
+- =font-size/line-height=
+- =font-family=
+
+*Note*: The =font-size= and =font-family= values are required. If one of the other values is missing, their default value are used.
+
+*Example*
+
+Use =font= to set several font properties in one declaration:
+#+begin_src css
+
+  p.a {
+      font: 20px Arial, sans-serif;
+  }
+
+  p.b {
+      font: italic small-caps bold 12px/30px Georgia, serif;
+  }
+
+#+end_src
+
+* Icons
+** How To Add Icons
+
+Icons can easily be added to your HTML page, by using an icon library.
+
+[[file:~/OrgBook/pictures/icons.png]]
+
+The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome.
+
+Add the name of the specified icons class to any inline HTML elements (like =<i>= or =<span>=).
+
+All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.)
+
+** Font Awesome Icons
+
+To use the Font Awesome icons, go to [[https://fontawesome.com][fontawesome.com]], sign in, and get a code to add in the =<head>= section of your HTML page:
+
+#+begin_src html
+
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+#+end_src
+
+*Note*: No downloading or installation is required!
+
+*Example*
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+      <i class="fas fa-cloud"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-car"></i>
+      <i class="fas fa-file"></i>
+      <i class="fas fa-bars"></i>
+
+    </body>
+  </html>
+
+#+end_src
+
+** Bootstrap Icons
+
+To use the Bootstrap glyphicons, add the following line inside the =<head>= section of your HTML page:
+
+#+begin_src html
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+#+end_src
+
+*Note*: No downloading or installation is required!
+
+*Example*
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+      <i class="glyphicon glyphicon-cloud"></i>
+      <i class="glyphicon glyphicon-remove"></i>
+      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-envelope"></i>
+      <i class="glyphicon glyphicon-thumbs-up"></i>
+
+    </body>
+  </html>
+
+#+end_src
+
+** Google Icons
+
+To use the Google icons, add the following line inside the =<head>= section of your HTML page:
+
+#+begin_src html
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+#+end_src
+
+*Note*: No downloading or installation is required!
+
+*Example*
+#+begin_src html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+
+      <i class="material-icons">cloud</i>
+      <i class="material-icons">favorite</i>
+      <i class="material-icons">attachment</i>
+      <i class="material-icons">computer</i>
+      <i class="material-icons">traffic</i>
+
+    </body>
+  </html>
+
+#+end_src
+
+* Links
+** Styling Links
+
+Links can be styled with any CSS property (e.g. =color=, =font-family=, =background=, etc.).
+
+*Example*
+#+begin_src css
+
+  a {
+      color: hotpink;
+  }
+
+#+end_src
+
+In addition, links can be styled differently depending on what *state* they are in.
+
+The four links states are:
+
+- =a:link= - a normal, unvisited link
+- =a:visited= - a link the user has visited
+- =a:hover= - a link when the user mouses over it
+- =a:active= - a link the moment it is clicked
+
+*Example*
+#+begin_src css
+
+  /* unvisited link */
+  a:link {
+      color: red;
+  }
+
+  /* visited link */
+  a:visited {
+      color: green;
+  }
+
+  /* mouse over link */
+  a:hover {
+      color: hotpink;
+  }
+
+  /* selected link */
+  a:active {
+      color: blue;
+  }
+
+#+end_src
+
+When setting the style for several link states, there are some order rules:
+
+- a:hover MUST come after a:link and a:visited
+- a:active MUST come after a:hover
+
+** Text Decoration
+
+The =text-decoration= property is mostly used to remove undelines from links:
+
+*Example*
+#+begin_src css
+
+  a:link {
+      text-decoration: none;
+  }
+
+  a:visited {
+      text-decoration: none;
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  a:active {
+      text-decoration: underline;
+  }
+
+#+end_src
+
+** Background Color
+
+The =background-color= property can be used to specify a background color ofr links:
+
+*Example*
+#+begin_src css
+
+  a:link {
+      background-color: yellow;
+  }
+
+  a:visited {
+      background-color: cyan;
+  }
+
+  a:hover {
+      background-color: lightgreen;
+  }
+
+  a:active {
+      background-color: hotpink;
+  }
+
+#+end_src
+
+** Link Buttons
+
+This example demonstrates a more advanced example where we combine several CSS properties to display links as boxes/buttons:
+
+*Example*
+#+begin_src css
+
+  a:link, a:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  a:hover, a:active {
+      background-color: red;
+  }
+
+#+end_src
+
+** More Examples
+
+This example demonstrates how to add other styles to hyperlinks:
+#+begin_src css
+
+  a.one:link {color: #ff0000;}
+  a.one:visited {color: #0000ff;}
+  a.one:hover {color: #ffcc00;}
+
+  a.two:link {color: #ff0000;}
+  a.two:visited {color: #0000ff;}
+  a.two:hover {font-size: 150%;}
+
+  a.three:link {color: #ff0000;}
+  a.three:visited {color: #0000ff;}
+  a.three:hover {background: #66ff66;}
+
+  a.four:link {color: #ff0000;}
+  a.four:visited {color: #0000ff;}
+  a.four:hover {font-family: monospace;}
+
+  a.five:link {color: #ff0000; text-decoration: none;}
+  a.five:visited {color: #0000ff; text-decoration: none;}
+  a.five:hover {text-decoration: underline;}
+
+#+end_src
+
+*Example*
+
+Another example of how to create link boxes/buttons:
+#+begin_src css
+
+  a:link, a:visited {
+      background-color: white;
+      color: black;
+      border: 2px solid green;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  a:hover, a:active {
+      background-color: green;
+      color: white;
+  }
+
+#+end_src
+
+*Example*
+
+This example demonstrates the different types of cursors (can be useful for links):
+#+begin_src html
+
+  <span style="cursor: auto">auto</span><br>
+  <span style="cursor: crosshair">crosshair</span><br>
+  <span style="cursor: default">default</span><br>
+  <span style="cursor: e-resize">e-resize</span><br>
+  <span style="cursor: help">help</span><br>
+  <span style="cursor: move">move</span><br>
+  <span style="cursor: n-resize">n-resize</span><br>
+  <span style="cursor: ne-resize">ne-resize</span><br>
+  <span style="cursor: nw-resize">nw-resize</span><br>
+  <span style="cursor: pointer">pointer</span><br>
+  <span style="cursor: progress">progress</span><br>
+  <span style="cursor: s-resize">s-resize</span><br>
+  <span style="cursor: se-resize">se-resize</span><br>
+  <span style="cursor: sw-resize">sw-resize</span><br>
+  <span style="cursor: text">text</span><br>
+  <span style="cursor: w-resize">w-resize</span><br>
+  <span style="cursor: wait">wait</span><br>
+
+#+end_src
+
+* Lists
+** HTML Lists and CSS List Properties
+
+In HTML, there are two main types of lists:
+
+- unordered lists (<ul>) - the list items are marked with bullets
+- ordered lists (<ol>) - the list items are marked with numbers or letters
+
+The CSS list properties allow you to:
+
+- Set different list item markers for ordered lists
+- Set different list item markers for unordered lists
+- Set an image as the list item marker
+- Add background colors to lists and list items
+
+** Different List Item Markers
+
+The =list-style-type= property specifies the type of list item marker.
+
+The following example shows some of the available list item markers:
+
+*Example*
+#+begin_src css
+
+  ul.a {
+      list-style-type: circle;
+  }
+
+  ul.b {
+      list-style-type: square;
+  }
+
+  ol.c {
+      list-style-type: upper-roman;
+  }
+
+  ol.d {
+      list-style-type: lower-alpha;
+  }
+
+#+end_src
+
+*Note*: Some of the values are for unordered lists, and some for ordered lists.
+
+** An Image as The List Item Marker
+
+The =list-style-image= property specifies an image as the list item marker:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-image: url('sqpurple.gif');
+  }
+
+#+end_src
+
+** Position The List Item Markers
+
+The =list-style-position= property specifies the position of the list-item markers (bullet points).
+
+"list-style-position: outside;" means that the bullet points will be outside the list item. The start of each line of a list item will be aligned vertically. This is default!
+
+"list-style-position: inside;" means that the bullet points will be inside the list item. As it is part of the list item, it will be part of the text and push the text at the start:
+
+*Example*
+#+begin_src css
+
+  ul.a {
+      list-style-position: outside;
+  }
+
+  ul.b {
+      list-style-position: inside;
+  }
+
+#+end_src
+
+** Remove Default Settings
+
+The =list-style-type:none= property can also be used to remove the markers/bullets. Note that the list also has default margin and padding. To remove this, add =margin:0= and =padding:0= to <ul> or <ol>:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  }
+
+#+end_src
+
+** List - Shorthand property
+
+The =list-style= property is a shorthand property. It is used to set all the list properties in one declaration:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style: square inside url('sqpurple.gif');
+  }
+
+#+end_src
+
+When using the shorthand property, the order of the property values are:
+
+- =list-style-type= (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+- =list-style-position= (specifies whether the list-item markers should appear inside or outside the content flow)
+- =list-style-image= (specifies an image as the list item marker)
+
+If one of the property values above are missing, the default value for the missing property will be inserted, if any.
+
+** Styling List With Colors
+
+We can also style lists with colors, to make them look a little more interesting.
+
+Anything added to the <ol> or <ul> tag, affects the entire list, white properties added the <li> tag will affect the individual list items:
+
+*Example*
+#+begin_src css
+
+  ol {
+      background: #ff9999;
+      padding: 20px;
+  }
+
+  ul {
+      background: #3399ff;
+      padding: 20px;
+  }
+
+  ol li {
+      background: #ffe5e5;
+      color: darkred;
+      padding: 5px;
+      margin-left: 35px;
+  }
+
+  ul li {
+      background: #cce5ff;
+      color: darkblue;
+      margin: 5px;
+  }
+
+#+end_src
+
+* Table Borders
+** Table Borders
+
+To specify table borders in CSS, use the =border= property.
+
+The example below specifies a solid border for <table>, <th>, and <td> elements:
+
+*Example*
+#+begin_src css
+
+  table, th, td {
+      border: 1px solid;
+  }
+
+#+end_src
+
+** Full-Width Table
+
+The table above might seem small in some cases. If you need a table that should span the entire screen (full-width), add =width: 100%= to the <table> element:
+
+*Example*
+#+begin_src css
+
+  table {
+      width: 100%;
+  }
+
+#+end_src
+
+** Double Borders
+
+Notice that the table in the examples above have double borders. This is because both the table and the <th> and <td> elements have separate borders.
+
+To remove double borders, take a look at the example below.
+
+** Collapse Table Borders
+
+The =border-collapse= property sets whether the table borders shoulb be collapsed into a single border:
+
+*Example*
+#+begin_src css
+
+  table {
+      border-collapse: collapse;
+  }
+
+#+end_src
+
+If you only want a border around the table, only specify the =border= property for <table>:
+
+*Example*
+#+begin_src css
+
+  table {
+      border: 1px solid;
+  }
+
+#+end_src
+
+* Table Size
+** Table Width and Height
+
+The width and height of a table are defined by the =width= and =height= properties.
+
+The example below sets the width of the table to 100%, and the height of the <th> elements to 70px:
+
+*Example*
+#+begin_src css
+
+  table {
+      width: 100%;
+  }
+
+  th {
+      height: 70px;
+  }
+
+#+end_src
+
+To create a table that should only span half the page, use =width: 50%=:
+
+*Example*
+#+begin_src css
+
+  table {
+      width: 50%;
+  }
+
+#+end_src
+
+* Table Alignment
+** Horizontal Alignment
+
+The =text-align= property sets the horizontal alignment (like left, right, or center) of the content in <th> or <td>.
+
+By default, the content of <th> elements are center-aligned and the content of <td> elements are left-aligned.
+
+To center-align the content of <td> elements as well, use =text-align: center=:
+
+*Example*
+#+begin_src css
+
+  td {
+      text-align: center;
+  }
+
+#+end_src
+
+To left-align the content, force the alignment of <th> elements to be left-aligned with the =text-align: left= property:
+
+*Example*
+#+begin_src css
+
+  th {
+      text-align: left;
+  }
+
+#+end_src
+
+** Vertical Alignment
+
+The =vertical-align= property sets the vertical alignment (like top, bottom, or middle) of the content in <th> or <td>.
+
+By default, the vertical alignment of the content in a table is middle (for both <th> and <td> elements).
+
+The following example sets the vertical text alignment to bottom for <td> elements:
+
+*Example*
+#+begin_src css
+
+  td {
+      height: 50px;
+      vertical-align: bottom;
+  }
+
+#+end_src
+
+* Table Style
+** Table Padding
+
+To control the space between the border and the content in a table, use the =padding= property on <td> and <th> elements:
+
+*Example*
+#+begin_src css
+
+  th, td {
+      padding: 15px;
+      text-align: left;
+  }
+
+#+end_src
+
+** Horizontal Dividers
+
+Add the =border-bottom= property to <th> and <td> for horizontal dividers:
+
+*Example*
+#+begin_src css
+
+  th, td {
+      border-bottom: 1px solid #ddd;
+  }
+
+#+end_src
+
+** Hoverable Table
+
+Use the =:hover= selector on <tr> to highlight table rows on mouse over:
+
+*Example*
+#+begin_src css
+
+  tr:hover {
+      background-color: coral;
+  }
+
+#+end_src
+
+** Striped Tables
+
+For zebra-striped tables, use the =nth-child()= selector and add a =background-color= to all even (or odd) table rows:
+
+*Example*
+#+begin_src css
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+
+#+end_src
+
+** Table Color
+
+The example below specifies the background color and text color of <th> elements:
+
+*Example*
+#+begin_src css
+
+  th {
+      background-color: #04AA6D;
+      color: white;
+  }
+
+#+end_src
+
+* Table Responsive
+** Responsive Table
+
+A responsive table will display a horizontal scroll bar if the screen is too small to display the full content:
+
+Add a container element (like <div>) with =overflow-x:auto= around the <table> element to make it reponsive:
+
+*Example*
+#+begin_src html
+
+  <div style="overflow-x:auto;">
+
+  <table>
+    ... table content ...
+  </table>
+
+  </div>
+
+#+end_src
+
+*Note*: In OS X Lion (on Mac), scrollbars are hidden by default and only shown when being used (even though "overflow:scroll" is set).
+
+* Display
+** The display Property
+
+The =display= property specifies if/how an element is displayed.
+
+The =display= property is the most important CSS property for controlling layout.
+
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is =block= or =inline=.
+
+** Block-level Elements
+
+A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as fas as it can).
+
+Examples of block-level elements:
+
+- <div>
+- <h1> - <h6>
+- <p>
+- <form>
+- <header>
+- <footer>
+- <section>
+
+** Inline Elements
+
+An inline element does not start on a new line and only takes up as much width as necessary.
+
+Examples of inline elements:
+
+- <span>
+- <a>
+- <img>
+
+** Display: none;
+
+=display: none;= is commonly used with JavaScript to hide and show elements without deleting and recreating them. Take a look at our last example on this page if you want to know how this can be achieved.
+
+The =<script>= element uses =display: none;= as default.
+
+** Override The Default Display Value
+
+As mentioned, every element has a default display value. However, you can override this.
+
+Changing an inline element to a block element, or vice versa, can be useful for making the page look a specific way, and still follow the web standards.
+
+A common example is making inline =<li>= elements for horizontal manus:
+
+*Example*
+#+begin_src css
+
+  li {
+      display: inline;
+  }
+
+#+end_src
+
+*Note*: Setting the display property of an element only changes *how the element is displayed*, NOT what kind of element it is. So, an inline element with =display: block;= is not allowed to have other block elements inside it.
+
+The following example displays <span> elements as block elements:
+
+*Example*
+#+begin_src css
+
+  span {
+      display: block;
+  }
+
+#+end_src
+
+The following example displays <a> elements as block elements:
+
+*Example*
+#+begin_src css
+
+  a {
+      display: block;
+  }
+
+#+end_src
+
+** Hide an Element - display:none or visibility:hidden?
+
+Hiding an element can be done by setting the =display= property to =none=. The element will be hidden, and the page will be displayed as if the element is not there:
+
+*Example*
+#+begin_src css
+
+  h1.hidden {
+      display: none;
+  }
+
+#+end_src
+
+=visibility:hidden;= also hides an element.
+
+However, the element will still take up the same space as before. The element will be hidden, but still affect the layout:
+
+*Example*
+#+begin_src css
+
+  h1.hidden {
+      visibility: hidden;
+  }
+
+#+end_src
+
+* Max-width
+** Using width, max-width and margin: auto;
+
+As mentioned in the previous chapter; a block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+
+Setting the =width= of a block-level element will prevent it from stretching out to the edges of its container. Then, you can set the margins to auto, to horizontally center the element withit its container. The element will take up the specified width, and the remaining space will be split equally between the two margins:
+
+*Note*: The problem with the =<div>= above occurs when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page.
+
+Using =max-width= instead, in this situation, will improve the browser's handling of small windows. This is important when making a site usable on small devices:
+
+*Tip*: Resize the browser window to less than 500px wide, to see the difference between the two divs!
+
+Here is an example of the two divs above:
+
+*Example*
+#+begin_src css
+
+  div.ex1 {
+      width: 500px;
+      margin: auto;
+      border: 3px solid #73AD21;
+  }
+
+  div.ex2 {
+      max-width: 500px;
+      margin: auto;
+      border: 3px solid #73AD21;
+  }
+
+#+end_src
+
+* Position
+** The position Property
+
+The =position= property specifies the type of positioning method used for an element.
+
+There are five different position values:
+
+- =static=
+- =relative=
+- =fixed=
+- =absolute=
+- =sticky=
+
+Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the =position= property is set first. They also work differently depending on the position value.
+
+** position: static;
+
+HTML elements are positioned static by default.
+
+Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+An element with =position: static;= is not positioned in any special way; it is always positioned according to the normal flow of the page.
+
+*Example*
+#+begin_src css
+
+  div.static {
+      position: static;
+      border: 3px solid #73AD21;
+  }
+
+#+end_src
+
+** position: relative;
+
+An element with =position: relative;= is positioned relative to its normal position.
+
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+
+*Example*
+#+begin_src css
+
+  div.relative {
+      position: relative;
+      left: 30px;
+      border: 3px solid #73AD21;
+  }
+
+#+end_src
+
+** position: fixed;
+
+An element with =position: fixed;= is positioned relative to the viewport, which means it always stays in the same placed even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
+A fixed element does not leave a gapt in the page where it would normally have been located.
+
+*Example*
+#+begin_src css
+
+  div.fixed {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      border: 3px solid #73AD21;
+  }
+
+#+end_src
+
+** position: absolute;
+
+An element with =position: absolute;= is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+However, if an absolute positioned element has no positioned acestors, it used the document body, and moves along with page scrolling.
+
+*Note*: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+*Example*
+#+begin_src css
+
+  div.relative {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      border: 3px solid #73AD21;
+  }
+
+  div.absolute {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 200px;
+      height: 100px;
+      border: 3px solid #73AD21;
+  }
+
+#+end_src
+
+** position: sticky;
+
+An element with =position: sticky;= is positioned based on the user's scroll position.
+
+A sticky element toggles between =relative= and =fixed=, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "stiks" in place (like position:fixed).
+
+*Note*: Internet Explorer does not support sticky positioning. Safari requires a webkit prefix (see example below). You must also specify at least one of =top=, =right=, =bottom=, or =left= for sticky positioning to work.
+
+In this example, the sticky element sticks to the top of the page (=top: 0=), when you reach its scroll position.
+
+*Example*
+#+begin_src css
+
+  div.sticky {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      background-color: green;
+      border: 2px solid #4CAF50;
+  }
+
+#+end_src
+
+* Z-index
+** The z-index Property
+
+When elements are positioned, they can overlap other elements.
+
+The =z-index= property specifies the stack order of an element (which element should be placed in from of, or behind, the others).
+
+An element can have a position or negative stack order.
+
+[[file:~/OrgBook/pictures/z-index.png]]
+
+*Example*
+#+begin_src css
+
+  img {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+  }
+
+#+end_src
+
+*Note*: =z-index= only works on _positioned elements_ (position: absolute, position: relative, position: fixed, or position: sticky) and _flex items_ (elements that are direct children of display: flex elements).
+
+** Another z-index Example
+
+*Example*
+
+Here we see that an element with greater stack order is always above an element with a lower stack order:
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        .container {
+          position: relative;
+        }
+
+        .black-box {
+          position: relative;
+          z-index: 1;
+          border: 2px solid black;
+          height: 100px;
+          margin: 30px;
+        }
+
+        .gray-box {
+          position: absolute;
+          z-index: 3;
+          background: lightgray;
+          height: 60px;
+          width: 70%;
+          left: 50px;
+          top: 50px;
+        }
+
+        .green-box {
+          position: absolute;
+          z-index: 2;
+          background: lightgreen;
+          height: 100px;
+          width: 35%;
+          left: 270px;
+          top: -15px;
+        }
+      </style>
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="black-box">Black box</div>
+        <div class="gray-box">Gray box</div>
+        <div class="green-box">Green box</div>
+      </div>
+
+    </body>
+  </html>
+
+#+end_src
+
+** Without z-index
+
+If two positioned elements overlap each other without a =z-index= specified, the element defined *last in the HTML code* will be shown on top.
+
+*Example*
+
+Same example as above, but here with no z-index specified:
+#+begin_src html
+
+
+
+#+end_src
+
+* Overflow
+** CSS Overflow
+
+The =overflow= property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+The =overflow= property has the following value:
+
+- =visible= - Default. The overflow is not clipped. The content renders outside the element's box
+
+- =hidden= - The overflow is clipped, and the rest of the content will be visible
+
+- =scroll= - The overflow is clipped, and a scrollbar is added to see the rest of the content
+
+- =auto= - Similar to =scroll=, but it adds scrollbars only when necessary
+
+*Note*: The =overflow= property only works for block elements with a specified height.
+
+*Note*: In OS X Lion (on Mac), scrollbars are hidden by default and only shown when being used (even though "overflow:scroll" is set).
+
+** overflow: visible
+
+By default, the overflow is =visible=, meaning that it is not clipped and it renders outside the element's box:
+
+*Example*
+#+begin_src css
+
+  div {
+      width: 200px;
+      height: 65px;
+      background-color: coral;
+      overflow: visible;
+  }
+
+#+end_src
+
+** overflow: hidden
+
+With the =hidden= value, the overflow is clipped, and the rest of the content is hidden:
+
+*Example*
+#+begin_src css
+
+  div {
+      overflow: hidden;
+  }
+
+#+end_src
+
+** overflow: scroll
+
+Setting the value to =scroll=, the overflow is clipped and a scrollbar is added to scroll inside the box. Note that this will add a scrollbar both horizontally and vertically (even if you do not need it).
+
+*Example*
+#+begin_src css
+
+  div {
+      overflow: scroll;
+  }
+
+#+end_src
+
+** overflow: auto
+
+The =auto= value is similar to =scroll=, but it adds scrollbars only when necessary.
+
+*Example*
+#+begin_src css
+
+  div {
+      overflow: auto;
+  }
+
+#+end_src
+
+** overflow-x and overflow-y
+
+The =overflow-x= and =overflow-y= properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+
+- =overflow-x= specifies what to do with the left/right edges of the content.
+- =overflow-y= specifies what to do with the top/bottom edges of the content.
+
+*Example*
+#+begin_src css
+
+  div {
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      overflow-y: scroll; /* Add vertical scrollbar */
+  }
+
+#+end_src
+
+* Float
+** The float Property
+
+The CSS =float= property specifies how an element should float.
+
+The CSS =clear= property specifies what elements can float beside the cleared element and on which side.
+
+The =float= property is used for positioning and formatting content e.g. let an image float left to the text in a container.
+
+The =float= property can have on of the following value:
+
+- =left= - The element floats to the left of its container
+
+- =right= - The element floats to the right of its container
+
+- =none= - The element does not float (will be displayed just where it occures in the text). This is default
+
+- =inherit= - The element inherits the float value of its parent
+
+In its simplest use, the =float= property can be used to wrap text around images.
+
+** Example - float: right;
+
+The following example specifies that an image should float to the *right* in a text:
+
+[[file:~/OrgBook/pictures/float.png]]
+
+*Example*
+#+begin_src css
+
+  img {
+      float: right;
+  }
+
+#+end_src
+
+** Example - float: left;
+
+The following example specifies that an image should float to the *left* in a text:
+
+[[file:~/OrgBook/pictures/float-left.png]]
+
+*Example*
+#+begin_src css
+
+  img {
+      float: left;
+  }
+
+#+end_src
+
+** Example - No float
+
+In the following example the image will be displayed just where it occurs in the text (float: none;):
+
+[[file:~/OrgBook/pictures/float-none.png]]
+
+*Example*
+#+begin_src css
+
+  img {
+      float: none;
+  }
+
+#+end_src
+
+** Example - Float Next To Each Other
+
+Normally div elements will be displayed on top of each other. However, if we use =float: left= we can let elements float next to each other:
+
+*Example*
+#+begin_src css
+
+  div {
+      float: left;
+      padding: 15px;
+  }
+
+  .div1 {
+      background: red;
+  }
+
+  .div2 {
+      background: yellow;
+  }
+
+  .div3 {
+      background: green;
+  }
+
+#+end_src
+
+* Float Clear
+** The clear Property
+
+When we use the =float= property, and we want the next element below (not on right or left), we will have to use the =clear= property.
+
+The =clear= property specifies what should happen with the element that is next to a floating element.
+
+The =clear= property can have one of the following values:
+
+- =none= - The element is not pushed below left or right floated elements. This is default
+- =left= - The element is pushed below left floated elements
+- =right= - The element is pushed below right floated elements
+- =both= - The element is pushed below both left and right floated elements
+- =inherit= - The element inherits the clear value from its parent
+
+When clearing floats, you should match the clear to the float: If an element is floated to the left, then you should clear to the left. Your floated element will continue to float, but the cleared element will appear below it on the web page.
+
+*Example*
+
+This example clears the float to the left. Here, it means that the <div2> element is pushed below the left floated <div1> element:
+#+begin_src css
+
+  div1 {
+      float: left;
+  }
+
+  div2 {
+      clear: left;
+  }
+
+#+end_src
+
+** The clearfix Hack
+
+If a floated element is taller than the containing element, it will "overflow" outside of its container. We can then add a clearfix hack to solve this problem:
+
+[[file:~/OrgBook/pictures/clearfix.png]]
+
+#+begin_src css
+
+  .clearfix {
+      overflow: auto;
+  }
+
+#+end_src
+
+The =overflow: auto= clearfix works well as long as you are able to keep control of your margins and padding (else you might see scrollbars). The *new, modern clearfix hack* however, is safer to use, and the following code is used for most webpages:
+
+*Example*
+#+begin_src css
+
+  .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+#+end_src
+
+* Inline-block
+** The display: inline-block Value
+
+Compared to =display: inline=, the major difference is that =display: inline-block= allows to set a width and height on the element.
+
+Also, with =display: inline-block=, the top and bottom margins/paddings are respected, but with =display: inline= they are not.
+
+Compared to =display: block=, the major difference is that =display: inline-block= does not add a line-break after the element, so the element can sit next to other elements.
+
+The following example shows the different behavior of =display: inline=, =display: inline-block= and =display:block=:
+
+#+begin_src css
+
+  span.a {
+      display: inline; /* the default for span */
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      border: 1px solid blue;
+      background-color: yellow;
+  }
+
+  span.b {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      border: 1px solid blue;
+      background-color: yellow;
+  }
+
+  span.c {
+      display: block;
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      border: 1px solid blue;
+      background-color: yellow;
+  }
+
+#+end_src
+
+** Using inline-block to Create Navigation Links
+
+One common use for =display: inline-block= is to display list items horizontally instead of vertically. The following example creates horizontal navigation links:
+
+*Example*
+#+begin_src css
+
+  .nav {
+      background-color: yellow;
+      list-style-type: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+  }
+
+  .nav li {
+      display: inline-block;
+      font-size: 20px;
+      padding: 20px;
+  }
+
+#+end_src
+
+* Align
+** Center Align Elements
+
+To horizontally center a block of element (like <div>), use =margin: auto;=
+
+Setting the width of the element will prevent it from stretching out to the edges of its container.
+
+The element will then take up the specified width, and the remaining space will be split between the two margins:
+
+*Example*
+#+begin_src css
+
+  .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+  }
+
+#+end_src
+
+*Note*: Center aligning has no effect if the =width= property is not set (or set to 100%).
+
+** Center Align Text
+
+To just center the text inside an element, use =text-align: center;=
+
+*Example*
+#+begin_src css
+
+  .center {
+      text-align: center;
+      border: 3px solid green;
+  }
+
+#+end_src
+
+** Center an Image
+
+To center an image, set left and right margin to =auto= and make it into a =block= element:
+
+*Example*
+#+begin_src css
+
+  img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+  }
+
+#+end_src
+
+** Left and Right Align - Using position
+
+One method for aligning elements is to use =position: absolute;=
+
+*Example*
+#+begin_src css
+
+  .right {
+      position: absolute;
+      right: 0px;
+      width: 300px;
+      border: 3px solid #73AD21;
+      padding: 10px;
+  }
+
+#+end_src
+
+*Note*: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+** Left and Right Align - Using float
+
+Another method for aligning elements is to use the =float= property:
+
+*Example*
+#+begin_src css
+
+  .right {
+      float: right;
+      width: 300px;
+      border: 3px solid #73AD21;
+      padding: 10px;
+  }
+
+#+end_src
+
+** Center Vertically - Using padding
+
+There are many ways to center an element vertically in CSS. A simple solution is to use top and bottom =padding=:
+
+*Example*
+#+begin_src css
+
+  .center {
+      padding: 70px 0;
+      border: 3px solid green;
+  }
+
+#+end_src
+
+To center both vertically and horizontally, use =padding= and =text-align: center=:
+
+*Example*
+#+begin_src css
+
+  .center {
+      padding: 70px 0;
+      border: 3px solid green;
+      text- align: center;
+  }
+
+#+end_src
+
+** Center Vertically - Using line-height
+
+Another trick is to use the =line-height= property with a value that is equal to the =height= property:
+
+*Example*
+#+begin_src css
+
+  .center {
+      line-height: 200px;
+      height: 200px;
+      border: 3px solid green;
+      text-align: center;
+  }
+
+  /* If the text has multiple lines, add the following: */
+
+  .center p {
+      line-height: 1.5;
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+#+end_src
+
+** Center Vertically - Using position & transform
+
+If =padding= and =line-height= are not options, another solution is to use positioning and the =transform= property:
+
+*Example*
+#+begin_src css
+
+  .center {
+      height: 200px;
+      position: relative;
+      border: 3px solid green;
+  }
+
+  .center p {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+#+end_src
+
+** Center Vertically - Using Flexbox
+
+You can also use flexbox to center things. Just note that flexbox is not supported in IE10 and earlier versions:
+
+*Example*
+#+begin_src css
+
+  .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      border: 3px solid green;
+  }
+
+#+end_src
+
+* Combinators
+** CSS Combinators
+
+A combinator is something that explains the relationship between the selectors.
+
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+There are four different combinators in CSS:
+
+- descendant selector (space)
+- child selector (>)
+- adjacent sibling selector (+)
+- general sibling selector (~)
+
+** Descendant Selector
+
+The descendant selector matches all elements that are descendants of a specified element.
+
+The following example selects all <p> elements inside <div> elements:
+
+*Example*
+#+begin_src css
+
+  div p {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** Child Selector (>)
+
+The child selector selects all elements that are the children of a specified element.
+
+The following exampole selects all <p> elements that are children of a <div> element:
+
+*Example*
+#+begin_src css
+
+  div > p {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** Adjacent Sibling Selector (+)
+
+The adjacent sibling selector is used to select an element that is directly after another specific element.
+
+Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+The followign example selects the first <p> element that are placed immediately after <div> element:
+
+*Example*
+#+begin_src css
+
+  div + p {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** General Sibling Selector (~)
+
+The general sibling selector selects all elements that are next siblings of a specified element.
+
+The following example selects all <p> elements that are next siblings of <div> elements:
+
+*Example*
+#+begin_src css
+
+  div ~ p {
+      background-color: yellow;
+  }
+
+#+end_src
+
+* Pseudo-classes
+** What are Pseudo-classes?
+
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+- Style an element when a user mouses over it
+- Style visited and unvisited links differently
+- Style an element when it gets focus
+
+** Syntax
+
+The syntax of pseudo-classes:
+
+#+begin_src css
+
+  selector:pseudo-class {
+      property: value;
+  }
+
+#+end_src
+
+** Anchor Pseudo-classes
+
+Links can be displayed in different ways:
+
+*Example*
+#+begin_src css
+
+  /* unvisited link */
+  a:link {
+      color: #FF0000;
+  }
+
+  /* visited link */
+  a:visited {
+      color: #00FF00;
+  }
+
+  /* mouse over link */
+  a:hover {
+      color: #FF00FF;
+  }
+
+  /* selected link */
+  a:active {
+      color: #0000FF;
+  }
+
+#+end_src
+
+*Note*: =a:hover= MUST come after =a:link= and =a:visited= in the CSS definition in order to be effective! =a:active= MUST come after =a:hover= in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+** Pseudo-classes and HTML Classes
+
+Pseudo-classes can be combined with HTML classes:
+
+When you hover over the link in the example, it will change color:
+
+*Example*
+#+begin_src css
+
+  a.highlight:hover {
+      color: #FF0000;
+  }
+
+#+end_src
+
+** Hover on <div>
+
+An example of using the =:hover= pseudo-class on a <div> element:
+
+*Example*
+#+begin_src css
+
+  div:hover {
+      background-color: blue;
+  }
+
+#+end_src
+
+** Simple Tooltip Hover
+
+Hover over a <div> element to show a <p> element (like a tooltip):
+
+*Example*
+#+begin_src css
+
+  p {
+      display: none;
+      background-color: yellow;
+      padding: 20px;
+  }
+
+  div:hover p {
+      display: block;
+  }
+
+#+end_src
+
+** CSS - The :first-child Pseudo-class
+
+The =:first-child= pseudo-class matches a specified element that is the first child of another element.
+
+** Match the first <p> element
+
+In the following example, the selector matches any <p> element that is the first child of any element.
+
+*Example*
+#+begin_src css
+
+  p:first-child {
+      color: blue;
+  }
+
+#+end_src
+
+** Match the first <i> element in all <p> elements
+
+In the following example, the selector matches the first <i> element in all <p> elements:
+
+*Example*
+#+begin_src css
+
+  p i:first-child {
+      color: blue;
+  }
+
+#+end_src
+
+** Match all <i> elements in all first child <p> elements
+
+In the following example, the selector matches all <i> elements in <p> elements that are the first child of another element:
+
+*Example*
+#+begin_src css
+
+  p:first-child i {
+      color: blue;
+  }
+
+#+end_src
+
+** CSS - The :lang Pseudo-class
+
+The =:lang= pseudo-class allows you to define special rules for different languages.
+
+In the example below, =:lang= defines the quotation marks for <q> elements with lang="no":
+
+*Example*
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        q:lang(no) {
+          quotes: "~" "~";
+        }
+      </style>
+    </head>
+    <body>
+
+      <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+
+    </body>
+  </html>
+
+#+end_src
+
+* Pseudo-elements
+** What are Pseudo-Elements?
+
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+
+- Style the first letter, or line, of an element
+- Insert content before, or after, the content of an element
+
+** Syntax
+
+The syntax of pseudo-elements:
+#+begin_src css
+
+  selector::pseudo-element {
+      property: value;
+  }
+
+#+end_src
+
+** The ::first-line Pseudo-element
+
+The =::first-line= pseudo-element is used to add a special style to the first line of a text.
+
+The following example formats the first line of the text in all <p> elements:
+
+*Example*
+#+begin_src css
+
+  p::first-line {
+      color: #ff0000;
+      font-variant: small-caps;
+  }
+
+#+end_src
+
+*Note*: The =::first-line= pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the =::first-line= pseudo-element:
+
+- font properties
+- color properties
+- background properties
+- word-spacing
+- letter-spacing
+- text-decoration
+- vertical-align
+- text-transform
+- line-height
+- clear
+
+*Notice the double color notation -* =::first-line= versus =:first-line=
+
+The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was attempt from W3C to distinguish between *pseudo-classes* and *pseudo-elements*.
+
+The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.
+
+For backward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements.
+
+** The ::first-letter Pseudo-element
+
+The =::first-letter= pseudo-element is used to add a special style to the first letter of a text.
+
+The following example formats the first letter of the text in all <p> elements:
+
+*Example*
+#+begin_src css
+
+  p::first-letter {
+      color: #ff0000;
+      font-size: xx-large;
+  }
+
+#+end_src
+
+*Note*: The =::first-letter= pseudo-element can only be applied to block-level elements.
+
+The following properties apply the the ::first-letter pseudo-element:
+
+- font properties
+- color properties
+- background properties
+- margin properties
+- padding properties
+- border properties
+- text-decoration
+- vertical-align (only if "float" is "none")
+- text-transform
+- line-height
+- float
+- clear
+
+** Pseudo-elements and HTML Classes
+
+Pseudo-elements can be combined with HTML classes:
+
+*Example*
+#+begin_src css
+
+  p.intro::first-letter {
+      color: #ff0000;
+      font-size: 200%;
+  }
+
+#+end_src
+
+The example above will display the first letter of paragraphs with class="intro", in red and in a larger size.
+
+** Multiple Pseudo-elements
+
+Several pseudo-elements can also be combined
+
+In the following example, the first letter of a paragraph will be red, in an xx-large font size. The rest of the first line will be blue, and in small-caps. The rest of the paragraph will be the default font size and color.
+
+*Example*
+#+begin_src css
+
+  p::first-letter {
+      color: #ff0000;
+      font-size: xx-large;
+  }
+
+  p::first-line {
+      color: #0000ff;
+      font-variant: small-caps;
+  }
+
+#+end_src
+
+** CSS - The ::before Pseudo-element
+
+The =::before= pseudo-element can be used to insert some content before the content of an element.
+
+The following example inserts an image before the content of each <h1> element:
+
+*Example*
+#+begin_src css
+
+  h1::before {
+      content: url(smiley.gif);
+  }
+
+#+end_src
+
+** CSS - The ::after Pseudo-element
+
+The =::after= pseudo-element can be used to insert some content after the content of an element.
+
+The following example inserts an image after the content of each <h1> element:
+
+*Example*
+#+begin_src css
+
+  h1::after {
+      content: url(smiley.gif);
+  }
+
+#+end_src
+
+** CSS - The ::marker Pseudo-element
+
+The =::marker= pseudo-element selects the markers of list items.
+
+The following example styles the markers of list items:
+
+*Example*
+#+begin_src css
+
+  ::marker {
+      color: red;
+      font-size: 23px;
+  }
+
+#+end_src
+
+** CSS - The ::selection Pseudo-element
+
+The =::selection= pseudo-element matches the portion of an element that is selected by a user.
+
+The following CSS properties can be applied to =::selection=: =color=, =background=, =cursor=, and =outline=.
+
+The following example makes the selected text red on a yellow background:
+
+*Example*
+#+begin_src css
+
+  ::selection {
+      color: red;
+      background: yellow;
+  }
+
+#+end_src
+
+* Opacity/Transparency
+** Transparent Image
+
+The =opacity= property specifies the opacity/transparency of an element.
+
+The =opacity= property can take a value from 0.0 - 1.0. The lower value, the more transparent.
+
+[[file:~/OrgBook/pictures/transparent-image.png]]
+
+*Example*
+#+begin_src css
+
+  img {
+      opacity: 0.5;
+  }
+
+#+end_src
+
+** Transparent Hover Effect
+
+The =opacity= property is often used together with the =:hover= selector to change the opacity of mouse-over:
+
+*Example*
+#+begin_src css
+
+  img {
+      opacity: 0.5;
+  }
+
+  img:hover {
+      opacity: 1.0;
+  }
+
+#+end_src
+
+*Example explained*
+
+The first CSS block is similar to the code in Example 1. In addition, we have added what should happen when a user hovers over one of the images. In this case we want the image to NOT be transparent when the user hovers it. The CSS for this is =opacity:1;=.
+
+When the mouse pointer moves away from the image, the image will be transparent again.
+
+*Example*
+#+begin_src css
+
+  img:hover {
+      opacity: 0.5;
+  }
+
+#+end_src
+
+** Transparent Box
+
+When using the =opacity= property to add transparency to the background of an element, all of its child elements inherit the same transparency. This can make the text inside a fully transparent element hard to read:
+
+[[file:~/OrgBook/pictures/transparent-box.png]]
+
+*Example*
+#+begin_src css
+
+  div {
+      opacity: 0.3;
+  }
+
+#+end_src
+
+** Transparency using RGBA
+
+If you do not want to apply opacity to child elements, like in our example above, use *RGBA* color values. The following example sets the opacity for the background color and not the text:
+
+[[file:~/OrgBook/pictures/transparent-rgba.png]]
+
+An RGBA color value is specified with: rgba(red, green, blue, /alpha/). The /alpha/ parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
+
+*Example*
+#+begin_src css
+
+  div {
+      background: rgba(76, 175, 80, 0.3); /* 30% opacity */
+  }
+
+#+end_src
+
+** Text in Transparent Box
+
+[[file:~/OrgBook/pictures/transparent-box2.png]]
+
+*Example*
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        div.background {
+          background: url(klematis.jpg) repeat;
+          border: 2px solid black;
+        }
+
+        div.transbox {
+          margin: 30px;
+          background-color: #ffffff;
+          border: 1px solid black;
+          opacity: 0.6;
+        }
+
+        div.transbox p {
+          margin: 5%;
+          font-weight: bold;
+          color: #000000;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="background">
+        <div class="transbox">
+          <p>This is some text that is placed in the transparent box.</p>
+        </div>
+      </div>
+    </body>
+  </html>
+
+#+end_src
+
+* Navbar
+** Navigation Bars
+
+Having easy-to-use navigation is important for any web site.
+
+With CSS you can transform boring HTML menus into good-looking navigation bars.
+
+** Navigation Bar = List of Links
+
+A navigation bar needs standard HTML as a base.
+
+In our examples we will build the navigation bar from a standard HTML list.
+
+A navigation bar is basically a list of links, so using the <ul> and <li> elements makes perfect sense:
+
+*Example*
+#+begin_src html
+
+  <ul>
+    <li><a href="default.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+
+#+end_src
+
+Now let's remove the bullets and the margins and padding from the list:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  }
+
+#+end_src
+
+The code in the example above is the standard code used in both vertical, and horizontal navigation bars, which you will learn more about in the next chapters.
+
+* Vertical Navbar
+** Vertical Navigation Bar
+
+To build a vetical navigation bar, you can style the <a> elements inside the list, in addition to the code from the previous page:
+
+*Example*
+#+begin_src css
+
+  li a {
+      display: block;
+      width: 60px;
+  }
+
+#+end_src
+
+You can also set the width of <ul>, and remove the width of <a>, as they will take up the full width available when displayed as block elements. This will produce the same result as our previous example:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 60px;
+  }
+
+  li a {
+      display: block;
+  }
+
+#+end_src
+
+** Vertical Navigation Bar Examples
+
+Create a basic vertical navigation bar with a gray background color and change the background color of the links when the user moves the mouse over them:
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+  }
+
+  li a {
+      display: block;
+      color: #000000;
+      padding: 8px 16px;
+      text-decoration: none;
+  }
+
+  li a:hover {
+      background-color: #555555;
+      color: white;
+  }
+
+#+end_src
+
+** Active/Current Navigation Link
+
+Add an "active" class to the current link to let the user know which page he/she is on:
+
+*Example*
+#+begin_src css
+
+  .active {
+      background-color: #04AA6d;
+      color: white;
+  }
+
+#+end_src
+
+** Center Links & Add Borders
+
+Add =text-align:center= to <li> or <a> to center the links.
+
+Add the =border= property to <ul> add a border around the navbar. If you also want borders inside the navbar, add a =border-bottom= to all <li> elements, except for the last one:
+
+*Example*
+#+begin_src css
+
+  ul {
+      border: 1px solid #555555;
+  }
+
+  li {
+      text-align: center;
+      border-bottom: 1px solid #555555;
+  }
+
+  li:last-child {
+      border-bottom: none;
+  }
+
+#+end_src
+
+** Full-height Fixed Vertical Navbar
+
+Create a full-height, "sticky" side navigation:
+
+[[file:~/OrgBook/pictures/vertical-navbar.png]]
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      background-color: #f1f1f1;
+      height: 100%; /* Full height */
+      position: fixed; /* Make it stick, even on scroll */
+      overflow: auto; /* Enable scrolling if the sidenav has to much content */
+  }
+
+#+end_src
+
+*Note*: This example might not work properly on mobile devices.
+
+* Horizontal Navbar
+** Horizontal Navigation Bar
+
+There are two ways to create a horizontal navigation bar. Using *inline* or *floating* list items.
+
++ *Inline List Items*
+
+One way to build a horizontal navigation bar is to specify the <li> elements as inline, in addition to the "standard" code from the previous page.
+
+*Example*
+#+begin_src css
+
+  li {
+      display: inline;
+  }
+
+#+end_src
+
++ *Floating List Items*
+
+Another way of creating a horizontal navigation bar is to float the <li> elements, and specify a layout for the navigation links:
+
+*Example*
+#+begin_src css
+
+  li {
+      float: left;
+  }
+
+  a {
+      display: block;
+      padding: 8px;
+      background-color: #dddddd;
+  }
+
+#+end_src
+
+*Tip*: Add the background-color to <ul> instead of each <a> element if you want a full-width background color:
+
+*Example*
+#+begin_src css
+
+  ul {
+      background-color: #dddddd;
+  }
+
+#+end_src
+
+** Horizontal Navigation Bar Examples
+
+Create a basic horizontal navigation bar with a dark background color and change the background color of the links when the user moves the mouse over them:
+
+[[file:~/OrgBook/pictures/horizontal-navbar.png]]
+
+*Example*
+#+begin_src css
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+  }
+
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  /* Change the link color to #111111 (black) on hover */
+  li a:hover {
+      background-color: #111111;
+  }
+
+#+end_src
+
+** Active/Current Navigation Link
+
+Add an "active" class to the current link to let the user know which page he/she is on:
+
+[[file:~/OrgBook/pictures/navigation-link.png]]
+
+*Example*
+#+begin_src css
+
+  .active {
+      background-color: #04AA6d;
+  }
+
+#+end_src
+
+** Right-Align Links
+
+Righ-align links by floating the list items to the right (=float:right;=):
+
+[[file:~/OrgBook/pictures/right-align.png]]
+
+*Example*
+#+begin_src html
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right;"><a class="active" href="#about">About</a></li>
+  </ul>
+
+#+end_src
+
+** Fixed Navigation Bar
+
+Make the navigation bar stay at the top or the bottom of the page, even when the user scrolls the page:
+
+[[file:~/OrgBook/pictures/fixed-navbar.png]]
+
++ Fixed Top
+
+#+begin_src css
+
+  ul {
+      position: fixed;
+      top: 0;
+      width: 100%;
+  }
+
+#+end_src
+
++ Fixed Bottom
+
+#+begin_src css
+
+  ul {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
+
+#+end_src
+
+*Note*: Fixed position might not work properly on mobile devices.
+
+* Dropdowns
+** Basic Dropdown
+
+Create a dropdown box that appears when the user moves the mouse over an element.
+
+*Example*
+#+begin_src html
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+
+  <div class="dropdown">
+    <span>Mouse over me</span>
+    <div class="dropdown-content">
+      <p>Hello World!</p>
+    </div>
+  </div>
+
+#+end_src
+
+** Dropdown Menu
+
+Create a dropdown menu that allows the user to choose an option from the list.
+
+This example is similar to the previous one, except that we add links inside the dropdown box and style them to fit a styled dropdown button:
+
+*Example*
+#+begin_src html
+
+  <style>
+    /* Style the Dropdown Button */
+    .dropbtn {
+      background-color: #4CAf50;
+      color: white;
+      padding: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* The container (div) - needed top position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+  </style>
+
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+
+#+end_src
+
+* Image Gallery
+** Image Gallery
+
+*Example*
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        div.gallery {
+          margin: 5px;
+          border: 1px solid #cccccc;
+          float: left;
+          width: 180px;
+        }
+
+        div.gallery:hover {
+          width: 100%;
+          height: auto;
+        }
+
+        div.desc {
+          padding: 15px;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="gallery">
+        <a href="img_5terre.jpg" target="_blank">
+          <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="gallery">
+        <a href="img_forest.jpg" target="_blank">
+          <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="gallery">
+        <a href="img_lights.jpg" target="_blank">
+          <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="gallery">
+        <a href="img_mountains.jpg" target="_blank">
+          <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </body>
+  </html>
+
+#+end_src
+
+* Image Sprites
+** Image Sprites
+
+An image sprite is a collection of images put into a single image.
+
+A web page with many images can take a long time to load and generates multiple server requests.
+
+Using image sprites will reduce the number of server requests and save bandwidth.
+
+** Image Sprites - Simple Example
+
+Instead of using three separate images, we use this single image ("img_navsprites.gif")
+
+[[file:~/OrgBook/pictures/imgsprite.png]]
+
+With CSS, we can show just the part of the image we need.
+
+In the following example the CSS specifies which part of the "img_navsprites.gif" image to show:
+
+*Example*
+#+begin_src css
+
+  #home {
+      width: 46px;
+      height: 44px;
+      background: url(img_navsprites.gif) 0 0;
+  }
+
+#+end_src
+
+** Image Sprites - Create a Navigation List
+
+We want to use the sprite image ("img_navsprites.gif") to create a navigation list.
+
+We will use an HTML list, because it can be a link and also supports a background image.
+
+*Example*
+#+begin_src css
+
+  #navlist {
+      position: relative;
+  }
+
+  #navlist li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: absolute;
+      top: 0;
+  }
+
+  #navlist li, #navlist a {
+      height: 44px;
+      display: block;
+  }
+
+  #home {
+      left: 0px;
+      width: 46px;
+      background: url('img_navsprites.gif') 0 0;
+  }
+
+  #prev {
+      left: 63px;
+      width: 43px;
+      background: url('img_navsprites.gif') -47px 0;
+  }
+
+  #next {
+      left: 129px;
+      width: 43px;
+      background: url('img_navsprites.gif') -91px 0;
+  }
+
+#+end_src
+
+** Image Sprites - Hover Effect
+
+Now we want to add a hover effect to our navigation list.
+
+*Tip*: The =:hover= selector can be used on all elements, not only on links.
+
+Our new image ("img_navsprites_hover.gif") contains three navigation images and three images to use for hover effects:
+
+[[file:~/OrgBook/pictures/hover-effect.png]]
+
+Because this is one single image, and not six separate files, there will be *no loading delay* when a user hovers over the image.
+
+We only add three lines of code to add the hover effect:
+
+*Example*
+#+begin_src css
+
+  #home a:hover {
+      background: url('img_navsprites_hover.gif') 0 -45px;
+  }
+
+  #prev a:hover {
+      background: url('img_navsprites_hover.gif') -47px -45px;
+  }
+
+  #next a:hover {
+      background: url('img_navsprites_hover.gif') -91px -45px;
+  }
+
+#+end_src
+
+* Attribute Selectors
+** Style HTML Elements With Specific Attributes
+
+It is possible to style HTML elements that have specific attributes or attributes values.
+
+** CSS [attribute] Selector
+
+The =[attribute]= selector is used to select elements with a specified attribute.
+
+The following example selects all <a> elements with a target attribute:
+
+*Example*
+#+begin_src css
+
+  a[target] {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** CSS [attribute="value"] Selector
+
+The *[attribute="value"]* selector is used to select elements with a specified attribute and value.
+
+The following example selects all <a> elements with a target="_blank" attribute:
+
+*Example*
+#+begin_src css
+
+  a[target="_blank"] {
+      background-color: yellow;
+  }
+
+#+end_src
+
+** CSS [attribute~="value"] Selector
+
+The *[attribute~="value"]* selector is used to select elements with an attribute value containing a specified word.
+
+The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+
+*Example*
+#+begin_src css
+
+  [title~="flower"] {
+      border: 5px solid yellow;
+  }
+
+#+end_src
+
+The example above will match elements with the title="flower", title="summer flower", and title="flower menu", but not title="my-flower" or title="flowers"
+
+** CSS [attribute|="value"] Selector
+
+The *[attribute|="value"]* selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+
+*Note*: The value has to be a whole word, either alone, like class="top", or followed by a hyphen (-), like class="top-text".
+
+*Example*
+#+begin_src css
+
+  [class|="top"] {
+      background: yellow;
+  }
+
+#+end_src
+
+** CSS [attribute^="value"] Selector
+
+The *[attribute^="value"]* selector is used to select elements with the specified attribute, whose value starts with the specified value.
+
+The following example selects all elements with a class attribute value that starts with "top":
+
+*Note*: The value does not have to be a whole word!
+
+*Example*
+#+begin_src css
+
+  [class^="top"] {
+      background: yellow;
+  }
+
+#+end_src
+
+** CSS [attribute$="value"] Selector
+
+The *[attribute$="value"]* selector is used to select elements whose attribute value ends with a specified value.
+
+The following example selects all elements with a class attribute value that ends with "test":
+
+*Note*: The value does not have to be a whole word!
+
+*Example*
+#+begin_src css
+
+  [class$="test"] {
+      background: yellow;
+  }
+
+#+end_src
+
+** CSS [attribute*="value"] Selector
+
+The *[attribute*="value"]* selector is used to select elements whose attribute value contains a specified value.
+
+The following example selects all elements with a class attribute value that contains "te":
+
+*Note*: The value does not have to be a whole word!
+
+*Example*
+#+begin_src css
+
+  [class*="te"] {
+      background: yellow;
+  }
+
+#+end_src
+
+** Styling Forms
+
+The attribute selectors can be useful for styling forms without class or ID:
+
+*Example*
+#+begin_src css
+
+  input[type="text"] {
+      width: 150px;
+      display: block;
+      margin-bottom: 10px;
+      background-color: yellow;
+  }
+
+  input[type="button"] {
+      width: 120px;
+      margin-left: 35px;
+      display: block;
+  }
+
+#+end_src
+
+* Forms
+** HTML form can be greatly improved with CSS
+
+[[file:~/OrgBook/pictures/form.png]]
+
+** Styling Input Fields
+
+Use the =width= property to determine the width of the input field:
+
+*Example*
+#+begin_src css
+
+  input {
+      width: 100%;
+  }
+
+#+end_src
+
+The example above applies to all <input> elements. If you only want to style a specific input type, you can use attribute selectors:
+
+- =input[type=text]= - will only select text fields
+- =input[type=password]= - will only select password fields
+- =input[type=number]= - will only select number fields
+- etc...
+
+** Padded Inputs
+
+Use the =padding= property to add space inside the text field.
+
+*Tip*: When you have many inputs after each other, you might also want to add some =margin=, to add more space outside of them:
+
+[[file:~/OrgBook/pictures/padded-inputs.png]]
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+  }
+
+#+end_src
+
+Note that we have set the =box-sizing= property to =border-box=. This makes sure that the padding and eventually borders are included in the total width and height of the elements.
+
+** Bordered Inputs
+
+Use the =border= property to change the border size and color, and use the =border-radius= property to add rounded corners:
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      border: 2px solid red;
+      border-radius: 4px;
+  }
+
+#+end_src
+
+If you only want a bottom border, use the =border-bottom= property:
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      border: none;
+      border-bottom: 2px solid red;
+  }
+
+#+end_src
+
+** Colored Inputs
+
+Use the =background-color= property to add a background color to the input, and the =color= property to change the text color:
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      background-color: #3CBC8D;
+      color: white;
+  }
+
+#+end_src
+
+** Focused Inputs
+
+By default, some browsers will add a blue outline around the input when it gets focus (clicked on). You can remove this behavior by adding =outline: none;= to the input.
+
+Use the =:focus= selector to do something with the input field when it gets focus:
+
+*Example 1*
+#+begin_src css
+
+  input[type=text]:focus {
+      background-color: lightblue;
+  }
+
+#+end_src
+
+*Example 2*
+#+begin_src css
+
+  input[type=text]:focus {
+      border: 3px solid #555;
+  }
+
+#+end_src
+
+** Input with icon/image
+
+If you want an icon inside the input, use the =background-image= property and position it with the =background-position= property. Also notice that we add a large left padding to reserve the space of the icon:
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      background-color: white;
+      background-image: url('searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+  }
+
+#+end_src
+
+** Animated Search Input
+
+In this example we use the CSS =transition= property to animated the width of the search input when it gets focus. You will learn more about the =transition= property later.
+
+*Example*
+#+begin_src css
+
+  input[type=text] {
+      transition: width 0.4s ease-in-out;
+  }
+
+  input[type=text]:focus {
+      width: 100%;
+  }
+
+#+end_src
+
+** Styling Textareas
+
+*Tip*: Use the =resize= property to prevent textareas from being resized (disable the "grabber" in the bottom right corner):
+
+*Example*
+#+begin_src css
+
+  textarea {
+      width: 100%;
+      height: 150px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      resize: none;
+  }
+
+#+end_src
+
+** Styling Select Menus
+
+*Example*
+#+begin_src css
+
+  select {
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+  }
+
+#+end_src
+
+** Styling Input Buttons
+
+*Example*
+#+begin_src css
+
+  input[type=button], input[type=submit], input[type=reset] {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+  }
+
+  /* Tip: use width: 100% for full-width buttons */
+
+#+end_src
+
+* Counters
+** CSS Counters
+[[file:~/OrgBook/pictures/counters.png]]
+
+CSS counters are "variables" maintained by CSS whose values can be incremented by CSS rules (to track how many times they are used). Counters let you adjust the apperance of content based on its placement in the document.
+
+** Automatic Numbering With Counters
+
+CSS counters are like "variables". The variable values can be incremented by CSS rules (which will track how many times they are used).
+
+To work with CSS counters we will use the following properties:
+
+- =counter-reset= - Creates or resets a counter
+- =counter-increment= - Increments a counter value
+- =content= - Inserts generated content
+- =counter()= or =counters()= function -  Adds the value of a counter to an element
+
+To use a CSS counter, it must first be created with =counter-reset=.
+
+The following example creates a counter for the page (in the body selector), then increments the counter value for each <h2> element and adds "Section /<value of the counter>/:" to the beginning of each <h2> element:
+
+*Example*
+#+begin_src css
+
+  body {
+      counter-reset: section;
+  }
+
+  h2::before {
+      counter-increment: section;
+      content: "Section " counter(section) ": ";
+  }
+
+#+end_src
+
+** Nesting Counters
+
+The following example creates one counter for the page (section) and one counter for each <h1> element (subsection). The "section" counter will be counted for each <h1> element with "Section" /<value of the section counter>./", and the "subsection" counter will be counted for each <h2> element with "/<value of the section counter>.<value of the subsection counter>/":
+
+*Example*
+#+begin_src css
+
+  body {
+      counter-reset: section;
+  }
+
+  h1 {
+      counter-reset: subsection;
+  }
+
+  h1::before {
+      counter-increment: section;
+      content: "Section " counter(section) ". ";
+  }
+
+  h2::before {
+      counter-increment: subsection;
+      content: counter(section) "." counter(subsection) " ";
+  }
+
+#+end_src
+
+A counter can also be useful to make outlined lists because a new instance of a counter is automatically created in child elements. Here we use the =counters()= function to insert a string between different levels of nested counters:
+
+*Example*
+#+begin_src css
+
+  ol {
+      counter-reset: section;
+      list-style-type: none;
+  }
+
+  li::before {
+      counter-increment: section;
+      content: counters(section,".") " ";
+  }
+
+#+end_src
+
+* Website Layout
+** Website Layout
+
+A website is often divided into headers, menus, content and a footer:
+
+[[file:~/OrgBook/pictures/website-layout.png]]
+
+There are tons of different layout designs to choose from. However, the structure above, is one of the most common, and we will take a closer look at it in this tutorial.
+
+** Header
+
+A header is usually located at the top of the website (or right below a top navigation menu). It often contains a logo or the website name:
+
+*Example*
+#+begin_src css
+
+  .header {
+      background-color: #F1F1F1;
+      text-align: center;
+      padding: 20px;
+  }
+
+#+end_src
+
+*Result*
+
+[[file:~/OrgBook/pictures/header.png]]
+
+** Navigation Bars
+
+A navigation bar contains a list of links to help visitors navigating through your website:
+
+*Example*
+#+begin_src css
+
+  /* The navbar container */
+  .topnav {
+      overflow: hidden;
+      background-color: #333;
+  }
+
+  /* Navbar links */
+  .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  /* Links - change color on hover */
+  .topnav a:hover {
+      background-color: #dddddd;
+      color: black;
+  }
+
+#+end_src
+
+** Content
+
+The layout in this section, often depends on the target users. The most common layout is one (or combining them) of the following:
+
+- *1-column* (often used for mobile browsers)
+- *2-column* (often used for tablets and laptops)
+- *3-column layout* (only used for desktops
+
+[[file:~/OrgBook/pictures/content.png]]
+
+We will create 3-column layout, and change it to a 1-column layout on smaller screens:
+
+*Example*
+#+begin_src css
+
+  /* Create three equal columns that float next to each other */
+  .column {
+      float: left;
+      width: 33.33%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+  @media screen and (max-width: 600px) {
+      .column {
+          width: 100%;
+      }
+  }
+
+#+end_src
+
+*Tip*: To create a 2-column layout, change the width to 50%. To create a 4-column layout, use 25%, etc.
+
+** Unequal Columns
+
+The main content is the biggest and the most important part of your site.
+
+It is common with *unequal* column widths, so that most of the space is reserved for the main content. The side content (if any) is often used as an alternative navigation or to specify information relevant to the main content. Change the widths as you like, only remember that it should add up to 100% in total:
+
+*Example*
+#+begin_src css
+
+  .column {
+      float: left;
+  }
+
+  /* Left and right column */
+  .column.side {
+      width: 25%;
+  }
+
+  /* Middle column */
+  .column.middle {
+      width: 50%;
+  }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+      .column.side, .column.middle {
+          width: 100%;
+      }
+  }
+
+#+end_src
+
+*Result*
+
+[[file:~/OrgBook/pictures/unequal.png]]
+
+** Footer
+
+The footer is placed at the bottom of your page. It often contains information like copyright and contact info:
+
+*Example*
+#+begin_src css
+
+  .footer {
+      background-color: #F1F1F1;
+      text-align: center;
+      padding: 10px;
+  }
+
+#+end_src
+
+* Units
+** CSS Units
+
+CSS has several different units for expressing a length.
+
+Many CSS properties take "length" values, such as =width=, =margin=, =padding=, =font-size=, etc.
+
+*Length* is a number followed by a length unit, such as =10px=, =2em=, etc.
+
+*Example*
+
+Set different length values, using px (pixels)
+
+#+begin_src css
+
+  h1 {
+      font-size: 60px;
+  }
+
+  p {
+      font-size: 25px;
+      line-height: 50px;
+  }
+
+#+end_src
+
+*Note*: A whitespace cannot appear between the number and the unit. However, if the value is =0=, the unit can be omitted.
+
+For some CSS properties, negative lengths are allowed.
+
+There are two types of length units: *absolute* and *relative*.
+
+** Absolute Lengths
+
+The absolute length units are fixed and a length expressed in any of these will appear as exactly that size.
+
+Absolute length units are not recommended for use on screen, because screen sizes vary so much. However, they can be used if the output medium is known, such as print layout.
+
+| *Unit* | *Description*                  |
+|------+------------------------------|
+| cm   | centimeters                  |
+| mm   | millimeters                  |
+| in   | inches (1in = 96px = 2.54cm) |
+| px * | pixels (1px = 1/96th of 1in) |
+| pt   | points (1pt = 1/72 of in)    |
+| pc   | picas (1pc = 12pt)           |
+
+*Note*: * Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
+
+** Relative Lenghts
+
+Relative lenght units specify a lenght relative to another length property. Relative length units scales better between different rendering mediums.
+
+| *Unit* | *Description*                                                                               |
+|------+-------------------------------------------------------------------------------------------|
+| em   | Relative to the font-size of the element (2em means 2 times the size of the current font) |
+| ex   | Relative to the x-height of the current font (rarely used)                                |
+| ch   | Relative to width of the "0" (zero)                                                       |
+| rem  | Relative to font-size of the root element                                                 |
+| vw   | Relative to 1% of the width of the viewport*                                              |
+| vh   | Relative to 1% of viewport's* smaller dimension                                           |
+| vmin | Relative to 1% of viewport's* smaller dimension                                           |
+| vmax | Relative to 1% of viewport's* larger dimension                                            |
+| %    | Relative to the parent element                                                            |
+
+*Tip*: The em and rem units are practical in creating perfectly scalable layout! * Viewport = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
+
+* Specificity
+** What is Specificity?
+
+If there are two or more CSS rules that point to the same element, the selector with the highest specificity value will "win", and its style declaration will be applied to that HTML element.
+
+Think of specificity as a score/rank that determines which style declaration are ultimately applied to an element.
+
+Look at the following examples:
+
+*Example 1*
+
+In this example, we have used the "p" element as selector, and specified a red color for this element. The text will be red:
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        p {color: red;}
+      </style>
+    </head>
+    <body>
+      <p>Hello World!</p>
+    </body>
+  </html>
+
+#+end_src
+
+Now, look at example 2:
+
+*Example 2*
+
+In this example, we have added a class selector (named "test"), and specified a green color for this class. The text will now be green (even though we have specified a red color for the element selector "p". This is because the class selector is given higher priority:
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        .test {color: green;}
+        p {color: red;}
+      </style>
+    </head>
+    <body>
+      <p class="test">Hello World!</p>
+    </body>
+  </html>
+
+#+end_src
+
+Now, look at example 3:
+
+*Example 3*
+
+In this example, we have added the id selector (named "demo"). The text will now be blue, because the id selector is given higher priority:
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        #demo {color: blue;}
+        .test {color: green;}
+        p {color: red;}
+      </style>
+    </head>
+    <body>
+      <p id="demo" class="test">Hello World!</p>
+    </body>
+  </html>
+
+#+end_src
+
+Now, look at example 4:
+
+*Example 4*
+
+In this example, we have added an inline style for the "p" element. The text will now be pink, because the inline style is given the highest priority:
+#+begin_src html
+
+  <html>
+    <head>
+      <style>
+        #demo {color: blue;}
+        .test {color: green;}
+        p {color: red;}
+      </style>
+    </head>
+    <body>
+      <p id="demo" class="test" style="color:pink;">Hello World!</p>
+    </body>
+  </html>
+
+#+end_src
+
+** Specificity Hierarchy
+
+Every CSS selector has its place in the specificity hierarchy.
+
+There are four categories which define the specificity level of a selector:
+
+- *Inline styles* - Example: <h1 style="color: pink;">
+- *IDs* - Example: #navbar
+- *Classes, pseudo-classes, attribute selectors* - Example: .test, :hover, [href]
+- *Elements and pseudo-elements* - Example: h1, :before
+
+** How to Calculate Specificity?
+
+Memorize how to calculate specificity!
+
+Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class or attribute selector), add 1 for each element selector or pseudo-element.
+
+*Note*: Inline style gets a specificity value of 1000, and is always given the highest priority!
+
+*Note 2*: There is one exception to this rule: if you use the =!important= rule, it will even override inline styles!
+
+The table below shows some examples on how to calculate specificity values:
+
+| *Selector*                | *Specificity Value* | *Calculation*                    |
+|-------------------------+-------------------+--------------------------------|
+| p                       |                 1 | 1                              |
+| p.test                  |                11 | 1 + 10                         |
+| p#demo                  |               101 | 1 + 100                        |
+| <p style="color: pink;> |              1000 | 1000                           |
+| #demo                   |               100 | 100                            |
+| .test                   |                10 | 10                             |
+| p.test.test2            |                21 | 1 + 10 + 10                    |
+| #navbar p#demo          |               201 | 100 + 1 + 100                  |
+| *                       |                 0 | 0 (universal selector ignored) |
+
+*The selector with the highest specificity value will win and take effect!*
+
+Consider these three code fragments:
+
+*Example*
+#+begin_src html
+
+  A: h1
+  B: h1#content
+  C: <h1 id="content" style="color: pink;">Heading</h1>
+
+#+end_src
+
++ The specificity of A is 1 (one element selector)
++ The specificity of B is 101 (one ID reference + one element selector)
++ The specificity of C is 1000 (inline styling)
+
+Since the third rule (C) has the highest specificity value (1000), this style declaration will be applied.
+
+** More Specificity Rules Examples
+
+*Equal specificity: the latest rule wins* - If the same rule is written twice into the external style sheet, then the latest rule wins:
+
+*Example*
+#+begin_src css
+
+  h1 {background-color: yellow;}
+  h1 {background-color: red;}
+
+#+end_src
+
+*ID selectors have a higher specificity than attribute selectors* - Look at the following three code lines:
+
+*Example*
+#+begin_src css
+
+  div#a {background-color: green;}
+  #a {background-color: yellow;}
+  div[id=a] {background-color: blue;}
+
+#+end_src
+
+The first rule is more specific than the other two, and will therefore be applied.
+
+*Contextual selectors are more specific than a single element selector* - The embedded style sheet is closer to the element to be styled. So in the following situation
+
+*Example*
+#+begin_src html
+
+  <!-- FROM EXTERNAL CSS FILE: -->
+  #content h1 {background-color: red;}
+
+  <!-- IN HTML FILE: -->
+  <style>
+    #content h1 {background-color: yellow;}
+  </style>
+
+#+end_src
+
+The latter rule will be applied.
+
+*A class selector beats any number of element selectors* - A class selector such as .intro beats h1, p, div, etc:
+
+*Example*
+#+begin_src css
+
+  .intro {background-color: yellow;}
+  h1 {background-color: red;}
+
+#+end_src
+
+*The universal selector * and inherited values have a specificity of 0* - The universal selector * and inherited values are ignored!
+
+* !important
+** What is !important?
+
+The =!important= rule in CSS is used to add more importance to a property/value than normal.
+
+If fact, if you use the =!important= rule, it will override ALL previous styling rules for that specific property on that element!
+
+Let us look at an example:
+
+*Example*
+#+begin_src css
+
+  #myid {
+      background-color: blue;
+  }
+
+  .myclass {
+      background-color: gray;
+  }
+
+  p {
+      background-color: red !important;
+  }
+
+#+end_src
+
+*Example Explained*
+
+In the example above. All three paragraphs will get a red background color, even though the ID selector and the class selector has a higher specificity. The =!important= rule overrides the =background-color= property in both classes.
+
+** Important About !important
+
+The only way to override an =!important= rule is to include another =!important= rule on a declaration with the same (or higher) specificity in the source code - and here the problem starts! This make the CSS code confusing and the debugging will be hard, especially if you have a large style sheet!
+
+Here we have created a simple example. IT is not very clear, when you look the CSS source code, which color is considered most important:
+
+*Example*
+#+begin_src css
+
+  #myid {
+      background-color: blue !important;
+  }
+
+  .myclass {
+      background-color: gray !important;
+  }
+
+  p {
+      background-color: red !important;
+  }
+
+#+end_src
+
+*Tip*: It is good to know about the =!important= rule, you might see it in some CSS source code. However, do not use it unless you absolutely have to.
+
+** Maybe One or Two Fair Uses of !important
+
+One way to use =!important= is if you have to override a style that cannot be overriden in any other way. This could be if you are working on a Content Management System (CMS) and cannot edit the CSS code. Then you can set some custom styles to override some of the CMS styles.
+
+Another way to use =!important= is: Assume you want a special look for all buttons on a page. Here, buttons are styled with a gray background color, white text, and some padding and border:
+
+*Example*
+#+begin_src css
+
+  .button {
+      background-color: #8c8c8c;
+      color: white;
+      padding: 5px;
+      border: 1px solid black;
+  }
+
+#+end_src
+
+The look of a button can sometimes change if we put it inside another element with higher specificity, and the properties get in conflict. Here is an example of this:
+
+*Example*
+#+begin_src css
+
+  .button {
+      background-color: #8c8c8c;
+      color: white;
+      padding: 5px;
+      border: 1px solid black;
+  }
+
+  #myDiv a {
+      color: red;
+      background-color: yellow;
+  }
+
+#+end_src
+
+To "force" all buttons to have the same loook, no matter what, we can add the =!important= rule to the properties of the button, like this:
+
+*Example*
+#+begin_src css
+
+  .button {
+      background-color: #8c8c8c !important;
+      color: white !important;
+      padding: 5px !important;
+      border: 1px solid black !important;
+  }
+
+  #myDiv a {
+      color: red;
+      background-color: yellow;
+  }
+
+#+end_src
+
+* Math Functions
+** What is Math Functions?
+
+The CSS math functions allow mathematical expression to be used as property values, we explain the =calc()=, =max()=, and =min()= functions.
+
+** The calc() Function
+
+The =calc()= function performs a calculation to be used as the property value.
+
+*CSS Syntax*
+#+begin_src css
+
+  calc(expression)
+
+#+end_src
+
+| *Value*      | *Description*                                            |
+|------------+--------------------------------------------------------|
+| expression | Required. The following operators can be used: + - * / |
+
+Let us look at an example:
+
+*Example*
+
+Use calc() to calculate the width of a <div> element:
+#+begin_src css
+
+  #div1 {
+      position: absolute;
+      left: 50px;
+      width: calc(100% - 100px);
+      border: 1px solid black;
+      background-color: yellow;
+      padding: 5px;
+  }
+
+#+end_src
+
+** The max() Function
+
+The =max()= function uses the largest value, from a comma-separated list of values, as the property value.
+
+*CSS Syntax*
+#+begin_src css
+
+  max(value1, value2, ...)
+
+#+end_src
+
+| *Value*               | *Description*                                                                    |
+|---------------------+--------------------------------------------------------------------------------|
+| value1, value2, ... | Required. A list of comma-separated values - where the largest value is chosen |
+
+Let us look at an example:
+
+*Example*
+
+Use max() to set the width of #div1 to whichever value is largest, 50% or 300px:
+#+begin_src css
+
+  #div1 {
+      background-color: yellow;
+      height: 100px;
+      width: max(50%, 300px);
+  }
+
+#+end_src
+
+** The min() Function
+
+The =min()= function uses the smallest value, from a comma-separated list of values, as the property value.
+
+*CSS Syntax*
+#+begin_src css
+
+  min(value1, value2, ...)
+
+#+end_src
+
+| *Value*               | *Description*                                                                     |
+|---------------------+---------------------------------------------------------------------------------|
+| value1, value2, ... | Required. A list of comma-separated values - where the smallest value is chosen |
+
+Let us look at an example:
+
+*Example*
+
+Use min() to set the width of #div1 to whichever value is smallest, 50% or 300px:
+#+begin_src css
+
+  #div1 {
+      background-color: yellow;
+      height: 100px;
+      width: min(50%, 300px);
+  }
 
 #+end_src
